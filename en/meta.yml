@@ -7,5 +7,7 @@ copyedit: false
 last_tested: "2020-02-26"
 steps:
   - title: Introduction
-  - title: Step title
-  - title: What next?
+  - title: Setting up your motors
+  - title: Bluetooth control
+  - title: Adding LEDs
+  - title: Assembling your robot

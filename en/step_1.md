@@ -1,11 +1,13 @@
 ## Introduction
 
-Add project description here. What will learners be making?
+Use LEGO and the Raspberry Pi LEGO HAT to build a cool robot car, then program it for Bluetooth control from your phone. Then add some LEDs to dazzle your friends.
+
+You will be building a differential wheeled robot. It's movement will be based on two separately driven wheels placed on either side of the robot body. It will be able to change its direction by varying the relative rate of rotation of each wheel and so will not require an additional steering mechanism.
 
 ### What you will make
 
 --- no-print ---
-Add instructions for using the embedded content here.
+
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
@@ -17,18 +19,29 @@ Add instructions for using the embedded content here.
 --- /print-only ---
 
 --- collapse ---
+
+Throughout the project we’ll work towards this example robot car and model how it was built. You can build your robot car using whatever lego and other materials you have available.
+
 ---
 title: What you will need
 ---
 ### Hardware
 
-+ Describe hardware here
++ A Raspberry Pi Computer running the latest Desktop version of Raspbian
++ A Raspberry Pi LEGO HAT
++ 2 Lego Technic Motors
++ A small breadboard
++ Some LEDs and 100 ohm resistors
++ Some breadboard jumper leads
++ Assortment of Lego, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
++ An Android mobile phone or tablet
++ If your Raspberry Pi computer doesn't have built-in Bluetooth you will also need a USB Bluetooth adapter.
 
 ### Software
 
-+ Scratch 2.0 (either [online](http://rpf.io/scratchon) or [offline](http://rpf.io/scratchoff))
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
++ *XXXXXX* python library for controlling the *XXXX* Hat
++ Bluedot Python library and Bluedot Android app
++ Gpiozero Python library
 
 ### Downloads
 
@@ -41,8 +54,10 @@ title: What you will need
 title: What you will learn
 ---
 
-+ Two or three learning objectives
-+ ...should go here
++ To control LEGO motors using the Raspberry Pi LEGO HAT
++ How to add Bluetooth control
++ How to blink and LED using gpiozero
+
 
 --- /collapse ---
 
