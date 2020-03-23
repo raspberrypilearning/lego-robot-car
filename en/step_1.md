@@ -6,6 +6,10 @@ You will be building a differential wheeled robot. It's movement will be based o
 
 ### What you will make
 
+In this project you will build a robot buggy that you can program to move around using simple Python commands.
+
+![finished](images/lego-bot.gif)
+
 --- no-print ---
 
 

@@ -5,7 +5,7 @@ This will let you control the robot from an Android phone or tablet.
 
 ### Pairing your Raspberry Pi with your Android device
 
-Later on, you will need to login to your Raspberry Pi to enable the pairing via the command line. Therefore it makses sense to use that method rather than using the Desktop.
+Later on, you will need to login to your Raspberry Pi to enable the pairing via the command line. Therefore it makes sense to use that method rather than using the Desktop.
 
 On your Raspberry Pi:
 
@@ -23,11 +23,22 @@ Depending on the version of Android you are running, the steps to follow on your
 
 Open Settings
 Select Connected Devices
+
+![andriod1](images/android1.JPG)
+
 Turn Bluetooth on and select the Bluetooth menu
 Select Pair new device
+
+![andriod1](images/android2.JPG)
+
 Your Raspberry Pi will appear in the list; select it
 Enter a PIN
+![andriod1](images/android3.JPG)
+
+
 On your Raspberry Pi:
 
-Re-enter the PIN
+Enter the same PIN
 Type quit and press Enter to return to the command line
+
+### Testing Bluetooth
