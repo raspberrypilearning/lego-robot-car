@@ -94,7 +94,7 @@ You'll need to think about which side of the robot each motor will be on to work
 
 --- /hint ---
 
-Finally,to turn the robot to the right, both motors need to turn in the same (opposite) direction.
+Finally, to turn the robot to the right, both motors need to turn in the same (opposite) direction.
 
 ```python
 def back():

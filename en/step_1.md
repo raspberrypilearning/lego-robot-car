@@ -20,7 +20,7 @@ You will be building a differential wheeled robot. It's movement will be based o
 
 --- collapse ---
 
-Throughout the project we’ll work towards this example robot car and model how it was built. You can build your robot car using whatever lego and other materials you have available.
+Throughout the project you’ll work towards this example robot car and model how it was built. However, you can build your robot car using whatever LEGO and other materials you have available.
 
 ---
 title: What you will need
@@ -33,7 +33,7 @@ title: What you will need
 + A small breadboard
 + Some LEDs and 100 ohm resistors
 + Some breadboard jumper leads
-+ Assortment of Lego, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
++ Assortment of LEGO, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + An Android mobile phone or tablet
 + If your Raspberry Pi computer doesn't have built-in Bluetooth you will also need a USB Bluetooth adapter.
 
