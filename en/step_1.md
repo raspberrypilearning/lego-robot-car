@@ -8,14 +8,11 @@ You will be building a differential wheeled robot. It's movement will be based o
 
 In this project you will build a robot buggy that you can program to move around using simple Python commands.
 
-![finished](images/lego-bot.gif)
 
 --- no-print ---
 
+![finished](images/lego-bot.gif)
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
 --- /no-print ---
 
 --- print-only ---
