@@ -19,7 +19,6 @@ In this project you will build a robot buggy that you can program to move around
 ![Complete project](images/buggy.JPG)
 --- /print-only ---
 
---- collapse ---
 
 Throughout the project you’ll work towards this example robot car and model how it is built. However, you can build your robot car using whatever LEGO and other materials you have available.
 

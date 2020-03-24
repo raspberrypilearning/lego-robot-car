@@ -24,16 +24,16 @@ Depending on the version of Android you are running, the steps to follow on your
 Open Settings
 Select Connected Devices
 
-![andriod1](images/android1.JPG)
+![andriod1](images/buggy.JPG)
 
 Turn Bluetooth on and select the Bluetooth menu
 Select Pair new device
 
-![andriod1](images/android2.JPG)
+![andriod1](images/android2.png)
 
 Your Raspberry Pi will appear in the list; select it
 Enter a PIN
-![andriod1](images/android3.JPG)
+![andriod1](images/android3.png)
 
 
 On your Raspberry Pi:
@@ -41,4 +41,19 @@ On your Raspberry Pi:
 Enter the same PIN
 Type quit and press Enter to return to the command line
 
-### Testing Bluetooth
+### Testing Bluedot
+
+Now test that Blue Dot.
+
+Create a new Python file on your Raspberry Pi called bluedot_test.py:
+
+```python
+from bluedot import BlueDot
+bd = BlueDot()
+print('Waiting...')
+bd.wait_for_press()
+print("It worked!")
+```
+Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of something????
+
+Click on the Raspberry Pi entry.
