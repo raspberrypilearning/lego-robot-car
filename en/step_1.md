@@ -2,6 +2,12 @@
 
 Use LEGO and the Raspberry Pi LEGO HAT to build a cool robot car, then program it for Bluetooth control from your phone. Then add some LEDs to dazzle your friends.
 
+--- no-print ---
+
+![finished](images/lego-bot.gif)
+
+--- /no-print ---
+
 You will be building a differential wheeled robot. It's movement will be based on two separately driven wheels placed on either side of the robot body. It will be able to change its direction by varying the relative rate of rotation of each wheel and so will not require an additional steering mechanism.
 
 ### What you will make
@@ -9,14 +15,10 @@ You will be building a differential wheeled robot. It's movement will be based o
 In this project you will build a robot buggy that you can program to move around using simple Python commands.
 
 
---- no-print ---
-
-![finished](images/lego-bot.gif)
-
---- /no-print ---
-
 --- print-only ---
+
 ![Complete project](images/buggy.JPG)
+
 --- /print-only ---
 
 
