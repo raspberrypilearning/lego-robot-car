@@ -64,7 +64,6 @@ When you've checked that everything works as expected, you can unleash the mobil
 First of all, make sure your Raspberry Pi is [connected to a wifi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
 
 Then make the necessary changes to allow remote access to the Raspberry Pi from the network using either ssh (recommended) or VNC.
-nix-bash-crontab
 
 [[[rpi-vnc-access]]]
 
