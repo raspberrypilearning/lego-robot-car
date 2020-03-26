@@ -58,7 +58,7 @@ Run this program and then grab your Android phone or tablet and  open the app on
 
 ![anfroid](images/android4.jpeg)
 
-Click on the Raspberry Pi entry.
+Click on the 'raspberrypi' entry.
 
 You should then see a big blue dot on your screen. Tap the dot.
 
