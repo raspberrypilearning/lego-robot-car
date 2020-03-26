@@ -54,7 +54,9 @@ print('Waiting...')
 bd.wait_for_press()
 print("It worked!")
 ```
-Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of something????
+Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of Bluetooth devices that have been paired with your device.
+
+![thonny1](images/android4.png)
 
 Click on the Raspberry Pi entry.
 
@@ -73,7 +75,7 @@ Now modify your code from the previous step so that the movement sequence is tri
 
 --- hint ---
 
-You don't need to make any changes to the function you wrote before. That's the cool things about making your code modular with functions.
+You don't need to make any changes to the function you wrote before. That's the cool thing about making your code modular with functions.
 
 
 --- /hint ---
