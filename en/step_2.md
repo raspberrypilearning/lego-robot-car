@@ -40,9 +40,8 @@ In order to remotely steer the robot, you'll need to be able to start and stop t
 
 ```python
 def stop():
-    lb.off()
-    mySPIKE.SendCommand("hub.port.A.motor.brake()")
-    mySPIKE.SendCommand("hub.port.B.motor.brake()")
+  mySPIKE.SendCommand("hub.port.A.motor.brake()")
+  mySPIKE.SendCommand("hub.port.B.motor.brake()")
 
 def forward():
   mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
@@ -84,7 +83,7 @@ def back():
 To turn the robot to the left, both motors need to turn in the same direction.
 
 ```python
-def back():
+def left():
   mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
   mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
 
@@ -97,7 +96,7 @@ You'll need to think about which side of the robot each motor will be on to work
 Finally, to turn the robot to the right, both motors need to turn in the same (opposite) direction.
 
 ```python
-def back():
+def right():
   mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(-50)")
   mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
 

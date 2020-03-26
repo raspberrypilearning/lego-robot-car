@@ -64,9 +64,113 @@ Back on the Raspberry Pi you should see that your program has accepted the Bluet
 
 ![thonny1](images/thonny1.png)
 
+### Integrating your motor code with Blue Dot
+
+Now modify your code from the previous step so that the movement sequence is triggered by a press of the blue dot.
+
+--- hints ---
+
+
+--- hint ---
+
+You don't need to make any changes to the function you wrote before. That's the cool things about making your code modular with functions.
+
+
+--- /hint ---
+
+--- hint ---
+
+The `bd.wait_for_press()` function will pause the execution of your program until it receives a message via Bluetooth to say the button has been pressed.
+
+
+
+--- /hint ---
+```python
+from bluedot import BlueDot
+bd = BlueDot()
+from spike import SPIKEPrimeSerial as SPIKE
+from time import sleep
+
+mySPIKE = SPIKE()
+mySPIKE.OpenSerial(port = "/dev/ttyACM0")
+mySPIKE.OpenSerial()
+
+def stop():
+  mySPIKE.SendCommand("hub.port.A.motor.brake()")
+  mySPIKE.SendCommand("hub.port.B.motor.brake()")
+
+def forward():
+  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
+  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+
+def back():
+  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
+  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+
+def left():
+  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
+  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+
+def right():
+  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(-50)")
+  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+
+print('Waiting...')
+bd.wait_for_press()
+print("It worked!")
+forward()
+sleep(1)
+stop()
+sleep(1)
+
+```
+
+--- /hint ---
+
+--- /hints ---
+
 ### More than just a blue dot
 
-The Blue Dot app is more than just a simnple button. The Blue Dot can also be used as a joystick when the middle, top, bottom, left or right areas of the dot are touched.
+The Blue Dot app is more than just a simple button. The blue dot itself can also be used as a joystick when the middle, top, bottom, left or right areas of the dot are touched. You can use this to steer the robot using the blue dot.
+
+Modify your existing code to move the robot backwards and forwards using the blue dot. Add the following new function:
+
+
+```python
+def move(pos):
+    if pos.top:
+        forward()
+    elif pos.bottom:
+        back()
+
+```
+
+
+```python
+from bluedot import BlueDot
+from signal import pause
+
+bd = BlueDot()
+
+def move(pos):
+    if pos.top:
+        robot.forward()
+    elif pos.bottom:
+        robot.backward()
+    elif pos.left:
+        robot.left()
+    elif pos.right:
+        robot.right()
+
+def stop():
+    robot.stop()
+
+bd.when_pressed = move
+bd.when_moved = move
+bd.when_released = stop
+
+pause()
+```
 
 You can change the robot to use variable speeds, so the further towards the edge you press the Blue Dot, the faster the robot will go.
 
