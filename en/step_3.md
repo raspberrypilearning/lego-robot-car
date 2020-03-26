@@ -56,7 +56,7 @@ print("It worked!")
 ```
 Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of Bluetooth devices that have been paired with your device.
 
-![thonny1](images/android4.png)
+![anfroid](images/android4.jpeg)
 
 Click on the Raspberry Pi entry.
 
