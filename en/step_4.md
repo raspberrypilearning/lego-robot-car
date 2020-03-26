@@ -66,9 +66,9 @@ First of all, make sure your Raspberry Pi is [connected to a wifi network](https
 Then make the necessary changes to allow remote access to the Raspberry Pi from the network using either ssh (recommended) or VNC.
 nix-bash-crontab
 
-[[ rpi-vnc-access ]]
+[[[rpi-vnc-access]]]
 
-[[ rpi-ssh-access ]]
+[[[rpi-ssh-access]]]
 
 
 Experiment with lots of different designs to see which works best.  

@@ -38,6 +38,8 @@ Because this will be a differential wheeled robot,  the identical motors identic
 
 In order to remotely steer the robot, you'll need to be able to start and stop the motors rather than just have them move for a set time.   Create two functions, one to cause the robot to move forward and another to stop.
 
+[[[generic-python-simple-functions]]]
+
 ```python
 def stop():
   mySPIKE.SendCommand("hub.port.A.motor.brake()")
