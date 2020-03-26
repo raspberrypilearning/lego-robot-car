@@ -13,7 +13,8 @@ A way of supporting the Raspberry Pi and battery pack.
 
 The robot shown in the images below uses components from the LEGO Education Spike Prime kit.
 
-![bottop](images/bot-top.jpg) | ![botbot](images/bot-bottom.jpg)
+![bottop](images/bot-top.jpg)
+![botbot](images/bot-bottom.jpg)
 
 Use whatever LEGO elements you have construct the robot. Try to be adaptable and work with what you've got available.
 
