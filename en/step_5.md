@@ -5,11 +5,8 @@ The holes in LEGO elements are just the right size for holding small LEDs so you
 
 There are plenty of ways of mounting a breadboard using LEGO. A couple of ideas are shown below but you can use whatever elements you have available to  
 
-![breadboard](images/big-breadboard-bottom.jpg)
+![breadboard](images/big-breadboard-bottom.png)
 
-![breadboard](images/big-breadboard-top.jpg)
-
-![Complete project](images/small-breadboard.JPG)
 
 Then connect an LED to your Raspberry Pi
 
@@ -37,4 +34,4 @@ while True:
 
 Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
 
-Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. 
+Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi.
