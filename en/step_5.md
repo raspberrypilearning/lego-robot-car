@@ -34,12 +34,38 @@ while True:
 
 Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
 
-Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi.
+Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. Add some extra code to the program above so the news LEDs can be controlled too. There are plots of ways to control LEDs with Python and GPIO Zero. For example, you could use LedBoard:
+
+```python
+from gpiozero import LEDBoard
+from time import sleep
+
+leds = LEDBoard(5, 6, 13, 17, 19)
+
+leds.on()
+sleep(1)
+leds.off()
+sleep(1)
+leds.value = (1, 0, 1, 0, 1)
+sleep(1)
+leds.blink()
+
+```
+In this case, there are 5 LEDs, connected to GPIO pins 5,6,13,17 and 19.
 
 Once you've got all the circuits working, add some extra jumper leads to extend the reach of the LEDs.
 
-![breadboard](images/ledsinlego.png)
+![breadboard](images/legtolegs2.png)
+
 
 Then insert the LED into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
 
-![breadboard](images/legtolegs2.png)
+![breadboard](images/ledsinlego.png)
+
+Add the breadboard assembly and LEDs to a suitable place on your model.
+
+Now integrate your LED code with the Blue Dot robot program. 
+
+### Other enhancements
+
+Buzzers
