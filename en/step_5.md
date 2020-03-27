@@ -1,5 +1,5 @@
 
-## Adding some LERDs
+## Adding some LEDs
 
 The holes in LEGO elements are just the right size for holding small LEDs so you can easily add them to your project with a breadboard.
 
@@ -35,3 +35,11 @@ while True:
 Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
 
 Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi.
+
+Once you've got all the circuits working, add some extra jumper leads to extend the reach of the LEDs.
+
+![breadboard](images/ledsinlego.png)
+
+Then insert the LED into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
+
+![breadboard](images/legtolegs2.png)
