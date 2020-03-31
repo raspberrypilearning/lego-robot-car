@@ -2,13 +2,13 @@
 
 It is easier to test and develop your program before building your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO is that you always rebuild).
 
-The Raspberry Pi LEGO HAT and its Python library allow you to control LEGO Technic motors directly from your Raspberry Pi computer.
+The Raspberry Pi Build HAT and its Python library allow you to control LEGO Technic motors directly from your Raspberry Pi computer.
 
-Plug two motors into ports A and B on the Raspberry Pi LEGO HAT.  
+Plug two motors into ports A and B on the Raspberry Pi Build HAT.  
 
 ### Make the motors spin
 
-Open up your favourite Python editor and enter the code below to import the LEGO HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 1000ms at 50% of the maximum speed possible.
+Open up your favourite Python editor and enter the code below to import the Build HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 1000ms at 50% of the maximum speed possible.
 
 ```python
 from spike import SPIKEPrimeSerial as SPIKE

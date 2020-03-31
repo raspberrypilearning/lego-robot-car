@@ -1,6 +1,6 @@
 ## Introduction
 
-Use LEGO and the Raspberry Pi LEGO HAT to build a cool robot car, then program it for Bluetooth control from your phone. Then add some LEDs to dazzle your friends.
+Use LEGO and the Raspberry Pi Build HAT to build a cool robot car, then program it for Bluetooth control from your phone. Then add some LEDs to dazzle your friends.
 
 --- no-print ---
 
@@ -31,7 +31,7 @@ title: What you will need
 ### Hardware
 
 + A Raspberry Pi Computer running the latest Desktop version of Raspbian
-+ A Raspberry Pi LEGO HAT
++ A Raspberry Pi Build HAT
 + 2 Lego Technic Motors
 + A small breadboard
 + Some LEDs and 100 ohm resistors
@@ -57,7 +57,7 @@ title: What you will need
 title: What you will learn
 ---
 
-+ To control LEGO motors using the Raspberry Pi LEGO HAT
++ To control LEGO motors using the Raspberry Pi Build HAT
 + How to add Bluetooth control
 + How to blink and LED using gpiozero
 
