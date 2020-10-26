@@ -39,6 +39,7 @@ title: What you will need
 + Assortment of LEGO, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + An Android mobile phone or tablet
 + If your Raspberry Pi computer doesn't have built-in Bluetooth you will also need a USB Bluetooth adapter.
++ A 9V battery pack with a barrel jack. 
 
 ### Software
 

@@ -4,7 +4,7 @@ It is easier to test and develop your program before building your robot. This r
 
 The Raspberry Pi Build HAT and its Python library allow you to control LEGO Technic motors directly from your Raspberry Pi computer.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT.  
+Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Conect your battery pack to the barrel jack on the Build HAT and turn it on. 
 
 ### Make the motors spin
 
