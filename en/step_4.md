@@ -46,8 +46,8 @@ So if the ratio of the wheel diameters was 2:1 , you should adjust the motors sp
 
 ```python
 def back(speed):
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(speed/2)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(speed)")
+  bh.port.B.motor.run_at_speed(speed/2)
+  bh.port.A.motor.run_at_speed(speed)
 
 ```
 

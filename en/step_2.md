@@ -11,14 +11,12 @@ Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Conect your b
 Open up your favourite Python editor and enter the code below to import the Build HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 1000ms at 50% of the maximum speed possible.
 
 ```python
-from spike import SPIKEPrimeSerial as SPIKE
+from build_hat import BuildHAT
 from time import sleep
 
-mySPIKE = SPIKE()
-mySPIKE.OpenSerial(port = "/dev/ttyACM0")
-mySPIKE.OpenSerial()
-mySPIKE.SendCommand("hub.port.B.motor.run_for_time(1000,50)")
-mySPIKE.SendCommand("hub.port.A.motor.run_for_time(1000,-50)")
+bh = BuildHAT()
+bh.port.B.motor.run_for_time(1000,50)
+bh.port.A.motor.run_for_time(1000,-50)
 ```
 
 Run your program and check the motors turn. When testing it can be helpful to add some LEGO to the central axle hole in the motor so that it is easy to see the direction the motor is turning.
@@ -42,12 +40,12 @@ In order to remotely steer the robot, you'll need to be able to start and stop t
 
 ```python
 def stop():
-  mySPIKE.SendCommand("hub.port.A.motor.brake()")
-  mySPIKE.SendCommand("hub.port.B.motor.brake()")
+  bh.port.A.motor.brake()
+  bh.port.B.motor.brake()
 
 def forward():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+  bh.port.B.motor.run_at_speed(50)
+  bh.port.A.motor.run_at_speed(-50)
 
 ```
 
@@ -73,8 +71,8 @@ To move the robot backwards, simply reverse the directions of both motors.
 
 ```python
 def back():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(-50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+  bh.port.B.motor.run_at_speed(-50)
+  bh.port.A.motor.run_at_speed(50)
 
 ```
 
@@ -86,8 +84,8 @@ To turn the robot to the left, both motors need to turn in the same direction.
 
 ```python
 def left():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+  bh.port.B.motor.run_at_speed(50)
+  bh.port.A.motor.run_at_speed(50)
 
 ```
 
@@ -99,8 +97,8 @@ Finally, to turn the robot to the right, both motors need to turn in the same (o
 
 ```python
 def right():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(-50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+  bh.port.B.motor.run_at_speed(-50)
+  bh.port.A.motor.run_at_speed(-50)
 
 ```
 

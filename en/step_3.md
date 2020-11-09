@@ -90,32 +90,30 @@ The `bd.wait_for_press()` function will pause the execution of your program unti
 ```python
 from bluedot import BlueDot
 bd = BlueDot()
-from spike import SPIKEPrimeSerial as SPIKE
+from build_hat import BuildHAT
 from time import sleep
 
-mySPIKE = SPIKE()
-mySPIKE.OpenSerial(port = "/dev/ttyACM0")
-mySPIKE.OpenSerial()
+bh = BuildHAT()
 
 def stop():
-  mySPIKE.SendCommand("hub.port.A.motor.brake()")
-  mySPIKE.SendCommand("hub.port.B.motor.brake()")
+  bh.port.A.motor.brake()
+  bh.port.B.motor.brake()
 
 def forward():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+  bh.port.B.motor.run_at_speed(50)
+  bh.port.A.motor.run_at_speed(-50)
 
 def back():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+  bh.port.B.motor.run_at_speed(50)
+  bh.port.A.motor.run_at_speed(50)
 
 def left():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(50)")
+  bh.port.B.motor.run_at_speed(50)
+  bh.port.A.motor.run_at_speed(50)
 
 def right():
-  mySPIKE.SendCommand("hub.port.B.motor.run_at_speed(-50)")
-  mySPIKE.SendCommand("hub.port.A.motor.run_at_speed(-50)")
+  bh.port.B.motor.run_at_speed(-50)
+  bh.port.A.motor.run_at_speed(-50)
 
 print('Waiting...')
 bd.wait_for_press()
