@@ -24,16 +24,16 @@ Depending on the version of Android you are running, the steps to follow on your
 Open Settings
 Select Connected Devices
 
-![andriod1](images/android1.png)
+![A screenshot of the connected devices settings page from an Android phone](images/android1.png)
 
 Turn Bluetooth on and select the Bluetooth menu
 Select Pair new device
 
-![andriod1](images/android2.png)
+![A screenshot of the pair new device page from an Android phone](images/android2.png)
 
 Your Raspberry Pi will appear in the list; select it
 Enter a PIN
-![andriod1](images/android3.png)
+![A screenshot of window that appears on an Android phone when pairing a new bluetooth device. It is asking for the pairing to be confirmed](images/android3.png)
 
 
 On your Raspberry Pi:
@@ -56,7 +56,7 @@ print("It worked!")
 ```
 Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of Bluetooth devices that have been paired with your device.
 
-![anfroid](images/android4.jpeg)
+![A screenshot of the bluetooth devices available from an Android phone. The top item on teh list says raspberrypi](images/android4.jpeg)
 
 Click on the 'raspberrypi' entry.
 
@@ -64,7 +64,7 @@ You should then see a big blue dot on your screen. Tap the dot.
 
 Back on the Raspberry Pi you should see that your program has accepted the Bluetooth connection and successfully responded to you pressing the blue dot.  
 
-![thonny1](images/thonny1.png)
+![A screenshot of the Thonny Python IDE showing that a device is connected then disconnected](images/thonny1.png)
 
 ### Integrating your motor code with Blue Dot
 
@@ -90,30 +90,31 @@ The `bd.wait_for_press()` function will pause the execution of your program unti
 ```python
 from bluedot import BlueDot
 bd = BlueDot()
-from build_hat import BuildHAT
+from buildhat import Motor
 from time import sleep
 
-bh = BuildHAT()
+motor_l = motor('A')
+motor_r = motor('B')
 
 def stop():
-  bh.port.A.motor.brake()
-  bh.port.B.motor.brake()
+  motor_l.stop()
+  motor_r.stop()
 
 def forward():
-  bh.port.B.motor.run_at_speed(50)
-  bh.port.A.motor.run_at_speed(-50)
+  motor_l.start(50)
+  motor_r.start(-50)
 
 def back():
-  bh.port.B.motor.run_at_speed(50)
-  bh.port.A.motor.run_at_speed(50)
+  motor_l.start(-50)
+  motor_r.start(50)
 
 def left():
-  bh.port.B.motor.run_at_speed(50)
-  bh.port.A.motor.run_at_speed(50)
+  motor_l.start(50)
+  motor_r.start(50)
 
 def right():
-  bh.port.B.motor.run_at_speed(-50)
-  bh.port.A.motor.run_at_speed(-50)
+  motor_l.start(-50)
+  motor_r.start(-50)
 
 print('Waiting...')
 bd.wait_for_press()

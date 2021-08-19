@@ -46,8 +46,8 @@ So if the ratio of the wheel diameters was 2:1 , you should adjust the motors sp
 
 ```python
 def back(speed):
-  bh.port.B.motor.run_at_speed(speed/2)
-  bh.port.A.motor.run_at_speed(speed)
+  motor_l.start(speed/2)
+  motor_r.start(speed)
 
 ```
 

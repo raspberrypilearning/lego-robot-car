@@ -4,19 +4,20 @@ It is easier to test and develop your program before building your robot. This r
 
 The Raspberry Pi Build HAT and its Python library allow you to control LEGO Technic motors directly from your Raspberry Pi computer.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Conect your battery pack to the barrel jack on the Build HAT and turn it on. 
+Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Connect your battery pack to the barrel jack on the Build HAT and turn it on. 
 
 ### Make the motors spin
 
-Open up your favourite Python editor and enter the code below to import the Build HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 1000ms at 50% of the maximum speed possible.
+Open up your favourite Python editor and enter the code below to import the Build HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 10 seconds at 50% of the maximum speed possible.
 
 ```python
-from build_hat import BuildHAT
+from buildhat import Motor
 from time import sleep
 
-bh = BuildHAT()
-bh.port.B.motor.run_for_time(1000,50)
-bh.port.A.motor.run_for_time(1000,-50)
+motor_l = Motor('A')
+motor_r = Motor('B')
+motor_l.run_for_seconds(10,50)
+motor_r.run_for_seconds(10,-50)
 ```
 
 Run your program and check the motors turn. When testing it can be helpful to add some LEGO to the central axle hole in the motor so that it is easy to see the direction the motor is turning.
@@ -40,12 +41,13 @@ In order to remotely steer the robot, you'll need to be able to start and stop t
 
 ```python
 def stop():
-  bh.port.A.motor.brake()
-  bh.port.B.motor.brake()
+  motor_l.stop()
+  motor_r.stop()
 
 def forward():
-  bh.port.B.motor.run_at_speed(50)
-  bh.port.A.motor.run_at_speed(-50)
+  motor_l.start(50)
+  motor_r.start(-50)
+
 
 ```
 
@@ -71,8 +73,8 @@ To move the robot backwards, simply reverse the directions of both motors.
 
 ```python
 def back():
-  bh.port.B.motor.run_at_speed(-50)
-  bh.port.A.motor.run_at_speed(50)
+  motor_l.start(-50)
+  motor_r.start(50)
 
 ```
 
@@ -84,8 +86,8 @@ To turn the robot to the left, both motors need to turn in the same direction.
 
 ```python
 def left():
-  bh.port.B.motor.run_at_speed(50)
-  bh.port.A.motor.run_at_speed(50)
+  motor_l.start(50)
+  motor_r.start(50)
 
 ```
 
@@ -97,8 +99,8 @@ Finally, to turn the robot to the right, both motors need to turn in the same (o
 
 ```python
 def right():
-  bh.port.B.motor.run_at_speed(-50)
-  bh.port.A.motor.run_at_speed(-50)
+  motor_l.start(-50)
+  motor_r.start(-50)
 
 ```
 

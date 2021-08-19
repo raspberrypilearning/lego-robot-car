@@ -4,7 +4,7 @@ Use LEGO and the Raspberry Pi Build HAT to build a cool robot car, then program 
 
 --- no-print ---
 
-![finished](images/lego-bot.gif)
+![A photo of the finished LEGO wheeled bot with Raspberry Pi and BuildHAT centrally mounted. There is a breadboard with wires attached to LEDs on top of the stack. ](images/lego-bot.gif)
 
 --- /no-print ---
 
