@@ -3,12 +3,15 @@
 
 The holes in LEGO elements are just the right size for holding small LEDs so you can easily add them to your project with a breadboard.
 
-There are plenty of ways of mounting a breadboard using LEGO. A couple of ideas are shown below but you can use whatever elements you have available to  
+There are plenty of ways of mounting a breadboard using LEGO. A couple of ideas are shown below but you can use whatever elements you have available to you.
 
-![breadboard](images/big-breadboard.png)
+![A photo of a half-size breadboard mounted to a LEGO plate. It is supported by LEGO beams underneath and then sandwiched into a frame at the sides to keep the top surface where components are plugged in, free. ](images/big-breadboard.png)
 
+You could use a small breadboard and sit it in the space on top of your HAT. Many breadboards have an adhesive strip on the bottom that you could use to stick firmly onto the HAT, but note that this will partially cover the slit which is used for the camera cable if you wish to add a [Raspberry Pi camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) to your project.
 
-Then connect an LED to your Raspberry Pi
+![A photo of a green mini breadboard sitting on top of the Build HAT. It is s good fit but does cover up the camera slit which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
+
+Once you've got your breadboard stable,  connect an LED to your Raspberry Pi
 
 [[[rpi-connect-led]]]
 
@@ -55,12 +58,12 @@ In this case, there are 5 LEDs, connected to GPIO pins 5,6,13,17 and 19.
 
 Once you've got all the circuits working, add some extra jumper leads to extend the reach of the LEDs.
 
-![breadboard](images/legtolegs2.png)
+![two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself, on the right it is attached using flying jumper leads.](images/legtolegs2.png)
 
 
 Then insert the LED into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
 
-![breadboard](images/ledsinlego.png)
+![A photo of an LED inserted into a LEGO beam element](images/ledsinlego.png)
 
 Add the breadboard assembly and LEDs to a suitable place on your model.
 
