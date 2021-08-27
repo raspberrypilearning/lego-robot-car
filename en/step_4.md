@@ -9,7 +9,7 @@ Two wheels.
 Some kind of caster or balance point at the front.
 A way of supporting the Raspberry Pi and battery pack.
 
-![photo of the robot with the 5 cell battery pack revealed](images/batteries.png)
+![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
 
 [[[attach_rpi_to_lego]]]
 
