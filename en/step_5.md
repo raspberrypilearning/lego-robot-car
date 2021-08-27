@@ -15,7 +15,7 @@ Once you've got your breadboard stable,  connect an LED to your Raspberry Pi
 
 [[[rpi-connect-led]]]
 
-Mow move the wire connected to the LEDs positive leg onto a numbered GPIO pin. You can choose any one you like, but this project will assume you've used pin 17.
+Mow move the wire connected to the LEDs positive leg onto a numbered GPIO pin. You can choose any one you like, but this project will assume you've used pin 27.
 
 [[[rpi-gpio-pins]]]
 
@@ -27,7 +27,7 @@ Create new python program called led_test.py:
 from gpiozero import LED
 from time import sleep
 
-led = LED(17)
+led = LED(27)
 
 while True:
     led.on()
@@ -37,13 +37,13 @@ while True:
 
 Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
 
-Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. Add some extra code to the program above so the news LEDs can be controlled too. There are plots of ways to control LEDs with Python and GPIO Zero. For example, you could use LedBoard:
+Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. Because the Build HAT also uses some GPIO pins you should avoid choosing pins 1, 4, 14,15, 16 or 17. Add some extra code to the program above so the news LEDs can be controlled too. There are plots of ways to control LEDs with Python and GPIO Zero. For example, you could use LedBoard:
 
 ```python
 from gpiozero import LEDBoard
 from time import sleep
 
-leds = LEDBoard(5, 6, 13, 17, 19)
+leds = LEDBoard(5, 6, 13, 27, 19)
 
 leds.on()
 sleep(1)
@@ -68,6 +68,10 @@ Then insert the LED into the LEGO element of your choice. If you find that the l
 Add the breadboard assembly and LEDs to a suitable place on your model.
 
 Now integrate your LED code with the Blue Dot robot program. 
+
+You could add some orange LEDs onto the side of the robot to act as indicators and have them triggered when the robot turns left or right. Or you could add some red LEDs to the rear to function as brake lights.
+
+![A photo of the finished LEGO wheeled bot with Raspberry Pi and BuildHAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on. ](images/brake_lights.gif)
 
 ### Other enhancements
 

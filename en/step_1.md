@@ -30,7 +30,7 @@ title: What you will need
 ---
 ### Hardware
 
-+ A Raspberry Pi Computer running the latest Desktop version of Raspbian
++ A Raspberry Pi Computer running the latest Desktop version of Raspberry Pi OS
 + A Raspberry Pi Build HAT
 + 2 Lego Technic Motors
 + A small breadboard
@@ -39,11 +39,11 @@ title: What you will need
 + Assortment of LEGO, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + An Android mobile phone or tablet
 + If your Raspberry Pi computer doesn't have built-in Bluetooth you will also need a USB Bluetooth adapter.
-+ A 9V battery pack with a barrel jack. 
++ Five AA batteries and a holder pack with a barrel jack. 
 
 ### Software
 
-+ *XXXXXX* python library for controlling the *XXXX* Hat
++ Buildhat python library for controlling the Build Hat
 + Bluedot Python library and Bluedot Android app
 + Gpiozero Python library
 
