@@ -8,103 +8,171 @@ Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Connect your 
 
 ### Make the motors spin
 
-Open up your favourite Python editor and enter the code below to import the Build HAT library and the sleep function from the time library (which we'll use later) and make both motors move for 10 seconds at 50% of the maximum speed possible.
+--- task ---
 
-```python
+Open Thonny on your Raspberry Pi from the Programming menu.
+
+--- /task ---
+
+--- task ---
+
+Use the following code to spin both motors at 50% of their maximum speed for 10 seconds.
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 
+line_highlights: 
+---
 from buildhat import Motor
 from time import sleep
 
-motor_l = Motor('A')
-motor_r = Motor('B')
-motor_l.run_for_seconds(10,50)
-motor_r.run_for_seconds(10,-50)
-```
+motor_left = Motor('A')
+motor_right = Motor('B')
+motor_left.run_for_seconds(10, 50)
+motor_right.run_for_seconds(10, -50)
+--- /code ---
 
-Run your program and check the motors turn. When testing it can be helpful to add some LEGO to the central axle hole in the motor so that it is easy to see the direction the motor is turning.
+--- /task ---
 
-Your current program should move the motors in opposite directions? Why is this necessary?
+--- task ---
 
---- hints ---
+Run your program and check the motors turn.
 
+--- /task ---
 
---- hint ---
+Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right hand side.
 
-Because this will be a differential wheeled robot,  the identical motors identical will be mounted on opposite sides of the robot chassis. So anti-clockwise rotation on the left hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right hand side.
+Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
 
---- /hint ---
+--- task ---
 
---- /hints ---
+Remove the two lines of code that make the motors run for 10 seconds, and add these two functions.
 
-In order to remotely steer the robot, you'll need to be able to start and stop the motors rather than just have them move for a set time.   Create two functions, one to cause the robot to move forward and another to stop.
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 
+line_highlights: 7-14
+---
+from buildhat import Motor
+from time import sleep
 
-[[[generic-python-simple-functions]]]
+motor_left = Motor('A')
+motor_right = Motor('B')
 
-```python
 def stop():
-  motor_l.stop()
-  motor_r.stop()
+  motor_left.stop()
+  motor_right.stop()
+
 
 def forward():
-  motor_l.start(50)
-  motor_r.start(-50)
+  motor_left.start(50)
+  motor_right.start(-50)
 
 
-```
+--- /code ---
 
-Test you functions out by adding the following start-stop-start-stop sequence:
+--- /task ---
 
-```python
+--- task ---
 
+Test your functions out by adding the following start-stop-start-stop sequence:
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 17
+line_highlights: 
+---
 for i in range(2):
   forward()
   sleep(1)
   stop()
   sleep(1)
-```
+--- /code ---
+--- /task ---
+
 
 Once that works, add 3 more functions to move the robot backwards, left and right.
 
---- hints ---
-
-
---- hint ---
+--- task ---
 
 To move the robot backwards, simply reverse the directions of both motors.
 
-```python
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 17
+line_highlights: 
+---
 def back():
   motor_l.start(-50)
   motor_r.start(50)
 
-```
 
---- /hint ---
+--- /code ---
 
---- hint ---
+--- /task ---
+
+--- task ---
 
 To turn the robot to the left, both motors need to turn in the same direction.
 
-```python
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 22
+line_highlights: 
+---
 def left():
   motor_l.start(50)
   motor_r.start(50)
 
-```
 
-You'll need to think about which side of the robot each motor will be on to work out which direction to turn them.
-
---- /hint ---
-
-Finally, to turn the robot to the right, both motors need to turn in the same (opposite) direction.
-
-```python
 def right():
   motor_l.start(-50)
   motor_r.start(-50)
 
-```
 
+--- /code ---
 
---- /hint ---
+--- /task ---
 
---- /hints ---
+--- task ---
+
+To test your code, you can edit your `for` loop.
+
+--- code ---
+---
+language: python
+filename: 
+line_numbers: true
+line_number_start: 32
+line_highlights: 
+---
+for i in range(2):
+  forward()
+  sleep(1)
+  sleep(1)
+  back()
+  sleep(1)
+  right()
+  sleep(1)
+  left()
+  sleep(1)
+  stop()
+--- /code ---
+
+--- /task ---
+

@@ -1,6 +1,15 @@
 ## Introduction
 
-Use LEGO and the Raspberry Pi Build HAT to build a cool robot car, then program it for Bluetooth control from your phone. Then add some LEDs to dazzle your friends.
+Use LEGO and the Raspberry Pi BuildHAT to build a robot car, then program so you can control it with Bluetooth from your Android phone. Then add some LEDs to dazzle your friends.
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+<span style="color: #0faeb0">The name [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)</span> was proposed in 1997 by Jim Kardach of Intel. At the time of this proposal, he was reading Frans G. Bengtsson's historical novel The Long Ships about Vikings and the 10th-century Danish king Harald Bluetooth. It was the nickname of King Harald Bluetooth who united the Danish tribes into a single kingdom, just as Bluetooth unites communication protocols.
+</p>
+
+You will:
++ learn to control LEGO motors using the Raspberry Pi Build HAT
++ learn to use Bluetooth to send signals to the Raspberry Pi
++ learn how to control LEDs using gpiozero on the Raspberry Pi
 
 --- no-print ---
 
@@ -8,12 +17,7 @@ Use LEGO and the Raspberry Pi Build HAT to build a cool robot car, then program 
 
 --- /no-print ---
 
-You will be building a differential wheeled robot. It's movement will be based on two separately driven wheels placed on either side of the robot body. It will be able to change its direction by varying the relative rate of rotation of each wheel and so will not require an additional steering mechanism.
-
-### What you will make
-
-In this project you will build a robot buggy that you can program to move around using simple Python commands.
-
+You will be building a wheeled car. It's movement will be based on two separately driven wheels placed on either side of the car, allowing it to move forwards, backwards and turn. You can optionally add LEDs to the car to act as brake lights, indicators or headlights.
 
 --- print-only ---
 
@@ -21,57 +25,29 @@ In this project you will build a robot buggy that you can program to move around
 
 --- /print-only ---
 
-
-Throughout the project you’ll work towards this example robot car and model how it is built. However, you can build your robot car using whatever LEGO and other materials you have available.
-
---- collapse ---
----
-title: What you will need
----
-### Hardware
+### You will need
 
 + A Raspberry Pi Computer running the latest Desktop version of Raspberry Pi OS
 + A Raspberry Pi Build HAT
-+ 2 Lego Technic Motors
-+ A small breadboard
-+ Some LEDs and 100 ohm resistors
-+ Some breadboard jumper leads
++ 2 Lego Spike Motors
 + Assortment of LEGO, including two wheels.  We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + An Android mobile phone or tablet
-+ If your Raspberry Pi computer doesn't have built-in Bluetooth you will also need a USB Bluetooth adapter.
 + Five AA batteries and a holder pack with a barrel jack. 
 
 ### Software
 
 + Buildhat python library for controlling the Build Hat
-+ Bluedot Python library and Bluedot Android app
-+ Gpiozero Python library
++ BlueDot Python library and Bluedot Android app
++ gpiozero Python library
 
-### Downloads
-
-+ [rpf.io/project-name-go](http://rpf.io/project-name-go){:target="_blank"}
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
----
-
-+ To control LEGO motors using the Raspberry Pi Build HAT
-+ How to add Bluetooth control
-+ How to blink and LED using gpiozero
-
-
---- /collapse ---
 
 --- collapse ---
 ---
 title: Additional information for educators
 ---
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/project-name/print){:target="_blank"}.
+You can download the complete project [here](https://rpf.io/p/en/bt-robot-car-go).)
 
-[Here is a link to the resources for this project](http://rpf.io/project-name-go).
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/bt-robot-car/print){:target="_blank"}.
 
 --- /collapse ---
