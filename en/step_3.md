@@ -1,6 +1,6 @@
 ## Bluetooth control
 
-To remotely pilot your robot, you're going to use the Blue Dot library.
+To remotely pilot your robot, you're going to use the BlueDot library.
 This will let you control the robot from an Android phone or tablet.
 
 ### Pairing your Raspberry Pi with your Android device
