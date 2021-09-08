@@ -1,178 +1,98 @@
-## Bluetooth control
+## Setup and test the Bluetooth control
 
-To remotely pilot your robot, you're going to use the BlueDot library.
-This will let you control the robot from an Android phone or tablet.
+To remotely pilot your car, you're going to use the Blue Dot library and Android app.
 
 ### Pairing your Raspberry Pi with your Android device
 
-Later on, you will need to login to your Raspberry Pi to enable the pairing via the command line. Therefore it makes sense to use that method rather than using the Desktop.
+--- task ---
 
-On your Raspberry Pi:
+Click on the Bluetooth icon in the top right hand corner of the desktop and make sure that Bluetooth is turned **On** and that the device is **Discoverable**
 
-Open a Terminal window.
+![Raspberry Pi Bluetooth menu](images/bt_rpi_1.png)
 
-Type `bluetoothctl` and press Enter to open Bluetooth control
-
-At the [bluetooth]# prompt enter the following commands:
-
-discoverable on
-pairable on
-default-agent
+--- /task ---
 
 Depending on the version of Android you are running, the steps to follow on your device may vary slightly but should be close to:
 
-Open Settings
-Select Connected Devices
+--- task ---
 
-![A screenshot of the connected devices settings page from an Android phone](images/android1.png)
+In **Settings** find your Bluetooth settings and then **Connected Devices**
 
-Turn Bluetooth on and select the Bluetooth menu
-Select Pair new device
+![Connected devices settings on Bluetooth menu in Android](images/bt_and_1.png)
 
-![A screenshot of the pair new device page from an Android phone](images/android2.png)
+--- /task ---
 
-Your Raspberry Pi will appear in the list; select it
-Enter a PIN
-![A screenshot of window that appears on an Android phone when pairing a new bluetooth device. It is asking for the pairing to be confirmed](images/android3.png)
+--- task ---
 
+Choose **Pair new device** and then select your Raspberry Pi device from the devices shown.
 
-On your Raspberry Pi:
+![device options with Raspberry Pi shown](images/bt_and_2.png)
 
-Enter the same PIN
-Type quit and press Enter to return to the command line
+Then choose **Pair** from the dialogue box.
 
-### Testing Bluedot
+![Pair with Raspberry Pi? options shown with Cancel and Pair options](images/bt_and_3.png)
 
-Now test that Blue Dot.
+--- /task ---
 
-Create a new Python file on your Raspberry Pi called bluedot_test.py:
+--- task ---
 
-```python
+On the Raspberry Pi, you should be prompted to accept the pairing request.
+
+![dialogue box asking if you want to pair the Android device and the Raspberry Pi](images/bt_rpi_2.png)
+
+Clicking on **OK** should show a successful pairing of the Raspberry Pi and the Android device.
+
+![confirmation box that the Android device and the Raspberry Pi are paired](imgaes/bt_rpi_3.png)
+--- /task ---
+
+Sometimes you might be asked to confirm a code before you are allowed to pair the devices.
+
+![box asking for code confirmation on Adnroid device](images/android3.png)
+
+### Testing Blue Dot
+
+--- task ---
+
+Create a new Python file on your Raspberry Pi called bluedot_test.py, with the following code.
+
+--- code ---
+---
+language: python
+filename: bluedot_test.py
+line_numbers: true
+line_number_start: 
+line_highlights: 
+---
 from bluedot import BlueDot
 bd = BlueDot()
+
 print('Waiting...')
 bd.wait_for_press()
 print("It worked!")
-```
-Run this program and then grab your Android phone or tablet and  open the app on that device. The first screen will show you a list of Bluetooth devices that have been paired with your device.
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Run the program and then on your Android device open the [Blue Dot](https://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot&hl=en_GB&gl=US) app. The first screen will show you a list of Bluetooth devices that have been paired with your device.
 
 ![A screenshot of the bluetooth devices available from an Android phone. The top item on teh list says raspberrypi](images/android4.jpeg)
 
-Click on the 'raspberrypi' entry.
+--- /task ---
 
-You should then see a big blue dot on your screen. Tap the dot.
+--- task ---
 
-Back on the Raspberry Pi you should see that your program has accepted the Bluetooth connection and successfully responded to you pressing the blue dot.  
+Click on **raspberrypi** from the menu and you should then see a big blue dot on your screen. Tap the dot.
+
+![the blue dot app](images/bt_and_5.png)
+
+--- /task ---
+
+--- task ---
+
+On the Raspberry Pi you should see that your program has accepted the Bluetooth connection and successfully responded to you pressing the blue dot.  
 
 ![A screenshot of the Thonny Python IDE showing that a device is connected then disconnected](images/thonny1.png)
 
-### Integrating your motor code with Blue Dot
-
-Now modify your code from the previous step so that the movement sequence is triggered by a press of the blue dot.
-
---- hints ---
-
-
---- hint ---
-
-You don't need to make any changes to the function you wrote before. That's the cool thing about making your code modular with functions.
-
-
---- /hint ---
-
---- hint ---
-
-The `bd.wait_for_press()` function will pause the execution of your program until it receives a message via Bluetooth to say the button has been pressed.
-
-
-
---- /hint ---
-```python
-from bluedot import BlueDot
-bd = BlueDot()
-from buildhat import Motor
-from time import sleep
-
-motor_l = motor('A')
-motor_r = motor('B')
-
-def stop():
-  motor_l.stop()
-  motor_r.stop()
-
-def forward():
-  motor_l.start(50)
-  motor_r.start(-50)
-
-def back():
-  motor_l.start(-50)
-  motor_r.start(50)
-
-def left():
-  motor_l.start(50)
-  motor_r.start(50)
-
-def right():
-  motor_l.start(-50)
-  motor_r.start(-50)
-
-print('Waiting...')
-bd.wait_for_press()
-print("It worked!")
-forward()
-sleep(1)
-stop()
-sleep(1)
-
-```
-
---- /hint ---
-
---- /hints ---
-
-### More than just a blue dot
-
-The Blue Dot app is more than just a simple button. The blue dot itself can also be used as a joystick when the middle, top, bottom, left or right areas of the dot are touched. You can use this to steer the robot using the blue dot.
-
-Modify your existing code to move the robot backwards and forwards using the blue dot. Add the following new function:
-
-
-```python
-def move(pos):
-    if pos.top:
-        forward()
-    elif pos.bottom:
-        back()
-
-```
-
-
-```python
-from bluedot import BlueDot
-from signal import pause
-
-bd = BlueDot()
-
-def move(pos):
-    if pos.top:
-        robot.forward()
-    elif pos.bottom:
-        robot.backward()
-    elif pos.left:
-        robot.left()
-    elif pos.right:
-        robot.right()
-
-def stop():
-    robot.stop()
-
-bd.when_pressed = move
-bd.when_moved = move
-bd.when_released = stop
-
-pause()
-```
-
-You can change the robot to use variable speeds, so the further towards the edge you press the Blue Dot, the faster the robot will go.
-
-The distance attribute returns how far from the centre the Blue Dot was pressed, which can be passed to the robot’s functions to change its speed:
+--- /task ---

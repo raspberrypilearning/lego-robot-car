@@ -1,55 +1,60 @@
-## Assembling your robot
+## Control your motors with Blue Dot
 
-Now you have the motor code working, it is time to construct and test your robot.
-
-The basic design needs to fulfil  4 main requirements:
-
-Two motors mounted parallel to each other.
-Two wheels.
-Some kind of caster or balance point at the front.
-A way of supporting the Raspberry Pi and battery pack.
-
-![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
-
-[[[attach_rpi_to_lego]]]
-
-The robot shown in the images below uses components from the LEGO Education Spike Prime kit.
-
-![bottop](images/bot-grid.png)
-
-
-Use whatever LEGO elements you have construct the robot. Try to be adaptable and work with what you've got available.
-
-For example, how could you adapt your code to cope if you only have wheels of different diameters?
-
-![wheels1](images/oddwheels2.jpg)
+Now modify your code from the previous step so that the movement sequence is triggered by a press of the blue dot.
 
 --- hints ---
 
+
 --- hint ---
 
-The speed of the motors would need to be adjusted to compensate for the fact that a
-single rotation of the bigger wheel would move the robot further than the smaller wheels.
+You don't need to make any changes to the function you wrote before. That's the cool thing about making your code modular with functions.
+
 
 --- /hint ---
 
 --- hint ---
 
-The ratio of speeds should be the same as the ratio of diameters (because the circumferences will
-likewise be in the same ratio).
+The `bd.wait_for_press()` function will pause the execution of your program until it receives a message via Bluetooth to say the button has been pressed.
+
+
 
 --- /hint ---
-
-
-
---- hint ---
-
-So if the ratio of the wheel diameters was 2:1 , you should adjust the motors speeds like this:
-
 ```python
-def back(speed):
-  motor_l.start(speed/2)
-  motor_r.start(speed)
+from bluedot import BlueDot
+bd = BlueDot()
+from buildhat import Motor
+from time import sleep
+
+motor_l = motor('A')
+motor_r = motor('B')
+
+def stop():
+  motor_l.stop()
+  motor_r.stop()
+
+def forward():
+  motor_l.start(50)
+  motor_r.start(-50)
+
+def back():
+  motor_l.start(-50)
+  motor_r.start(50)
+
+def left():
+  motor_l.start(50)
+  motor_r.start(50)
+
+def right():
+  motor_l.start(-50)
+  motor_r.start(-50)
+
+print('Waiting...')
+bd.wait_for_press()
+print("It worked!")
+forward()
+sleep(1)
+stop()
+sleep(1)
 
 ```
 
@@ -57,23 +62,49 @@ def back(speed):
 
 --- /hints ---
 
-### Testing
+### More than just a blue dot
 
-Once you robot is assembled, you should test it carefully with a monitor, keyboard and mouse connected.
+The Blue Dot app is more than just a simple button. The blue dot itself can also be used as a joystick when the middle, top, bottom, left or right areas of the dot are touched. You can use this to steer the robot using the blue dot.
 
-When you've checked that everything works as expected, you can unleash the mobile capability of your robot by configuring it to run headless (this is what it is called when your Raspberry Pi does not have a monitor connected).  Before we can do this, we need to make a few changes to the setup of our Raspberry Pi.
-
-First of all, make sure your Raspberry Pi is [connected to a wifi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
-
-Then make the necessary changes to allow remote access to the Raspberry Pi from the network using either ssh (recommended) or VNC.
-
-[[[rpi-vnc-access]]]
-
-[[[rpi-ssh-access]]]
+Modify your existing code to move the robot backwards and forwards using the blue dot. Add the following new function:
 
 
-Experiment with lots of different designs to see which works best.  
-You create some tests to see how the design of the robot affects performance.
+```python
+def move(pos):
+    if pos.top:
+        forward()
+    elif pos.bottom:
+        back()
 
-Timed straight line drag race to test speeds
-Twisty obstacle course to test manoeuvrability  
+```
+
+
+```python
+from bluedot import BlueDot
+from signal import pause
+
+bd = BlueDot()
+
+def move(pos):
+    if pos.top:
+        robot.forward()
+    elif pos.bottom:
+        robot.backward()
+    elif pos.left:
+        robot.left()
+    elif pos.right:
+        robot.right()
+
+def stop():
+    robot.stop()
+
+bd.when_pressed = move
+bd.when_moved = move
+bd.when_released = stop
+
+pause()
+```
+
+You can change the robot to use variable speeds, so the further towards the edge you press the Blue Dot, the faster the robot will go.
+
+The distance attribute returns how far from the centre the Blue Dot was pressed, which can be passed to the robot’s functions to change its speed:

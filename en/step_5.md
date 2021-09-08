@@ -1,78 +1,79 @@
+## Assembling your robot
 
-## Adding some LEDs
+Now you have the motor code working, it is time to construct and test your robot.
 
-The holes in LEGO elements are just the right size for holding small LEDs so you can easily add them to your project with a breadboard.
+The basic design needs to fulfil  4 main requirements:
 
-There are plenty of ways of mounting a breadboard using LEGO. A couple of ideas are shown below but you can use whatever elements you have available to you.
+Two motors mounted parallel to each other.
+Two wheels.
+Some kind of caster or balance point at the front.
+A way of supporting the Raspberry Pi and battery pack.
 
-![A photo of a half-size breadboard mounted to a LEGO plate. It is supported by LEGO beams underneath and then sandwiched into a frame at the sides to keep the top surface where components are plugged in, free. ](images/big-breadboard.png)
+![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
 
-You could use a small breadboard and sit it in the space on top of your HAT. Many breadboards have an adhesive strip on the bottom that you could use to stick firmly onto the HAT, but note that this will partially cover the slit which is used for the camera cable if you wish to add a [Raspberry Pi camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) to your project.
+[[[attach_rpi_to_lego]]]
 
-![A photo of a green mini breadboard sitting on top of the Build HAT. It is s good fit but does cover up the camera slit which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
+The robot shown in the images below uses components from the LEGO Education Spike Prime kit.
 
-Once you've got your breadboard stable,  connect an LED to your Raspberry Pi
+![bottop](images/bot-grid.png)
 
-[[[rpi-connect-led]]]
 
-Mow move the wire connected to the LEDs positive leg onto a numbered GPIO pin. You can choose any one you like, but this project will assume you've used pin 27.
+Use whatever LEGO elements you have construct the robot. Try to be adaptable and work with what you've got available.
 
-[[[rpi-gpio-pins]]]
+For example, how could you adapt your code to cope if you only have wheels of different diameters?
 
-Now you can control the LED with Python using the GPIO Zero library which will allow you to turn on an LED by change the state of the GPIO pin to which it is connected.
+![wheels1](images/oddwheels2.jpg)
 
-Create new python program called led_test.py:
+--- hints ---
+
+--- hint ---
+
+The speed of the motors would need to be adjusted to compensate for the fact that a
+single rotation of the bigger wheel would move the robot further than the smaller wheels.
+
+--- /hint ---
+
+--- hint ---
+
+The ratio of speeds should be the same as the ratio of diameters (because the circumferences will
+likewise be in the same ratio).
+
+--- /hint ---
+
+
+
+--- hint ---
+
+So if the ratio of the wheel diameters was 2:1 , you should adjust the motors speeds like this:
 
 ```python
-from gpiozero import LED
-from time import sleep
-
-led = LED(27)
-
-while True:
-    led.on()
-    sleep(1)
-    led.off()
-```
-
-Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
-
-Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. Because the Build HAT also uses some GPIO pins you should avoid choosing pins 1, 4, 14,15, 16 or 17. Add some extra code to the program above so the news LEDs can be controlled too. There are plots of ways to control LEDs with Python and GPIO Zero. For example, you could use LedBoard:
-
-```python
-from gpiozero import LEDBoard
-from time import sleep
-
-leds = LEDBoard(5, 6, 13, 27, 19)
-
-leds.on()
-sleep(1)
-leds.off()
-sleep(1)
-leds.value = (1, 0, 1, 0, 1)
-sleep(1)
-leds.blink()
+def back(speed):
+  motor_l.start(speed/2)
+  motor_r.start(speed)
 
 ```
-In this case, there are 5 LEDs, connected to GPIO pins 5,6,13,17 and 19.
 
-Once you've got all the circuits working, add some extra jumper leads to extend the reach of the LEDs.
+--- /hint ---
 
-![two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself, on the right it is attached using flying jumper leads.](images/legtolegs2.png)
+--- /hints ---
+
+### Testing
+
+Once you robot is assembled, you should test it carefully with a monitor, keyboard and mouse connected.
+
+When you've checked that everything works as expected, you can unleash the mobile capability of your robot by configuring it to run headless (this is what it is called when your Raspberry Pi does not have a monitor connected).  Before we can do this, we need to make a few changes to the setup of our Raspberry Pi.
+
+First of all, make sure your Raspberry Pi is [connected to a wifi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
+
+Then make the necessary changes to allow remote access to the Raspberry Pi from the network using either ssh (recommended) or VNC.
+
+[[[rpi-vnc-access]]]
+
+[[[rpi-ssh-access]]]
 
 
-Then insert the LED into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
+Experiment with lots of different designs to see which works best.  
+You create some tests to see how the design of the robot affects performance.
 
-![A photo of an LED inserted into a LEGO beam element](images/ledsinlego.png)
-
-Add the breadboard assembly and LEDs to a suitable place on your model.
-
-Now integrate your LED code with the Blue Dot robot program. 
-
-You could add some orange LEDs onto the side of the robot to act as indicators and have them triggered when the robot turns left or right. Or you could add some red LEDs to the rear to function as brake lights.
-
-![A photo of the finished LEGO wheeled bot with Raspberry Pi and BuildHAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on. ](images/brake_lights.gif)
-
-### Other enhancements
-
-Buzzers
+Timed straight line drag race to test speeds
+Twisty obstacle course to test manoeuvrability  
