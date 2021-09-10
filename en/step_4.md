@@ -182,6 +182,8 @@ bd.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing on the blue dot on your Android device, and moving your finger around to different positions.
+Run your program and experiment with pressing on the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
 
 --- /task ---
+
+--- save ---
