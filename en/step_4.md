@@ -1,110 +1,187 @@
 ## Control your motors with Blue Dot
 
-Now modify your code from the previous step so that the movement sequence is triggered by a press of the blue dot.
+Now the Blue Dot app and Python library can be used to control your motors, from your device.
 
---- hints ---
+--- task ---
 
+Open up the `bt_car.py` file again, and setup Blue Dot at the top of the file. You can also remove the `sleep` import.
 
---- hint ---
-
-You don't need to make any changes to the function you wrote before. That's the cool thing about making your code modular with functions.
-
-
---- /hint ---
-
---- hint ---
-
-The `bd.wait_for_press()` function will pause the execution of your program until it receives a message via Bluetooth to say the button has been pressed.
-
-
-
---- /hint ---
-```python
-from bluedot import BlueDot
-bd = BlueDot()
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 
+line_highlights: 3,7
+---
 from buildhat import Motor
-from time import sleep
+from bluedot import BlueDot
 
-motor_l = motor('A')
-motor_r = motor('B')
+motor_left = Motor('A')
+motor_right = Motor('B')
+bd = BlueDot()
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Remove the `for` loop from your current code, so that the complete code looks like this:
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 
+line_highlights: 
+---
+from buildhat import Motor
+from bluedot import BlueDot
+
+motor_left = Motor('A')
+motor_right = Motor('B')
+bd = BlueDot()
+
 
 def stop():
-  motor_l.stop()
-  motor_r.stop()
+    motor_left.stop()
+    motor_right.stop()
+
 
 def forward():
-  motor_l.start(50)
-  motor_r.start(-50)
+    motor_left.start(-100)
+    motor_right.start(100)
 
-def back():
-  motor_l.start(-50)
-  motor_r.start(50)
 
-def left():
-  motor_l.start(50)
-  motor_r.start(50)
+def backward():
+    motor_left.start(100)
+    motor_right.start(-100)
+
 
 def right():
-  motor_l.start(-50)
-  motor_r.start(-50)
-
-print('Waiting...')
-bd.wait_for_press()
-print("It worked!")
-forward()
-sleep(1)
-stop()
-sleep(1)
-
-```
-
---- /hint ---
-
---- /hints ---
-
-### More than just a blue dot
-
-The Blue Dot app is more than just a simple button. The blue dot itself can also be used as a joystick when the middle, top, bottom, left or right areas of the dot are touched. You can use this to steer the robot using the blue dot.
-
-Modify your existing code to move the robot backwards and forwards using the blue dot. Add the following new function:
+    motor_left.start(-100)
+    motor_right.start(-100)
 
 
-```python
+def left():
+    motor_left.start(100)
+    motor_right.start(100)
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Now add a function that uses Blue Dot to **call** the the `forward` function.
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 32
+line_highlights: 
+---
+
+
+def move(pos):
+    if pos.top:
+        forward()
+--- /code ---
+
+--- /task ---
+
+The `move` function has a single parameter which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+
+--- task ---
+
+Add two method calls to your code, that will make the car move forward and stop.
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 37
+line_highlights: 
+---
+
+
+bd.when_pressed = move
+bd.when_released = stop
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+
+--- /task ---
+
+At the moment, the motors will only turn in the forward direction. By using the `pos` parameter, you can make the motors turn in all directions.
+
+--- task ---
+
+Add to your `move` function so that the motors can turn backwards, left and right.
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 32
+line_highlights: 37-42
+---
+
+
 def move(pos):
     if pos.top:
         forward()
     elif pos.bottom:
-        back()
-
-```
-
-
-```python
-from bluedot import BlueDot
-from signal import pause
-
-bd = BlueDot()
-
-def move(pos):
-    if pos.top:
-        robot.forward()
-    elif pos.bottom:
-        robot.backward()
+        backward()
     elif pos.left:
-        robot.left()
+        left()
     elif pos.right:
-        robot.right()
+        right()
 
-def stop():
-    robot.stop()
+
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Run your code again, and test it with the Blue Dot app. Pressing on the right, left and bottom of the blue dot should now move the motors in different directions.
+
+--- /task ---
+
+You can add a single line to your code, so that Blue Dot responds, not only to presses, but when your finger moves over the blue dot.
+
+--- task ---
+
+Add this single line so that the motors respond to motion over the blue dot.
+
+--- code ---
+---
+language: python
+filename: 
+line_numbers: true
+line_number_start: 43
+line_highlights: 47
+---
+
 
 bd.when_pressed = move
-bd.when_moved = move
 bd.when_released = stop
+bd.when_moved = move
+--- /code ---
 
-pause()
-```
+--- /task ---
 
-You can change the robot to use variable speeds, so the further towards the edge you press the Blue Dot, the faster the robot will go.
+--- task ---
 
-The distance attribute returns how far from the centre the Blue Dot was pressed, which can be passed to the robot’s functions to change its speed:
+Run your program and experiment with pressing on the blue dot on your Android device, and moving your finger around to different positions.
+
+--- /task ---
