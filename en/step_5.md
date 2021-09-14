@@ -2,60 +2,32 @@
 
 Now you have the motor code working, it is time to construct and test your robot.
 
-The basic design needs to fulfil  4 main requirements:
+The basic design needs to fulfil 5 main requirements:
 
-Two motors mounted parallel to each other.
-Two wheels.
-Some kind of caster or balance point at the front.
-A way of supporting the Raspberry Pi and battery pack.
+- A mounted Raspberry Pi and Build HAT.
+- Two motors mounted parallel to each other.
+- Two wheels.
+- A caster or balance point at the front.
+- A secured battery pack.
 
-![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
+The Raspberry Pi and Build HAT can be secured to lego pieces using M2 machine screws and nuts.
+
+[an M2 machine screw and nut](images/m2_machine_screws.jpg)
+
+[a lego piece attached to a raspberry pi using an m2 machine screw](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
-The robot shown in the images below uses components from the LEGO Education Spike Prime kit.
+The following photos show some different designs for how a car could be built, to incorporate a Raspberry Pi, Build HAT and battery pack.
 
-![bottop](images/bot-grid.png)
+![a basic robot car from 4 different angles](images/basic_bot.png)
 
+![4 views of a possible robot car design](images/bot-grid_2.png)
 
-Use whatever LEGO elements you have construct the robot. Try to be adaptable and work with what you've got available.
-
-For example, how could you adapt your code to cope if you only have wheels of different diameters?
-
-![wheels1](images/oddwheels2.jpg)
-
---- hints ---
-
---- hint ---
-
-The speed of the motors would need to be adjusted to compensate for the fact that a
-single rotation of the bigger wheel would move the robot further than the smaller wheels.
-
---- /hint ---
-
---- hint ---
-
-The ratio of speeds should be the same as the ratio of diameters (because the circumferences will
-likewise be in the same ratio).
-
---- /hint ---
+![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
 
 
-
---- hint ---
-
-So if the ratio of the wheel diameters was 2:1 , you should adjust the motors speeds like this:
-
-```python
-def back(speed):
-  motor_l.start(speed/2)
-  motor_r.start(speed)
-
-```
-
---- /hint ---
-
---- /hints ---
+Use whatever LEGO elements you have to construct the robot and us your imagination.
 
 ### Testing
 
