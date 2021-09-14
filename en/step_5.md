@@ -12,9 +12,9 @@ The basic design needs to fulfil 5 main requirements:
 
 The Raspberry Pi and Build HAT can be secured to lego pieces using M2 machine screws and nuts.
 
-[an M2 machine screw and nut](images/m2_machine_screws.jpg)
+![an M2 machine screw and nut](images/m2_machine_screws.jpg)
 
-[a lego piece attached to a raspberry pi using an m2 machine screw](images/m2_rpi_attached.jpg)
+![a lego piece attached to a raspberry pi using an m2 machine screw](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
