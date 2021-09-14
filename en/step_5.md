@@ -24,28 +24,76 @@ The following photos show some different designs for how a car could be built, t
 
 ![4 views of a possible robot car design](images/bot-grid_2.png)
 
-![photo of the robot with the 5 cell battery pack revealed](images/batteries.JPG)
+--- task ---
 
+Use whatever LEGO elements you have to construct the robot and use your imagination.
 
-Use whatever LEGO elements you have to construct the robot and us your imagination.
+--- /task ---
 
 ### Testing
 
-Once you robot is assembled, you should test it carefully with a monitor, keyboard and mouse connected.
+Once you robot is assembled, you should test it using Bluetooth with you Android device.
 
-When you've checked that everything works as expected, you can unleash the mobile capability of your robot by configuring it to run headless (this is what it is called when your Raspberry Pi does not have a monitor connected).  Before we can do this, we need to make a few changes to the setup of our Raspberry Pi.
+--- task ---
+
+Power your Raspberry Pi, and then run your `bt_car.py` program. Test that you car works when using Bluetooth and the Blue Dot app from your Android device.
+
+--- /task ---
+
+You may need to make changes to your code, depending on which side your of the car, and which way around your motors are connected.
+
+Next you need to make you Raspberry Pi run **headless**. This means running your code without needing to have a monitor, keyboard or mouse connected.
 
 First of all, make sure your Raspberry Pi is [connected to a wifi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
 
-Then make the necessary changes to allow remote access to the Raspberry Pi from the network using either ssh (recommended) or VNC.
+Now you can use a program called **cron** to make your Python script run everytime the Raspberry Pi is booted.
 
-[[[rpi-vnc-access]]]
+--- task ---
 
-[[[rpi-ssh-access]]]
+Open a terminal by pressing **Ctrl** + **Alt** + **T** on your keyboard.
+
+--- /task ---
+
+--- task ---
+
+Type `crontab -e` into the terminal window. If this is the first time you have ever used **crontab** then it will ask you which editor you would like to use.
+
+```bash
+pi@raspberrypi:~ $ crontab -e
+no crontab for pi - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.tiny
+  3. /bin/ed
+
+Choose 1-3 [1]: 
+```
+
+Unless you are experienced with **vim** choose `1. /bin/nano`
+
+--- /task ---
+
+Nano will open up and show the default template file.
+
+--- task ---
+
+Use the cursor keys to scroll to the bottom of the file. You can then add this single line, which will wait for 30 seconds and then run your `bt_car.py` file.
+
+```bash
+# m h  dom mon dow   command
+@reboot sleep 30 && python3 /home/pi/bt_car.py
+```
+
+--- /task ---
+
+--- task ---
+
+Reboot your Raspberry Pi, wait for 30 seconds and then use your Blue Dot app on your Android device to connect to your car and control it.
+
+--- /task ---
 
 
-Experiment with lots of different designs to see which works best.  
-You create some tests to see how the design of the robot affects performance.
 
-Timed straight line drag race to test speeds
-Twisty obstacle course to test manoeuvrability  
+
+
