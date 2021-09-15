@@ -115,8 +115,8 @@ line_number_start: 17
 line_highlights: 
 ---
 def back():
-  motor_l.start(-50)
-  motor_r.start(50)
+  motor_left.start(-50)
+  motor_right.start(50)
 
 
 --- /code ---
@@ -136,13 +136,13 @@ line_number_start: 22
 line_highlights: 
 ---
 def left():
-  motor_l.start(50)
-  motor_r.start(50)
+  motor_left.start(50)
+  motor_right.start(50)
 
 
 def right():
-  motor_l.start(-50)
-  motor_r.start(-50)
+  motor_left.start(-50)
+  motor_right.start(-50)
 
 
 --- /code ---
