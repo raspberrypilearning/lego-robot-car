@@ -2,6 +2,23 @@
 
 To remotely pilot your car, you're going to use the Blue Dot library and Android app.
 
+--- collapse ---
+---
+title: Installing the bluedot python library
+---
+
+--- task ---
+Open your terminal window. At the prompt type 
+```
+sudo pip3 install bluedot
+```
+and press Enter.
+--- /task ---
+
+You should see your terminal return that the latest version of bluedot is installed.
+
+--- /collapse ---
+
 ### Pairing your Raspberry Pi with your Android device
 
 --- task ---

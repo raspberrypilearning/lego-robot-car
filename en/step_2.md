@@ -164,7 +164,6 @@ line_highlights:
 for i in range(2):
   forward()
   sleep(1)
-  sleep(1)
   back()
   sleep(1)
   right()
