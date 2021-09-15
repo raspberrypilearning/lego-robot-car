@@ -5,9 +5,9 @@ from gpiozero import LED
 
 motor_left = Motor('A')
 motor_right = Motor('B')
+bd = BlueDot()
 led_left = LED(20)
 led_right = LED(21)
-bd = BlueDot()
 
 
 def stop():
@@ -15,6 +15,7 @@ def stop():
     motor_right.stop()
     led_right.on()
     led_left.on()
+
 
 def forward():
     motor_left.start(-100)
@@ -26,20 +27,23 @@ def forward():
 def backward():
     motor_left.start(100)
     motor_right.start(-100)
-    led_right.on()
-    led_left.on()
+    led_right.on(0.2)
+    led_left.on(0.2)
+
 
 def right():
     motor_left.start(-100)
     motor_right.start(-100)
-    led_right.blink()
+    led_right.blink(0.2)
     led_left.off()
+
 
 def left():
     motor_left.start(100)
     motor_right.start(100)
     led_right.off()
-    led_left.blink()
+    led_left.blink(0.2)
+
 
 def move(pos):
     if pos.top:
@@ -53,6 +57,7 @@ def move(pos):
 
 
 bd.when_pressed = move
-bd.when_moved = move
 bd.when_released = stop
+bd.when_moved = move
+
 pause()

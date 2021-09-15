@@ -1,7 +1,6 @@
-
 ## Adding some LEDs
 
-The holes in LEGO elements are just the right size for holding small LEDs so you can easily add them to your project with a breadboard.
+The holes in LEGO elements are just the right size for holding small LEDs so you can easily add them to your project or use a breadboard.
 
 There are plenty of ways of mounting a breadboard using LEGO. A couple of ideas are shown below but you can use whatever elements you have available to you.
 
@@ -11,68 +10,104 @@ You could use a small breadboard and sit it in the space on top of your HAT. Man
 
 ![A photo of a green mini breadboard sitting on top of the Build HAT. It is s good fit but does cover up the camera slit which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
 
-Once you've got your breadboard stable,  connect an LED to your Raspberry Pi
+--- task ---
 
-[[[rpi-connect-led]]]
+Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the example below pins 20 and 21 are used on the Raspberry Pi.
 
-Mow move the wire connected to the LEDs positive leg onto a numbered GPIO pin. You can choose any one you like, but this project will assume you've used pin 27.
+--- /task ---
 
 [[[rpi-gpio-pins]]]
 
-Now you can control the LED with Python using the GPIO Zero library which will allow you to turn on an LED by change the state of the GPIO pin to which it is connected.
+[[[rpi-connect-led]]]
 
-Create new python program called led_test.py:
-
-```python
-from gpiozero import LED
-from time import sleep
-
-led = LED(27)
-
-while True:
-    led.on()
-    sleep(1)
-    led.off()
-```
-
-Run this program. You should see the LED flash on and off every second. Press the Crtl and C keys on the keyboard to stop your program.
-
-Now add some more LEDs. Connect each one to a different GPIO pin on the Raspberry Pi. Because the Build HAT also uses some GPIO pins you should avoid choosing pins 1, 4, 14,15, 16 or 17. Add some extra code to the program above so the news LEDs can be controlled too. There are plots of ways to control LEDs with Python and GPIO Zero. For example, you could use LedBoard:
-
-```python
-from gpiozero import LEDBoard
-from time import sleep
-
-leds = LEDBoard(5, 6, 13, 27, 19)
-
-leds.on()
-sleep(1)
-leds.off()
-sleep(1)
-leds.value = (1, 0, 1, 0, 1)
-sleep(1)
-leds.blink()
-
-```
-In this case, there are 5 LEDs, connected to GPIO pins 5,6,13,17 and 19.
-
-Once you've got all the circuits working, add some extra jumper leads to extend the reach of the LEDs.
+If needed you can add some extra jumper leads to extend the reach of the LEDs.
 
 ![two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself, on the right it is attached using flying jumper leads.](images/legtolegs2.png)
 
-
-Then insert the LED into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
+Additionally the LEDs can be inserted into the LEGO element of your choice. If you find that the legs of the LEDs are coming close together or touching, you can insulate one with some tape to prevent short-circuiting.
 
 ![A photo of an LED inserted into a LEGO beam element](images/ledsinlego.png)
 
-Add the breadboard assembly and LEDs to a suitable place on your model.
+--- task ---
 
-Now integrate your LED code with the Blue Dot robot program. 
+Alter your code to import the `LED` object from `gpiozero` and set up the LEDs.
 
-You could add some orange LEDs onto the side of the robot to act as indicators and have them triggered when the robot turns left or right. Or you could add some red LEDs to the rear to function as brake lights.
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 
+line_highlights: 4, 9, 10
+---
+from buildhat import Motor
+from bluedot import BlueDot
+from signal import pause
+from gpiozero import LED
+
+motor_left = Motor('A')
+motor_right = Motor('B')
+bd = BlueDot()
+led_left = LED(20)
+led_right = LED(21)
+--- /code ---
+
+--- /task ---
+
+
+--- task ---
+
+Alter your code so that the LEDs light, dependent on the movement of the car. In the example below, both LEDs light when the car moves backwards or stops. They turn off when the car moves forwards. The left LED will blink when the car moves left and the right LED will blink when the car moves right.
+
+--- code ---
+---
+language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 13
+line_highlights: 16, 17, 23, 24, 30, 31, 37, 38, 44, 45
+---
+def stop():
+    motor_left.stop()
+    motor_right.stop()
+    led_right.on()
+    led_left.on()
+
+
+def forward():
+    motor_left.start(-100)
+    motor_right.start(100)
+    led_right.off()
+    led_left.off()
+
+
+def backward():
+    motor_left.start(100)
+    motor_right.start(-100)
+    led_right.on(0.2)
+    led_left.on(0.2)
+
+
+def right():
+    motor_left.start(-100)
+    motor_right.start(-100)
+    led_right.blink(0.2)
+    led_left.off()
+
+
+def left():
+    motor_left.start(100)
+    motor_right.start(100)
+    led_right.off()
+    led_left.blink(0.2)
+--- /code ---
+
+--- /task ---
+
+![car is static and held in the hand, with LEDs blinking as described in the text above, dependent on wheel motion](images/led_indicators.gif)
+
+You can use your imagination to light or blink the LEDs in anyway you want.
 
 ![A photo of the finished LEGO wheeled bot with Raspberry Pi and BuildHAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on. ](images/brake_lights.gif)
 
-### Other enhancements
-
-Buzzers
+--- save ---

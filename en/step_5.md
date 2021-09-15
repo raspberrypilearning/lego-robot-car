@@ -8,7 +8,7 @@ The basic design needs to fulfil 5 main requirements:
 - Two motors mounted parallel to each other.
 - Two wheels.
 - A caster or balance point at the front.
-- A secured battery pack.
+- A secured battery pack with barrel connector.
 
 The Raspberry Pi and Build HAT can be secured to lego pieces using M2 machine screws and nuts.
 
@@ -17,6 +17,12 @@ The Raspberry Pi and Build HAT can be secured to lego pieces using M2 machine sc
 ![a lego piece attached to a raspberry pi using an m2 machine screw](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
+
+You can power the Raspberry Pi and Build HAT using a battery connected to a barrel jack. A minimum of 5 AA batteries or a 9V battery will be required.
+
+![5 AA batteries in a pack, connected to a barrel jack](images/AA_battery.jpg)
+
+![a 9V battery connected to a barrel jack](images/9V_battery.jpg)
 
 The following photos show some different designs for how a car could be built, to incorporate a Raspberry Pi, Build HAT and battery pack.
 
