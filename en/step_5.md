@@ -30,6 +30,8 @@ The following photos show some different designs for how a car could be built, t
 
 ![4 views of a possible robot car design](images/bot-grid_2.png)
 
+![Complex jeep buggy from three angles](images/buggy3grid.jpg)
+
 --- task ---
 
 Use whatever LEGO elements you have to construct the robot and use your imagination.

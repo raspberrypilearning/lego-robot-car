@@ -2,8 +2,11 @@
 
 If you are following the Build HAT path then you can now move on to [NAME OF PROJECT](URL OF PROJECT).
 
-If you would like to enhance your Bluetooth car then you could think about adding more electronic components. Many vehicles make a sound when they are reversing, for instance, so you could add a buzzer to your project.
+If you would like to enhance your Bluetooth car then you could think about adding more electronic components: 
 
-You could even use an Ultrasonic Distance Sensor (UDS) that would detect when the car approaches an obstacle, and automatically stops.
++ Add extra LEDs as brake lights when the car stops, or headlights when the car drives.
 
-ANYTHING ELSE YOU CAN THINK OF HERE MARK??
++ Many vehicles make a sound when they are reversing, so you could add a buzzer to your project.
+
++ You could even use an Ultrasonic Distance Sensor (UDS) that would detect when the car approaches an obstacle, and automatically stops it from crashing!
+
