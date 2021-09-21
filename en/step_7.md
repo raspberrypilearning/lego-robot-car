@@ -4,7 +4,7 @@ If you are following the Build HAT path then you can now move on to the [Data Pl
 
 If you would like to enhance your Bluetooth car then you could think about adding more electronic components: 
 
-+ Add extra LEDs as brake lights when the car stops, or headlights when the car drives.
++ Add extra LEDs as flashing police 'pursuit' lights, or headlights when the car drives.
 
 + Many vehicles make a sound when they are reversing, so you could add a buzzer to your project.
 
