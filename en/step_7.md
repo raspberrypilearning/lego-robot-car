@@ -1,6 +1,6 @@
 ## What next?
 
-If you are following the Build HAT path then you can now move on to [NAME OF PROJECT](URL OF PROJECT).
+If you are following the Build HAT path then you can now move on to the [Data Plotter](URL OF PROJECT) build!
 
 If you would like to enhance your Bluetooth car then you could think about adding more electronic components: 
 
