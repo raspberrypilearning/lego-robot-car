@@ -1,10 +1,10 @@
 ## Control your motors with Blue Dot
 
-Now the Blue Dot app and Python library can be used to control your motors, from your device.
+The Blue Dot app and Python library can be used to control your motors, from your device.
 
 --- task ---
 
-Open up the `bt_car.py` file again, and setup Blue Dot at the top of the file. You can also remove the `sleep` import.
+Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You can also remove the `sleep` import.
 
 --- code ---
 ---
@@ -14,12 +14,12 @@ line_numbers: true
 line_number_start: 
 line_highlights: 3,7
 ---
-from buildhat import Motor
-from bluedot import BlueDot
+from buildhat import Motor    
+from bluedot import BlueDot    
 
-motor_left = Motor('A')
-motor_right = Motor('B')
-bd = BlueDot()
+motor_left = Motor('A')     
+motor_right = Motor('B')     
+bd = BlueDot()     
 --- /code ---
 
 --- /task ---
@@ -36,37 +36,37 @@ line_numbers: true
 line_number_start: 
 line_highlights: 
 ---
-from buildhat import Motor
-from bluedot import BlueDot
+from buildhat import Motor    
+from bluedot import BlueDot     
 
-motor_left = Motor('A')
-motor_right = Motor('B')
-bd = BlueDot()
-
-
-def stop():
-    motor_left.stop()
-    motor_right.stop()
+motor_left = Motor('A')     
+motor_right = Motor('B')     
+bd = BlueDot()     
 
 
-def forward():
-    motor_left.start(-100)
-    motor_right.start(100)
+def stop():     
+    motor_left.stop()     
+    motor_right.stop()     
 
 
-def backward():
-    motor_left.start(100)
-    motor_right.start(-100)
+def forward():     
+    motor_left.start(-100)     
+    motor_right.start(100)     
 
 
-def right():
-    motor_left.start(-100)
-    motor_right.start(-100)
+def backward():     
+    motor_left.start(100)     
+    motor_right.start(-100)     
 
 
-def left():
-    motor_left.start(100)
-    motor_right.start(100)
+def right():     
+    motor_left.start(-100)     
+    motor_right.start(-100)     
+
+
+def left():     
+    motor_left.start(100)     
+    motor_right.start(100)     
 --- /code ---
 
 --- /task ---
@@ -85,18 +85,18 @@ line_highlights:
 ---
 
 
-def move(pos):
-    if pos.top:
-        forward()
+def move(pos):     
+    if pos.top:     
+        forward()     
 --- /code ---
 
 --- /task ---
 
-The `move` function has a single parameter which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
 
 --- task ---
 
-Add two method calls to your code, that will make the car move forward and stop.
+Add two method calls to your code. These will make the car move forward and stop.
 
 --- code ---
 ---
@@ -108,8 +108,8 @@ line_highlights:
 ---
 
 
-bd.when_pressed = move
-bd.when_released = stop
+bd.when_pressed = move    
+bd.when_released = stop    
 --- /code ---
 
 --- /task ---
@@ -120,11 +120,11 @@ Run your code. On the Blue Dot app on your device, press the blue dot near the t
 
 --- /task ---
 
-At the moment, the motors will only turn in the forward direction. By using the `pos` parameter, you can make the motors turn in all directions.
+At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
 
 --- task ---
 
-Add to your `move` function so that the motors can turn backwards, left and right.
+Add to your `move` function so that the motors can turn the wheels backwards, left, and right.
 
 --- code ---
 ---
@@ -136,15 +136,15 @@ line_highlights: 37-42
 ---
 
 
-def move(pos):
-    if pos.top:
-        forward()
-    elif pos.bottom:
-        backward()
-    elif pos.left:
-        left()
-    elif pos.right:
-        right()
+def move(pos):    
+    if pos.top:    
+        forward()    
+    elif pos.bottom:    
+        backward()    
+    elif pos.left:    
+        left()     
+    elif pos.right:    
+        right()     
 
 
 --- /code ---
@@ -153,11 +153,11 @@ def move(pos):
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left and bottom of the blue dot should now move the motors in different directions.
+Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds, not only to presses, but when your finger moves over the blue dot.
+You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
 
 --- task ---
 
@@ -173,16 +173,16 @@ line_highlights: 47
 ---
 
 
-bd.when_pressed = move
-bd.when_released = stop
-bd.when_moved = move
+bd.when_pressed = move    
+bd.when_released = stop    
+bd.when_moved = move     
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Run your program and experiment with pressing on the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
 
 --- /task ---
 
