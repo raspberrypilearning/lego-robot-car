@@ -1,16 +1,16 @@
-## Setting up the Motors
+## Setting up the motors
 
-It is easier to test and develop your program before building your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO is that you always rebuild).
+It is easier to test and develop your program before building your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO is that you can always rebuild).
 
 The Raspberry Pi Build HAT and its Python library allow you to control LEGO Technic motors directly from your Raspberry Pi computer.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT.  Connect your battery pack to the barrel jack on the Build HAT and turn it on. 
+Plug two motors into ports A and B on the Raspberry Pi Build HAT. Connect your battery pack to the barrel jack on the Build HAT and turn it on. 
 
 ### Make the motors spin
 
 --- task ---
 
-Open Thonny on your Raspberry Pi from the Programming menu.
+Open Thonny on your Raspberry Pi from the **Programming** menu.
 
 --- /task ---
 
@@ -26,13 +26,13 @@ line_numbers: true
 line_number_start: 
 line_highlights: 
 ---
-from buildhat import Motor
-from time import sleep
+from buildhat import Motor   
+from time import sleep   
 
-motor_left = Motor('A')
-motor_right = Motor('B')
-motor_left.run_for_seconds(10, 50)
-motor_right.run_for_seconds(10, -50)
+motor_left = Motor('A')   
+motor_right = Motor('B')   
+motor_left.run_for_seconds(10, 50)   
+motor_right.run_for_seconds(10, -50)    
 --- /code ---
 
 --- /task ---
@@ -43,7 +43,7 @@ Run your program and check the motors turn.
 
 --- /task ---
 
-Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right hand side.
+Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left-hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right-hand side.
 
 Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
 
@@ -59,20 +59,20 @@ line_numbers: true
 line_number_start: 
 line_highlights: 7-14
 ---
-from buildhat import Motor
-from time import sleep
+from buildhat import Motor   
+from time import sleep    
 
-motor_left = Motor('A')
-motor_right = Motor('B')
+motor_left = Motor('A')    
+motor_right = Motor('B')    
 
-def stop():
-  motor_left.stop()
-  motor_right.stop()
+def stop():    
+  motor_left.stop()    
+  motor_right.stop()    
 
 
-def forward():
-  motor_left.start(50)
-  motor_right.start(-50)
+def forward():     
+  motor_left.start(50)     
+  motor_right.start(-50)     
 
 
 --- /code ---
@@ -81,7 +81,7 @@ def forward():
 
 --- task ---
 
-Test your functions out by adding the following start-stop-start-stop sequence:
+Test your functions out by adding the following start–stop–start–stop sequence:
 
 --- code ---
 ---
@@ -91,16 +91,16 @@ line_numbers: true
 line_number_start: 17
 line_highlights: 
 ---
-for i in range(2):
-  forward()
-  sleep(1)
-  stop()
-  sleep(1)
+for i in range(2):    
+  forward()    
+  sleep(1)    
+  stop()    
+  sleep(1)    
 --- /code ---
 --- /task ---
 
 
-Once that works, add 3 more functions to move the robot backwards, left and right.
+Once that works, add three more functions to move the robot backwards, left, and right.
 
 --- task ---
 
@@ -114,9 +114,9 @@ line_numbers: true
 line_number_start: 17
 line_highlights: 
 ---
-def back():
-  motor_left.start(-50)
-  motor_right.start(50)
+def back():    
+  motor_left.start(-50)     
+  motor_right.start(50)      
 
 
 --- /code ---
@@ -161,16 +161,16 @@ line_numbers: true
 line_number_start: 32
 line_highlights: 
 ---
-for i in range(2):
-  forward()
-  sleep(1)
-  back()
-  sleep(1)
-  right()
-  sleep(1)
-  left()
-  sleep(1)
-  stop()
+for i in range(2):    
+  forward()     
+  sleep(1)     
+  back()     
+  sleep(1)     
+  right()     
+  sleep(1)     
+  left()      
+  sleep(1)      
+  stop()      
 --- /code ---
 
 --- /task ---
