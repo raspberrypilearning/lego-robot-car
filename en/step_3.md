@@ -1,10 +1,10 @@
-## Setup and test the Bluetooth control
+## Set up and test the Bluetooth control
 
 To remotely pilot your car, you're going to use the Blue Dot library and Android app.
 
 --- collapse ---
 ---
-title: Installing the bluedot python library
+title: Install the Blue Dot Python library
 ---
 
 --- task ---
@@ -12,10 +12,10 @@ Open your terminal window. At the prompt type
 ```
 sudo pip3 install bluedot
 ```
-and press Enter.
+and press <kbd>Enter</kbd>.
 --- /task ---
 
-You should see your terminal return that the latest version of bluedot is installed.
+You should see your terminal return that the latest version of Blue Dot is installed.
 
 --- /collapse ---
 
@@ -23,9 +23,9 @@ You should see your terminal return that the latest version of bluedot is instal
 
 --- task ---
 
-Click on the Bluetooth icon in the top right hand corner of the desktop and make sure that Bluetooth is turned **On** and that the device is **Discoverable**
+Click on the Bluetooth icon in the top right-hand corner of the desktop and make sure that Bluetooth is turned **On** and that the device is **Discoverable**.
 
-![Raspberry Pi Bluetooth menu](images/bt_rpi_1.png)
+![Raspberry Pi Bluetooth menu.](images/bt_rpi_1.png)
 
 --- /task ---
 
@@ -33,9 +33,9 @@ Depending on the version of Android you are running, the steps to follow on your
 
 --- task ---
 
-In **Settings** find your Bluetooth settings and then **Connected Devices**
+In **Settings**, find your Bluetooth settings and then **Connected Devices**.
 
-![Connected devices settings on Bluetooth menu in Android](images/bt_and_1.png)
+![Connected devices settings on Bluetooth menu in Android.](images/bt_and_1.png)
 
 --- /task ---
 
@@ -43,11 +43,11 @@ In **Settings** find your Bluetooth settings and then **Connected Devices**
 
 Choose **Pair new device** and then select your Raspberry Pi device from the devices shown.
 
-![device options with Raspberry Pi shown](images/bt_and_2.png)
+![Device options with Raspberry Pi shown.](images/bt_and_2.png)
 
 Then choose **Pair** from the dialogue box.
 
-![Pair with Raspberry Pi? options shown with Cancel and Pair options](images/bt_and_3.png)
+![Pair with Raspberry Pi? options shown, along with Cancel and Pair options.](images/bt_and_3.png)
 
 --- /task ---
 
@@ -55,16 +55,16 @@ Then choose **Pair** from the dialogue box.
 
 On the Raspberry Pi, you should be prompted to accept the pairing request.
 
-![dialogue box asking if you want to pair the Android device and the Raspberry Pi](images/bt_rpi_2.png)
+![Dialogue box asking if you want to pair the Android and the Raspberry Pi devices.](images/bt_rpi_2.png)
 
-Clicking on **OK** should show a successful pairing of the Raspberry Pi and the Android device.
+Clicking on **OK** should show a successful pairing of the Raspberry Pi and the Android devices.
 
-![confirmation box that the Android device and the Raspberry Pi are paired](imgaes/bt_rpi_3.png)
+![Confirmation box showing that the Android device and the Raspberry Pi are paired.](imgaes/bt_rpi_3.png)
 --- /task ---
 
 Sometimes you might be asked to confirm a code before you are allowed to pair the devices.
 
-![box asking for code confirmation on Adnroid device](images/android3.png)
+![Box asking for code confirmation on the Adnroid device.](images/android3.png)
 
 ### Testing Blue Dot
 
@@ -80,21 +80,21 @@ line_numbers: true
 line_number_start: 
 line_highlights: 
 ---
-from bluedot import BlueDot
-bd = BlueDot()
+from bluedot import BlueDot   
+bd = BlueDot()   
 
-print('Waiting...')
-bd.wait_for_press()
-print("It worked!")
+print('Waiting...')   
+bd.wait_for_press()    
+print("It worked!")    
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Run the program and then on your Android device open the [Blue Dot](https://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot&hl=en_GB&gl=US) app. The first screen will show you a list of Bluetooth devices that have been paired with your device.
+Run the program and then, on your Android device, open the [Blue Dot](https://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot&hl=en_GB&gl=US) app. The first screen will show you a list of Bluetooth devices that have been paired with your device.
 
-![A screenshot of the bluetooth devices available from an Android phone. The top item on teh list says raspberrypi](images/android4.jpeg)
+![A screenshot of the bluetooth devices available from an Android phone. The top item on the list says raspberrypi.](images/android4.jpeg)
 
 --- /task ---
 
@@ -102,14 +102,14 @@ Run the program and then on your Android device open the [Blue Dot](https://play
 
 Click on **raspberrypi** from the menu and you should then see a big blue dot on your screen. Tap the dot.
 
-![the blue dot app](images/bt_and_5.png)
+![The Blue Dot app.](images/bt_and_5.png)
 
 --- /task ---
 
 --- task ---
 
-On the Raspberry Pi you should see that your program has accepted the Bluetooth connection and successfully responded to you pressing the blue dot.  
+On the Raspberry Pi, you should see that your program has accepted the Bluetooth connection and has successfully responded to you pressing the blue dot.  
 
-![A screenshot of the Thonny Python IDE showing that a device is connected then disconnected](images/thonny1.png)
+![A screenshot of the Thonny Python IDE showing that a device is connected then disconnected.](images/thonny1.png)
 
 --- /task ---
