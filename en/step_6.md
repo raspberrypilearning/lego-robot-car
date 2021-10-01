@@ -106,7 +106,7 @@ def left():
 
 ![The car is static and held in a hand, with LEDs blinking as described in the text above, dependent on wheel motion.](images/led_indicators.gif)
 
-You can use your imagination to light or blink the LEDs in anyway you want.
+You can use your imagination to light or blink the LEDs in any way you want.
 
 ![The finished LEGO wheeled bot with Raspberry Pi and Build HAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on.](images/brake_lights.gif)
 
