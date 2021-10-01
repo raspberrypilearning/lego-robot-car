@@ -124,7 +124,7 @@ At the moment, the motors will only turn the wheels in the forward direction. By
 
 --- task ---
 
-Add to your `move` function so that the motors can turn the wheels backwards, left, and right.
+Add to your `move` function so that the motors will move the car backwards, left, and right.
 
 --- code ---
 ---
