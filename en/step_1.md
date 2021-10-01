@@ -7,8 +7,8 @@ Use LEGO and the Raspberry Pi Build HAT to build a robot car, then program it so
 </p>
 
 You will:
-+ Learn to control LEGO motors using the Raspberry Pi Build HAT
-+ Learn to use Bluetooth to send signals to the Raspberry Pi
++ Control LEGO motors using the Raspberry Pi Build HAT
++ Use Bluetooth to send signals to the Raspberry Pi
 + Learn how to control LEDs using gpiozero on the Raspberry Pi
 
 --- no-print ---
@@ -17,7 +17,7 @@ You will:
 
 --- /no-print ---
 
-You will be building a wheeled car. Its movement will be determined by two separately driven wheels placed on either side of the car, allowing it to move forwards, backwards, and turn. You can optionally add LEDs to the car to act as brake lights, indicators, or headlights.
+You will build a wheeled car. Its movement will be determined by two separately driven wheels placed on either side of the car, allowing it to move forwards, backwards, and turn. You can optionally add LEDs to the car to act as brake lights, indicators, or headlights.
 
 --- print-only ---
 
@@ -29,7 +29,7 @@ You will be building a wheeled car. Its movement will be determined by two separ
 
 + A Raspberry Pi computer running the latest Desktop version of Raspberry Pi OS
 + A Raspberry Pi Build HAT
-+ 2 Lego Spike motors
++ 2× Lego Spike motors
 + An assortment of LEGO, including two wheels (we used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime))
 + An Android mobile phone or tablet
 + 5× AA batteries and a holder pack with a barrel jack 
