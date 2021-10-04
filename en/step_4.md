@@ -1,6 +1,6 @@
 ## Control your motors with Blue Dot
 
-The Blue Dot app and Python library can be used to control your motors, from your device.
+The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
 
 --- task ---
 
