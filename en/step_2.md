@@ -1,4 +1,4 @@
-## Setting up the motors
+## Setting up the LEGO® Technic™ motors
 
 It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
 
