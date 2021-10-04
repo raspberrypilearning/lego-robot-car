@@ -10,11 +10,11 @@ The basic design needs to fulfil five main requirements:
 - A caster or balance point at the front
 - A secured battery pack with barrel connector
 
-The Raspberry Pi and Build HAT can be secured to LEGO pieces by using M2 machine screws and nuts.
+The Raspberry Pi and Build HAT can be secured to LEGO® pieces by using M2 machine screws and nuts.
 
 ![An M2 machine screw and nut.](images/m2_machine_screws.jpg)
 
-![A LEGO piece attached to a Raspberry Pi using an M2 machine screw.](images/m2_rpi_attached.jpg)
+![A LEGO® piece attached to a Raspberry Pi using an M2 machine screw.](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
@@ -24,7 +24,7 @@ You can power the Raspberry Pi and Build HAT using a battery connected to a barr
 
 ![A 9V battery connected to a barrel jack.](images/9V_battery.jpg)
 
-The following photos show some different designs for how your car could be built, which incorporate the Raspberry Pi, Build HAT, and battery pack.
+The following photos show some different designs for how your LEGO® car could be built, which incorporate the Raspberry Pi, Build HAT, and battery pack.
 
 ![A basic robot car from four different angles.](images/basic_bot.png)
 
@@ -34,7 +34,7 @@ The following photos show some different designs for how your car could be built
 
 --- task ---
 
-Use whatever LEGO elements you have to construct the robot and use your imagination.
+Use whatever LEGO® elements you have to construct the robot and use your imagination.
 
 --- /task ---
 
@@ -70,7 +70,7 @@ Type `crontab -e` into the terminal window. If this is the first time you have e
 pi@raspberrypi:~ $ crontab -e
 no crontab for pi - using an empty one
 
-Select an editor.  To change later, run 'select-editor'.
+Select an editor. To change this later, run 'select-editor'.
   1. /bin/nano        <---- easiest
   2. /usr/bin/vim.tiny
   3. /bin/ed
