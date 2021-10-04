@@ -1,19 +1,19 @@
 ## Introduction
 
-Use LEGO and the Raspberry Pi Build HAT to build a robot car, then program it so you can control it with a Bluetooth connection from your Android phone. Then add some LEDs to dazzle your friends.
+Use LEGO® and the Raspberry Pi Build HAT to build a robot car, then program it so you can control it with a Bluetooth connection from your Android phone. Then add some LEDs to dazzle your friends.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 <span style="color: #0faeb0">The name [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)</span> was proposed in 1997 by Jim Kardach of Intel. At the time of this proposal, he was reading Frans G. Bengtsson's historical novel *The Long Ships* about Vikings and the 10th-century Danish king Harald Bluetooth. Bluetooth was King Harald's nickname, and he united the Danish tribes into a single kingdom, just as Bluetooth unites communication protocols.
 </p>
 
 You will:
-+ Control LEGO motors using the Raspberry Pi Build HAT
++ Control LEGO® Technic™ motors using the Raspberry Pi Build HAT
 + Use Bluetooth to send signals to the Raspberry Pi
 + Learn how to control LEDs using gpiozero on the Raspberry Pi
 
 --- no-print ---
 
-![A photo of the finished LEGO wheeled bot with the Raspberry Pi and Build HAT centrally mounted. There is a breadboard with wires attached to LEDs on top of the stack.](images/lego-bot.gif)
+![A photo of the finished LEGO® wheeled bot with the Raspberry Pi and Build HAT centrally mounted. There is a breadboard with wires attached to LEDs on top of the stack.](images/lego-bot.gif)
 
 --- /no-print ---
 
@@ -29,8 +29,8 @@ You will build a wheeled car. Its movement will be determined by two separately 
 
 + A Raspberry Pi computer running the latest Desktop version of Raspberry Pi OS
 + A Raspberry Pi Build HAT
-+ 2× Lego Spike motors
-+ An assortment of LEGO, including two wheels (we used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime))
++ 2× LEGO® Technic™ motors
++ An assortment of LEGO®, including two wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
 + An Android mobile phone or tablet
 + 5× AA batteries and a holder pack with a barrel jack 
 
