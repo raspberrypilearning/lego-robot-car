@@ -1,4 +1,4 @@
-## Setting up the LEGO® Technic™ motors
+## Setting up the LEGO® Spike™ motors
 
 It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
 
@@ -16,7 +16,7 @@ Open Thonny on your Raspberry Pi from the **Programming** menu.
 
 --- task ---
 
-Use the following code to spin both motors at 50% of their maximum speed for 10 seconds.
+Use the following code to spin both motors at 50% of their maximum speed for 10 seconds. (They will run one at a time, not together.) 
 
 --- code ---
 ---
@@ -31,8 +31,8 @@ from time import sleep
 
 motor_left = Motor('A')   
 motor_right = Motor('B')   
-motor_left.run_for_seconds(10, 50)   
-motor_right.run_for_seconds(10, -50)    
+motor_left.run_for_seconds(seconds=10, speed=50)   
+motor_right.run_for_seconds(seconds=10, speed=-50)    
 --- /code ---
 
 --- /task ---
@@ -49,7 +49,7 @@ Now that you have tested the motors, you can create functions to make the motors
 
 --- task ---
 
-Remove the two lines of code that make the motors run for 10 seconds, and add these two functions.
+Remove the two lines of code that make the motors run for 10 seconds, and add these two functions. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
 
 --- code ---
 ---

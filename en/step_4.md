@@ -4,22 +4,23 @@ The Blue Dot app and Python library can be used to control your LEGOÂ® Technicâ„
 
 --- task ---
 
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You can also remove the `sleep` import.
+Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
 
 --- code ---
 ---
 language: python
 filename: bt_car.py
 line_numbers: true
-line_number_start: 
-line_highlights: 3,7
+line_number_start: 1
+line_highlights: 2,3,7
 ---
 from buildhat import Motor    
-from bluedot import BlueDot    
+from bluedot import BlueDot
+from signal import pause    
 
 motor_left = Motor('A')     
 motor_right = Motor('B')     
-bd = BlueDot()     
+dot = BlueDot()     
 --- /code ---
 
 --- /task ---
@@ -33,15 +34,16 @@ Remove the `for` loop from your current code, so that the complete code looks li
 language: python
 filename: bt_car.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 line_highlights: 
 ---
 from buildhat import Motor    
 from bluedot import BlueDot     
+from signal import pause
 
 motor_left = Motor('A')     
 motor_right = Motor('B')     
-bd = BlueDot()     
+dot = BlueDot()     
 
 
 def stop():     
@@ -73,18 +75,16 @@ def left():
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function.
+Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
 
 --- code ---
 ---
 language: python
 filename: bt_car.py
 line_numbers: true
-line_number_start: 32
+line_number_start: 34
 line_highlights: 
 ---
-
-
 def move(pos):     
     if pos.top:     
         forward()     
@@ -96,20 +96,19 @@ The `move` function has a single parameter, which has been called `pos`. This wi
 
 --- task ---
 
-Add two method calls to your code. These will make the car move forward and stop.
+Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
 
 --- code ---
 ---
 language: python
 filename: bt_car.py
 line_numbers: true
-line_number_start: 37
+line_number_start: 39
 line_highlights: 
 ---
-
-
-bd.when_pressed = move    
-bd.when_released = stop    
+dot.when_pressed = move    
+dot.when_released = stop   
+pause() 
 --- /code ---
 
 --- /task ---
@@ -173,9 +172,9 @@ line_highlights: 47
 ---
 
 
-bd.when_pressed = move    
-bd.when_released = stop    
-bd.when_moved = move     
+dot.when_pressed = move    
+dot.when_released = stop    
+dot.when_moved = move     
 --- /code ---
 
 --- /task ---
@@ -185,5 +184,7 @@ bd.when_moved = move
 Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
 
 --- /task ---
+
+To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
 
 --- save ---

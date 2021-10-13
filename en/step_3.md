@@ -1,6 +1,6 @@
 ## Set up and test the Bluetooth control
 
-To remotely pilot your car, you're going to use the Blue Dot library and Android app.
+To remotely pilot your car, you're going to use the Blue Dot library and Android app. You should only have to pair your raspberry pi and mobile device once. After that, they should connect easily each time.
 
 --- collapse ---
 ---
@@ -81,10 +81,10 @@ line_number_start:
 line_highlights: 
 ---
 from bluedot import BlueDot   
-bd = BlueDot()   
+dot = BlueDot()   
 
 print('Waiting...')   
-bd.wait_for_press()    
+dot.wait_for_press()    
 print("It worked!")    
 --- /code ---
 
@@ -103,6 +103,15 @@ Run the program and then, on your Android device, open the [Blue Dot](https://pl
 Click on **raspberrypi** from the menu and you should then see a big blue dot on your screen. Tap the dot.
 
 ![The Blue Dot app.](images/bt_and_5.png)
+
+--- collapse ---
+---
+title: Bluedot won't select my Raspberry Pi
+---
+ In order for BlueDot to connect to your Raspberry Pi, a server needs to be running on the Raspberry Pi. This means that a BlueDot object (`bd = BlueDot()`) must have already been created in your Python program and be waiting for connections. 
+
+ Make sure that you are running your program before trying to connect with Bluedot and that it has no errors.
+--- /collapse ---
 
 --- /task ---
 

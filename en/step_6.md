@@ -47,7 +47,7 @@ from gpiozero import LED
 
 motor_left = Motor('A')     
 motor_right = Motor('B')     
-bd = BlueDot()     
+dot = BlueDot()     
 led_left = LED(20)     
 led_right = LED(21)     
 --- /code ---
