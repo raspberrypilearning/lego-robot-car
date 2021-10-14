@@ -1,7 +1,5 @@
 ## What next?
 
-If you are following the Build HAT path, then you could now move on to the [Data plotter](URL OF PROJECT) build!
-
 If you would like to enhance your Bluetooth car, then you could think about adding more electronic components: 
 
 + Add extra LEDs as flashing police 'pursuit' lights, or headlights when the car drives
@@ -10,3 +8,6 @@ If you would like to enhance your Bluetooth car, then you could think about addi
 
 + You could even use an Ultrasonic Distance Sensor (UDS), which detects when the car approaches an obstacle, and automatically stops it from crashing!
 
+If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Data Plotter](https://projects.raspberrypi.org/en/projects/lego-plotter) project. In this project, you will make a data plotter that draws on paper!
+
+![Lego Data Plotter](images/plotterbanner.png)
