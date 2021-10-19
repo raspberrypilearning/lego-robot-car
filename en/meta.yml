@@ -2,8 +2,8 @@ title: LEGO® remote controlled car
 hero_image: images/banner.png
 description: Make a remote controlled car with LEGO® and the Build HAT
 version: 4
-listed: false
-copyedit: false
+listed: true
+copyedit: true
 last_tested: "2020-02-26"
 steps:
   - title: Introduction
