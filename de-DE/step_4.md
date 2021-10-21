@@ -11,12 +11,14 @@ Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. 
 language: python filename: bt_car.py line_numbers: true line_number_start: 1
 line_highlights: 2,3,7
 ---
+
 from buildhat import Motor    
 from bluedot import BlueDot from signal import pause
 
 motor_left = Motor('A')     
 motor_right = Motor('B')     
-dot = BlueDot()     
+dot = BlueDot()
+
 --- /code ---
 
 --- /task ---
@@ -30,6 +32,7 @@ Remove the `for` loop from your current code, so that the complete code looks li
 language: python filename: bt_car.py line_numbers: true line_number_start: 1
 line_highlights:
 ---
+
 from buildhat import Motor    
 from bluedot import BlueDot     
 from signal import pause
@@ -75,9 +78,11 @@ Now add a function that uses Blue Dot to **call** the the `forward` function to 
 language: python filename: bt_car.py line_numbers: true line_number_start: 34
 line_highlights:
 ---
+
 def move(pos):     
 if pos.top:     
-forward()     
+forward()
+
 --- /code ---
 
 --- /task ---
@@ -93,9 +98,12 @@ Add two method calls to the bottom of your code. These will make the car move fo
 language: python filename: bt_car.py line_numbers: true line_number_start: 39
 line_highlights:
 ---
+
 dot.when_pressed = move    
 dot.when_released = stop   
-pause() --- /code ---
+pause()
+
+--- /code ---
 
 --- /task ---
 
@@ -154,7 +162,8 @@ line_highlights: 47
 
 dot.when_pressed = move    
 dot.when_released = stop    
-dot.when_moved = move     
+dot.when_moved = move
+
 --- /code ---
 
 --- /task ---
