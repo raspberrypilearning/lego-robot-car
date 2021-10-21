@@ -37,6 +37,7 @@ Alter your code to import the `LED` object from `gpiozero` and set up the LEDs.
 language: python filename: bt_car.py line_numbers: true line_number_start:
 line_highlights: 4, 9, 10
 ---
+
 from buildhat import Motor    
 from bluedot import BlueDot    
 from signal import pause     
@@ -46,7 +47,8 @@ motor_left = Motor('A')
 motor_right = Motor('B')     
 dot = BlueDot()     
 led_left = LED(20)     
-led_right = LED(21)     
+led_right = LED(21)
+
 --- /code ---
 
 --- /task ---
@@ -61,6 +63,7 @@ Alter your code so that the LEDs light up, dependent on the movement of the car.
 language: python filename: bt_car.py line_numbers: true line_number_start: 13
 line_highlights: 16, 17, 23, 24, 30, 31, 37, 38, 44, 45
 ---
+
 def stop():    
 motor_left.stop()     
 motor_right.stop()    
@@ -93,7 +96,8 @@ def left():
 motor_left.start(100)    
 motor_right.start(100)    
 led_right.off()     
-led_left.blink(0.2)     
+led_left.blink(0.2)
+
 --- /code ---
 
 --- /task ---
