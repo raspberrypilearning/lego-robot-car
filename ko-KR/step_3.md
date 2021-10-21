@@ -7,11 +7,15 @@ To remotely pilot your car, you're going to use the Blue Dot library and Android
 title: Install the Blue Dot Python library
 ---
 
---- task --- Open your terminal window. At the prompt type
+--- task ---
+
+Open your terminal window. At the prompt type
 ```
 sudo pip3 install bluedot
 ```
-and press <kbd>Enter</kbd>. --- /task ---
+and press <kbd>Enter</kbd>.
+
+--- /task ---
 
 You should see your terminal return that the latest version of Blue Dot is installed.
 
@@ -57,7 +61,9 @@ On the Raspberry Pi, you should be prompted to accept the pairing request.
 
 Clicking on **OK** should show a successful pairing of the Raspberry Pi and the Android devices.
 
-![Confirmation box showing that the Android device and the Raspberry Pi are paired.](imgaes/bt_rpi_3.png) --- /task ---
+![Confirmation box showing that the Android device and the Raspberry Pi are paired.](imgaes/bt_rpi_3.png)
+
+--- /task ---
 
 Sometimes you might be asked to confirm a code before you are allowed to pair the devices.
 
@@ -74,12 +80,14 @@ Create a new Python file on your Raspberry Pi called bluedot_test.py, with the f
 language: python filename: bluedot_test.py line_numbers: true line_number_start:
 line_highlights:
 ---
+
 from bluedot import BlueDot   
 dot = BlueDot()
 
 print('Waiting...')   
 dot.wait_for_press()    
-print("It worked!")    
+print("It worked!")
+
 --- /code ---
 
 --- /task ---
@@ -102,9 +110,12 @@ Click on **raspberrypi** from the menu and you should then see a big blue dot on
 ---
 title: Bluedot won't select my Raspberry Pi
 ---
+
  In order for BlueDot to connect to your Raspberry Pi, a server needs to be running on the Raspberry Pi. This means that a BlueDot object (`bd = BlueDot()`) must have already been created in your Python program and be waiting for connections.
 
- Make sure that you are running your program before trying to connect with Bluedot and that it has no errors. --- /collapse ---
+ Make sure that you are running your program before trying to connect with Bluedot and that it has no errors.
+
+--- /collapse ---
 
 --- /task ---
 
