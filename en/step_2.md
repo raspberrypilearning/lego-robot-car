@@ -26,6 +26,7 @@ line_numbers: true
 line_number_start: 
 line_highlights: 
 ---
+
 from buildhat import Motor   
 from time import sleep   
 
@@ -33,6 +34,7 @@ motor_left = Motor('A')
 motor_right = Motor('B')   
 motor_left.run_for_seconds(seconds=10, speed=50)   
 motor_right.run_for_seconds(seconds=10, speed=-50)    
+
 --- /code ---
 
 --- /task ---
@@ -59,6 +61,7 @@ line_numbers: true
 line_number_start: 
 line_highlights: 7-14
 ---
+
 from buildhat import Motor   
 from time import sleep    
 
@@ -91,11 +94,13 @@ line_numbers: true
 line_number_start: 17
 line_highlights: 
 ---
+
 for i in range(2):    
   forward()    
   sleep(1)    
   stop()    
-  sleep(1)    
+  sleep(1)  
+
 --- /code ---
 --- /task ---
 
@@ -114,6 +119,7 @@ line_numbers: true
 line_number_start: 17
 line_highlights: 
 ---
+
 def back():    
   motor_left.start(-50)     
   motor_right.start(50)      
@@ -135,6 +141,7 @@ line_numbers: true
 line_number_start: 22
 line_highlights: 
 ---
+
 def left():
   motor_left.start(50)
   motor_right.start(50)
@@ -161,6 +168,7 @@ line_numbers: true
 line_number_start: 32
 line_highlights: 
 ---
+
 for i in range(2):    
   forward()     
   sleep(1)     
@@ -170,7 +178,8 @@ for i in range(2):
   sleep(1)     
   left()      
   sleep(1)      
-  stop()      
+  stop()    
+    
 --- /code ---
 
 --- /task ---

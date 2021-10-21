@@ -14,13 +14,15 @@ line_numbers: true
 line_number_start: 1
 line_highlights: 2,3,7
 ---
+
 from buildhat import Motor    
 from bluedot import BlueDot
 from signal import pause    
 
 motor_left = Motor('A')     
 motor_right = Motor('B')     
-dot = BlueDot()     
+dot = BlueDot() 
+
 --- /code ---
 
 --- /task ---
@@ -37,6 +39,7 @@ line_numbers: true
 line_number_start: 1
 line_highlights: 
 ---
+
 from buildhat import Motor    
 from bluedot import BlueDot     
 from signal import pause
@@ -85,9 +88,11 @@ line_numbers: true
 line_number_start: 34
 line_highlights: 
 ---
+
 def move(pos):     
     if pos.top:     
-        forward()     
+        forward()  
+
 --- /code ---
 
 --- /task ---
@@ -106,9 +111,11 @@ line_numbers: true
 line_number_start: 39
 line_highlights: 
 ---
+
 dot.when_pressed = move    
 dot.when_released = stop   
 pause() 
+
 --- /code ---
 
 --- /task ---
@@ -174,7 +181,8 @@ line_highlights: 47
 
 dot.when_pressed = move    
 dot.when_released = stop    
-dot.when_moved = move     
+dot.when_moved = move  
+   
 --- /code ---
 
 --- /task ---
