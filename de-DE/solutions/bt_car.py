@@ -3,61 +3,61 @@ from bluedot import BlueDot
 from signal import pause
 from gpiozero import LED
 
-motor_left = Motor('A')
-motor_right = Motor('B')
-bd = BlueDot()
-led_left = LED(20)
-led_right = LED(21)
+motor_links = Motor('A')
+motor_rechts = Motor('B')
+dot = BlueDot()
+led_links = LED(20)
+led_rechts = LED(21)
 
 
 def stop():
-    motor_left.stop()
-    motor_right.stop()
-    led_right.on()
-    led_left.on()
+    motor_links.stop()
+    motor_rechts.stop()
+    led_rechts.on()
+    led_links.on()
 
 
-def forward():
-    motor_left.start(-100)
-    motor_right.start(100)
-    led_right.off()
-    led_left.off()
+def vorwaerts():
+    motor_links.start(-100)
+    motor_rechts.start(100)
+    led_rechts.off()
+    led_links.off()
 
 
-def backward():
-    motor_left.start(100)
-    motor_right.start(-100)
-    led_right.on(0.2)
-    led_left.on(0.2)
+def zurueck():
+    motor_links.start(100)
+    motor_rechts.start(-100)
+    led_rechts.on(0.2)
+    led_links.on(0.2)
 
 
-def right():
-    motor_left.start(-100)
-    motor_right.start(-100)
-    led_right.blink(0.2)
-    led_left.off()
+def rechts():
+    motor_links.start(-100)
+    motor_rechts.start(-100)
+    led_rechts.blink(0.2)
+    led_links.off()
 
 
-def left():
-    motor_left.start(100)
-    motor_right.start(100)
-    led_right.off()
-    led_left.blink(0.2)
+def links():
+    motor_links.start(100)
+    motor_rechts.start(100)
+    led_rechts.off()
+    led_links.blink(0.2)
 
 
-def move(pos):
+def bewege(pos):
     if pos.top:
-        forward()
+        vorwaerts()
     elif pos.bottom:
-        backward()
+        zurueck()
     elif pos.left:
-        left()
+        links()
     elif pos.right:
-        right()
+        rechts()
 
 
-bd.when_pressed = move
-bd.when_released = stop
-bd.when_moved = move
+dot.when_pressed = move
+dot.when_released = stop
+dot.when_moved = move
 
 pause()
