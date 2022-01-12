@@ -1,23 +1,23 @@
 ---
-title: LEGO® remote controlled car
+title: Ferngesteuertes LEGO® Auto
 hero_image: images/banner.png
-description: Make a remote controlled car with LEGO® and the Build HAT
+description: Baue ein ferngesteuertes Auto mit LEGO® und dem Build HAT
 version: 4
 listed: true
 copyedit: true
 last_tested: "2020-02-26"
 steps:
   - 
-    title: Introduction
+    title: Einleitung
   - 
-    title: Setting up the LEGO® Spike™ motors
+    title: Set up the LEGO® Spike™ motors
   - 
-    title: Set up and test the Bluetooth control
+    title: Bluetooth-Steuerung einrichten und testen
   - 
-    title: Control your motors with Blue Dot
+    title: Steuern der Motoren mit Blue Dot
   - 
-    title: Assembling your robot
+    title: Assemble your robot
   - 
-    title: Adding LEDs
+    title: Add LEDs
   - 
-    title: What next?
+    title: Wie geht es weiter?
