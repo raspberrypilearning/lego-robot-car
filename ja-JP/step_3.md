@@ -67,7 +67,7 @@ Clicking on **OK** should show a successful pairing of the Raspberry Pi and the 
 
 Sometimes you might be asked to confirm a code before you are allowed to pair the devices.
 
-![Box asking for code confirmation on the Adnroid device.](images/android3.png)
+![Box asking for code confirmation on the Android device.](images/android3.png)
 
 ### Testing Blue Dot
 
@@ -111,7 +111,7 @@ Click on **raspberrypi** from the menu and you should then see a big blue dot on
 title: Bluedot won't select my Raspberry Pi
 ---
 
- In order for BlueDot to connect to your Raspberry Pi, a server needs to be running on the Raspberry Pi. This means that a BlueDot object (`bd = BlueDot()`) must have already been created in your Python program and be waiting for connections.
+ In order for BlueDot to connect to your Raspberry Pi, a server needs to be running on the Raspberry Pi. This means that a BlueDot object (`dot = BlueDot()`) must have already been created in your Python program and be waiting for connections.
 
  Make sure that you are running your program before trying to connect with Bluedot and that it has no errors.
 
