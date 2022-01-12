@@ -1,4 +1,4 @@
-## Adding some LEDs
+## Add some LEDs
 
 The holes in LEGO® elements are just the right size for holding small LEDs, so you can easily add them to your project. Alternatively, you could use a breadboard.
 
