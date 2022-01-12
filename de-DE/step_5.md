@@ -1,76 +1,76 @@
-## Assembling your robot
+## Assemble your robot
 
-Now you have the motor code working, it is time to construct and test your robot.
+Deinn Motorcode funktioniert jetzt und es ist Zeit, deinen Roboter zu konstruieren und zu testen.
 
-The basic design needs to fulfil five main requirements:
+Das Grunddesign muss fünf Hauptanforderungen erfüllen:
 
-- A mounted Raspberry Pi and Build HAT
-- Two motors mounted parallel to each other
-- Two wheels
-- A caster or balance point at the front
-- A secured battery pack with barrel connector
+- Ein montierter Raspberry Pi mit Build HAT
+- Zwei parallel zueinander montierte Motoren
+- Zwei Räder
+- Eine Lenkrolle oder eine Stütze an der Vorderseite
+- Ein befestigtes Batteriefach mit Hohlstecker
 
-The Raspberry Pi and Build HAT can be secured to LEGO® pieces by using M2 machine screws and nuts.
+Der Raspberry Pi und das Build HAT können mit M2 Maschinenschrauben und Muttern an LEGO® Teilen befestigt werden.
 
-![An M2 machine screw and nut.](images/m2_machine_screws.jpg)
+![Eine M2-Maschinenschraube und -mutter.](images/m2_machine_screws.jpg)
 
-![A LEGO® piece attached to a Raspberry Pi using an M2 machine screw.](images/m2_rpi_attached.jpg)
+![Ein LEGO®-Teil, das mit einer M2-Maschinenschraube an einem Raspberry Pi befestigt ist.](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
-You can power the Raspberry Pi and Build HAT using a battery connected to a barrel jack. A minimum of five AA batteries or a 9V battery will be required.
+Du kannst den Raspberry Pi und das Build HAT mit einer Batterie mit Strom versorgen, die an einen Hohlstecker angeschlossen ist. Es werden mindestens fünf AA-Batterien oder eine 9-V-Batterie benötigt.
 
-![Five AA batteries in a pack, connected to a barrel jack.](images/AA_battery.jpg)
+![Fünf AA-Batterien in einem Batteriegehäuse, verbunden mit einem Hohlstecker.](images/AA_battery.jpg)
 
-![A 9V battery connected to a barrel jack.](images/9V_battery.jpg)
+![Eine 9-V-Batterie, die an einen Hohlstecker angeschlossen ist.](images/9V_battery.jpg)
 
-The following photos show some different designs for how your LEGO® car could be built, which incorporate the Raspberry Pi, Build HAT, and battery pack.
+Die folgenden Fotos zeigen einige unterschiedliche Designs für den Bau deines LEGO® Autos, die Raspberry Pi, Build HAT und Batterien enthalten.
 
-![A basic robot car from four different angles.](images/basic_bot.png)
+![Ein einfaches Roboterauto aus vier verschiedenen Blickwinkeln.](images/basic_bot.png)
 
-![Four views of a possible robot car design.](images/bot-grid_2.png)
+![Vier Ansichten eines möglichen Roboterautodesigns.](images/bot-grid_2.png)
 
-![Complex jeep buggy from three angles.](images/buggy3grid.jpg)
+![Komplexer Jeep-Buggy aus drei Blickwinkeln.](images/buggy3grid.jpg)
 
 --- task ---
 
-Use whatever LEGO® elements you have to construct the robot and use your imagination.
+Verwende alle LEGO®-Elemente, die du hast, um den Roboter zu bauen, und lassen Sie deiner Fantasie freien Lauf.
 
 --- /task ---
 
-### Testing
+### Testen
 
-Once you robot is assembled, you should test it using Bluetooth with your Android device.
+Sobald deiin Roboter zusammengebaut ist, solltest du ihn über Bluetooth mit deinem Android-Gerät testen.
 
 --- task ---
 
-Power your Raspberry Pi, and then run your `bt_car.py` program. Test that you car works when using Bluetooth and the Blue Dot app from your Android device.
+Schalte deinen Raspberry Pi ein und führe dann dein Programm `bt_car.py` aus. Teste, ob dein Auto funktioniert, wenn du Bluetooth und die Blue Dot-App von deinem Android-Gerät verwendest.
 
 --- /task ---
 
-You may need to make changes to your code, depending on which side your of the car, and which way around your motors are connected.
+Möglicherweise musst du deinen Code ändern, je nachdem, auf welcher Seite des Autos du bist und wie deine Motoren angeschlossen sind.
 
-Next, you need to make you Raspberry Pi run **headless**. This means running your code without needing to have a monitor, keyboard, or mouse connected.
+Als nächstes musst du dafür sorgen, dass dein Raspberry Pi **Headless**läuft. Dies bedeutet, dass dein Code ausgeführt wird, ohne dass ein Monitor, eine Tastatur oder eine Maus angeschlossen sein muss.
 
-First of all, make sure your Raspberry Pi is [connected to a WiFi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
+Stelle zunächst sicher, dass dein Raspberry Pi [mit einem WiFi-Netzwerk verbunden ist](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
 
-Now, you can use a program called **cron** to make your Python script run everytime the Raspberry Pi is booted.
+Jetzt kannst du ein Programm namens **cron** verwenden, um dein Python-Skript jedes Mal auszuführen, wenn der Raspberry Pi gebootet wird.
 
 --- task ---
 
-Open a terminal by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> on your keyboard.
+Öffne ein Terminal, indem du <kbd>Strg</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> auf deiner Tastatur drückst.
 
 --- /task ---
 
 --- task ---
 
-Type `crontab -e` into the terminal window. If this is the first time you have ever used **crontab**, then it will ask you which editor you would like to use.
+Gib `crontab -e` in das Terminalfenster ein. Wenn du **crontab** zum ersten Mal verwendest, wirst du gefragt, welchen Editor du verwenden möchtest.
 
 ```bash
 pi@raspberrypi:~ $ crontab -e
 no crontab for pi - using an empty one
 
-Select an editor. To change this later, run 'select-editor'.
+Select an editor. Um diese Auswahl später zu ändern, führe 'select-editor' aus.
   1. /bin/nano        <---- easiest
   2. /usr/bin/vim.tiny
   3. /bin/ed
@@ -78,15 +78,15 @@ Select an editor. To change this later, run 'select-editor'.
 Choose 1-3 [1]: 
 ```
 
-Unless you are experienced with **vim**, choose `1. /bin/nano`.
+Sofern du keine Erfahrung mit **vim** hast, wähle `1. /bin/nano`.
 
 --- /task ---
 
-Nano will open up and show the default template file.
+Nano wird geöffnet und zeigt die Standardvorlagendatei an.
 
 --- task ---
 
-Use the cursor keys to scroll to the bottom of the file. You can then add this single line, which will wait for 30 seconds and then run your `bt_car.py` file.
+Verwende die Cursortasten, um zum Ende der Datei zu scrollen. Du kannst dann diese Zeile hinzufügen, die 30 Sekunden wartet und dann deine `bt_car.py` Datei ausführt.
 
 ```bash
 # m h  dom mon dow   command
@@ -97,7 +97,7 @@ Use the cursor keys to scroll to the bottom of the file. You can then add this s
 
 --- task ---
 
-Reboot your Raspberry Pi, wait for 30 seconds, and then use your Blue Dot app on your Android device to connect to your car and control it.
+Starte deinen Raspberry Pi neu, warte 30 Sekunden und verwende dann deine Blue Dot-App auf deinem Android-Gerät, um eine Verbindung zu deinem Auto herzustellen und es zu steuern.
 
 --- /task ---
 
