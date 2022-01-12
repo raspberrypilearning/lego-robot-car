@@ -1,31 +1,37 @@
-## Control your motors with Blue Dot
+## Blue Dot으로 모터 제어하기
 
-The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
-
---- task ---
-
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
-
---- code ---
----
-language: python filename: bt_car.py line_numbers: true line_number_start: 1
-line_highlights: 2,3,7
----
-
-from buildhat import Motor    
-from bluedot import BlueDot from signal import pause
-
-motor_left = Motor('A')     
-motor_right = Motor('B')     
-dot = BlueDot()
-
---- /code ---
-
---- /task ---
+Blue Dot 앱과 Python 라이브러리를 사용하여 스마트폰에서 LEGO® Technic™ 모터를 제어할 수 있습니다.
 
 --- task ---
 
-Remove the `for` loop from your current code, so that the complete code looks like this:
+`bt_car.py` 파일을 다시 열고 파일 상단에 Blue Dot을 설정합니다. `sleep` import 를 </code>from signal import pause` 로 바꿔야 합니다.</p>
+
+<p spaces-before="0">--- code ---</p>
+
+<hr />
+
+<p spaces-before="0">language: python
+filename: bt_car.py
+line_numbers: true
+line_number_start: 1</p>
+
+<h2 spaces-before="0">line_highlights: 2,3,7</h2>
+
+<p spaces-before="0">from buildhat import Motor<br x-id="4" />
+from bluedot import BlueDot
+from signal import pause    </p>
+
+<p spaces-before="0">motor_left = Motor('A')<br x-id="5" />
+motor_right = Motor('B')<br x-id="5" />
+dot = BlueDot() </p>
+
+<p spaces-before="0">--- /code ---</p>
+
+<p spaces-before="0">--- /task ---</p>
+
+<p spaces-before="0">--- task ---</p>
+
+<p spaces-before="0">전체 코드가 다음과 같이 보이도록 현재 코드에서 <code>for` 루프를 제거하도록 합니다.
 
 --- code ---
 ---
@@ -71,7 +77,7 @@ motor_right.start(100)
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
+이제 Blue Dot이 `forward` 함수를 **호출** 하도 스크립트 맨 아래에 코드를 추가하세요.
 
 --- code ---
 ---
@@ -87,11 +93,11 @@ forward()
 
 --- /task ---
 
-The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+`move` 함수에는 `pos`이라고 하는 1개의 매개변수가 있습니다. Blue Dot을 터치한 위치에 따라 함수에 자동으로 전달되게 됩니다.
 
 --- task ---
 
-Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
+코드 맨 아래에 두 개의 메서드 호출을 추가합니다. 이것들은 차가 앞으로 움직이고 멈추도록 할 것입니다. 마지막 호출은 프로그램이 스크립트 맨 아래에서 끝나지 않도록 합니다.
 
 --- code ---
 ---
@@ -109,15 +115,15 @@ pause()
 
 --- task ---
 
-Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+코드를 테스트해 보세요. 기기의 Blue Dot 앱에서 상단 근처의 파란색 점을 누르면 모터가 회전해야 합니다. 파란색 점에서 손가락을 떼면 모터가 정지해야 합니다.
 
 --- /task ---
 
-At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
+현재 모터는 바퀴를 앞으로만 돌립니다. `pos` 매개변수를 사용하여 모든 방향으로 회전하도록 할 수 있습니다.
 
 --- task ---
 
-Add to your `move` function so that the motors will move the car backwards, left, and right.
+모터가 자동차를 전후좌우로 움직이도록 `move` 함수에 아래 코드를 추가하십시오.
 
 --- code ---
 ---
@@ -143,15 +149,15 @@ right()
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
+코드를 다시 실행하고 Blue Dot 앱으로 테스트합니다. 파란색 점의 오른쪽, 왼쪽, 아래쪽을 누르면 이제 모터가 다른 방향으로 움직여야 합니다.
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
+코드에 한 줄을 더 추가하면 Blue Dot이 누르는 것뿐만 아니라 손가락이 파란색 점 위로 움직일 때에도 응답하도록 할 수 있습니다.
 
 --- task ---
 
-Add this single line so that the motors respond to motion over the blue dot.
+모터가 파란색 점 위의 움직임에 반응하도록 다음 코드를 추가합니다.
 
 --- code ---
 ---
@@ -170,10 +176,10 @@ dot.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+프로그램을 실행하고 Android 기기에서 파란색 점을 누르고 손가락을 다른 위치로 이동하여 실험해 봅니다. 모터는 다른 방향으로 회전해야 하며 파란색 점에서 손가락을 떼면 정지하도록 해야 합니다.
 
 --- /task ---
 
-To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
+BlueDot에 대한 전체 설명서를 읽으려면 [여기를 클릭하십시오](https://bluedot.readthedocs.io/en/latest/).
 
 --- save ---
