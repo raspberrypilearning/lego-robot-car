@@ -1,4 +1,4 @@
-## Assembling your robot
+## Assemble your robot
 
 Now you have the motor code working, it is time to construct and test your robot.
 
