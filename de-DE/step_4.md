@@ -1,10 +1,10 @@
-## Control your motors with Blue Dot
+## Steuern der Motoren mit Blue Dot
 
-The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
+Die Blue Dot-App und die Python-Bibliothek können verwendet werden, um deine LEGO® Technic™-Motoren von deinem Gerät aus zu steuern.
 
 --- task ---
 
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
+Öffne die Datei `bt_car.py` erneut und richte Blue Dot oben in der Datei ein. Außerdem solltest du den Import von `sleep` durch `from signal import pause` ersetzen.
 
 --- code ---
 ---
@@ -15,9 +15,9 @@ line_highlights: 2,3,7
 from buildhat import Motor    
 from bluedot import BlueDot from signal import pause
 
-motor_left = Motor('A')     
-motor_right = Motor('B')     
-dot = BlueDot()
+motor_links = Motor('A')     
+motor_rechts = Motor('B')     
+punkt = BlueDot()
 
 --- /code ---
 
@@ -25,7 +25,7 @@ dot = BlueDot()
 
 --- task ---
 
-Remove the `for` loop from your current code, so that the complete code looks like this:
+Entferne die `for` Schleife aus deinem aktuellen Code, sodass der vollständige Code wie folgt aussieht:
 
 --- code ---
 ---
@@ -37,41 +37,41 @@ from buildhat import Motor
 from bluedot import BlueDot     
 from signal import pause
 
-motor_left = Motor('A')     
-motor_right = Motor('B')     
-dot = BlueDot()
+motor_links = Motor('A')     
+motor_rechts = Motor('B')     
+punkt = BlueDot()
 
 
 def stop():     
-motor_left.stop()     
-motor_right.stop()
+motor_links.stop()     
+motor_rechts.stop()
 
 
-def forward():     
-motor_left.start(-100)     
-motor_right.start(100)
+def vorwaerts():     
+motor_links.start(-100)     
+motor_rechts.start(100)
 
 
-def backward():     
-motor_left.start(100)     
-motor_right.start(-100)
+def zurueck():     
+motor_links.start(100)     
+motor_rechts.start(-100)
 
 
-def right():     
-motor_left.start(-100)     
-motor_right.start(-100)
+def rechts():     
+motor_links.start(-100)     
+motor_rechts.start(-100)
 
 
-def left():     
-motor_left.start(100)     
-motor_right.start(100)     
+def links():     
+motor_links.start(100)     
+motor_rechts.start(100)     
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
+Füge nun am Ende deines Skripts eine Funktion hinzu, die Blue Dot verwendet, um die **vorwaerts** Funktion `aufzurufen`.
 
 --- code ---
 ---
@@ -79,19 +79,19 @@ language: python filename: bt_car.py line_numbers: true line_number_start: 34
 line_highlights:
 ---
 
-def move(pos):     
+def bewege(pos):     
 if pos.top:     
-forward()
+vorwaerts()
 
 --- /code ---
 
 --- /task ---
 
-The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+Die Funktion `bewege` hat einen einzigen Parameter, nämlich `pos`. Dieser wird automatisch an die Funktion übergeben, je nachdem wo der Blaue Punkt berührt wird.
 
 --- task ---
 
-Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
+Füge am Ende deines Codes zwei Methodenaufrufe hinzu. Diese lassen das Auto vorwärts fahren und anhalten. Der letzte Befehl stellt sicher, dass das Programm nicht einfach am Ende des Skripts endet.
 
 --- code ---
 ---
@@ -99,8 +99,8 @@ language: python filename: bt_car.py line_numbers: true line_number_start: 39
 line_highlights:
 ---
 
-dot.when_pressed = move    
-dot.when_released = stop   
+punkt.when_pressed = bewege    
+punkt.when_released = stop   
 pause()
 
 --- /code ---
@@ -109,15 +109,15 @@ pause()
 
 --- task ---
 
-Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+Führe deinen Code aus. Drücke in der Blue Dot-App auf deinem Gerät auf den blauen Punkt oben und die Motoren sollten sich drehen. Wenn du deinen Finger vom blauen Punkt nimmst, sollten die Motoren stoppen.
 
 --- /task ---
 
-At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
+Im Moment drehen die Motoren die Räder nur in Vorwärtsrichtung. Mit dem Parameter `pos` kannst du sie in alle Richtungen drehen lassen.
 
 --- task ---
 
-Add to your `move` function so that the motors will move the car backwards, left, and right.
+Füge deiner `bewege` Funktion Code hinzu, damit die Motoren das Auto nach hinten, links und rechts bewegen.
 
 --- code ---
 ---
@@ -126,15 +126,15 @@ line_highlights: 37-42
 ---
 
 
-def move(pos):    
+def bewege(pos):    
 if pos.top:    
-forward()    
+vorwaerts()    
 elif pos.bottom:    
-backward()    
+zurueck()    
 elif pos.left:    
-left()     
+links()     
 elif pos.right:    
-right()
+rechts()
 
 
 --- /code ---
@@ -143,15 +143,15 @@ right()
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
+Führe deinen Code erneut aus und teste ihn mit der Blue Dot-App. Wenn du rechts, links und unten auf den blauen Punkt drückst, sollten sich die Motoren jetzt in verschiedene Richtungen bewegen.
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
+Du kannst deinem Code eine einzelne Zeile hinzufügen, sodass Blue Dot nicht nur auf Drücken reagiert, sondern auch darauf, wenn dein Finger über den blauen Punkt fährt.
 
 --- task ---
 
-Add this single line so that the motors respond to motion over the blue dot.
+Fügee diese einzelne Linie hinzu, damit die Motoren auf Bewegungen auf dem blauen Punkt reagieren.
 
 --- code ---
 ---
@@ -160,9 +160,9 @@ line_highlights: 47
 ---
 
 
-dot.when_pressed = move    
-dot.when_released = stop    
-dot.when_moved = move
+punkt.when_pressed = bewege    
+punkt.when_released = stop    
+punkt.when_moved = bewege
 
 --- /code ---
 
@@ -170,10 +170,10 @@ dot.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+Führe dein Programm aus und experimentiere damit, den blauen Punkt auf deinem Android-Gerät zu drücken und deinen Finger an verschiedene Positionen zu bewegen. Die Motoren sollten sich in verschiedene Richtungen drehen und stoppen, wenn du deinen Finger vom blauen Punkt nimmst.
 
 --- /task ---
 
-To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
+Um die vollständige Dokumentation zu BlueDot zu lesen, [klicke hier](https://bluedot.readthedocs.io/en/latest/).
 
 --- save ---
