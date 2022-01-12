@@ -1,22 +1,22 @@
-## Set up the LEGO® Spike™ motors
+## LEGO® Spike™ 모터설정
 
-It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
+로봇을 만들기 전에 프로그램을 테스트하고 개발하는 것이 더 좋습니다. 이렇게 하면 모터가 예기치 않게 로봇을 잘못된 방향으로 보내 책상 아래로 떨어져, 멋진 모델을 망칠 위험이 줄어듭니다(물론 LEGO® 사용의 좋은 점은 부서지더라도 언제든지 다시 조립할 수 있다는 점입니다).
 
-The Raspberry Pi Build HAT and its Python library allow you to control LEGO® Technic™ motors directly from your Raspberry Pi computer.
+Raspberry Pi Build HAT 그리고 Python 라이브러리를 사용하면 Raspberry Pi 컴퓨터에서 직접 LEGO® Technic™ 모터를 제어할 수 있습니다.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT. Connect your battery pack to the barrel jack on the Build HAT and turn it on.
+두 개의 모터를 Raspberry Pi Build HAT의 포트 A와 B에 연결하세요. 배터리팩을 Build HAT의 배럴 잭에 연결하고 켭니다.
 
-### Make the motors spin
+### 모터 회전시키기
 
 --- task ---
 
-Open Thonny on your Raspberry Pi from the **Programming** menu.
+**프로그래밍** 메뉴에서 Raspberry Pi의 Thonny를 엽니다.
 
 --- /task ---
 
 --- task ---
 
-Use the following code to spin both motors at 50% of their maximum speed for 10 seconds. (They will run one at a time, not together.)
+다음 코드를 사용하여 10초 동안 최대 속도의 50%로 두 모터를 모두 회전시키도록 하세요. (함께가 아니라 한 번에 하나씩 실행되게 됩니다.)
 
 --- code ---
 ---
@@ -38,17 +38,17 @@ motor_right.run_for_seconds(seconds=10, speed=-50)
 
 --- task ---
 
-Run your program and check the motors turn.
+프로그램을 실행하고 모터 회전을 확인하세요.
 
 --- /task ---
 
-Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left-hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right-hand side.
+모터는 자동차 섀시의 반대쪽에 장착되므로 현재 프로그램은 모터를 반대 방향으로 움직이도록 구현해야 합니다. 따라서 왼쪽 바퀴에서 시계 반대 방향으로 회전하면 로봇이 앞으로 이동하는 반면, 오른쪽에서는 시계 방향으로 회전하도록 해야 합니다.
 
-Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
+이제 모터를 테스트했으므로 모터를 정지하고 앞으로 이동하는 기능을 만들 수 있습니다.
 
 --- task ---
 
-Remove the two lines of code that make the motors run for 10 seconds, and add these two functions. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
+모터가 10초 동안 작동하도록 하는 두 줄의 코드를 제거하고 이 두 함수를 추가하세요. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
 
 --- code ---
 ---
@@ -78,7 +78,7 @@ motor_right.start(-50)
 
 --- task ---
 
-Test your functions out by adding the following start–stop–start–stop sequence:
+다음 시작-중지-시작-중지 기능을 추가하여 테스트합니다.
 
 --- code ---
 ---
@@ -95,11 +95,11 @@ sleep(1)
 --- /code --- --- /task ---
 
 
-Once that works, add three more functions to move the robot backwards, left, and right.
+이 기능이 잘 작동하면 세 가지 기능을 추가하여 로봇을 전후좌우로 이동합니다.
 
 --- task ---
 
-To move the robot backwards, simply reverse the directions of both motors.
+로봇을 뒤로 움직이려면 두 모터의 방향을 반대로 하면 되겠습니다.
 
 --- code ---
 ---
@@ -118,7 +118,7 @@ motor_right.start(50)
 
 --- task ---
 
-To turn the robot to the left, both motors need to turn in the same direction.
+로봇을 왼쪽으로 돌리려면 두 모터가 같은 방향으로 회전하도록 해야 합니다.
 
 --- code ---
 ---
@@ -138,7 +138,7 @@ def right(): motor_left.start(-50) motor_right.start(-50)
 
 --- task ---
 
-To test your code, you can edit your `for` loop.
+코드를 테스트하기 위해서, `for` 반복을 편집할 수 있습니다.
 
 --- code ---
 ---
@@ -163,7 +163,7 @@ stop()
 
 --- task ---
 
-Run your code and check that the wheels turn correctly.
+코드를 실행하고 바퀴가 올바르게 회전하는지 확인하세요.
 
 --- /task ---
 
