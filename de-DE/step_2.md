@@ -1,22 +1,22 @@
-## Setting up the LEGO® Spike™ motors
+## Set up the LEGO® Spike™ motors
 
-It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
+Es ist einfacher, dein Programm zu testen und zu entwickeln, bevor du deinen Roboter baust. Dies verringert die Gefahr, dass dein wunderschönes Modell ruiniert wird, wenn ein Motor den Roboter unerwartet in die falsche Richtung schickt und er von deinem Schreibtisch rauscht (obwohl das Gute an LEGO® natürlich ist, dass du ihn immer wieder aufbauen kannst).
 
-The Raspberry Pi Build HAT and its Python library allow you to control LEGO® Technic™ motors directly from your Raspberry Pi computer.
+Mit dem Raspberry Pi Build HAT und seiner Python-Bibliothek kannst du LEGO® Technic™-Motoren direkt von deinem Raspberry Pi-Computer aus steuern.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT. Connect your battery pack to the barrel jack on the Build HAT and turn it on.
+Stecke zwei Motoren in die Ports A und B des Raspberry Pi Build HAT. Verbinde deinen Batteriehalter mit der Hohlstecker-Buchse am Build HAT und schalte ihn ein.
 
-### Make the motors spin
+### Lass die Motoren drehen
 
 --- task ---
 
-Open Thonny on your Raspberry Pi from the **Programming** menu.
+Öffne Thonny auf deinem Raspberry Pi aus dem Menü **Programmierung**.
 
 --- /task ---
 
 --- task ---
 
-Use the following code to spin both motors at 50% of their maximum speed for 10 seconds. (They will run one at a time, not together.)
+Verwende den folgenden Code, um beide Motoren 10 Sekunden lang mit 50% ihrer maximalen Geschwindigkeit laufen zu lassen. (Sie werden nacheinander laufen, nicht zusammen.)
 
 --- code ---
 ---
@@ -27,10 +27,10 @@ line_highlights:
 from buildhat import Motor   
 from time import sleep
 
-motor_left = Motor('A')   
-motor_right = Motor('B')   
-motor_left.run_for_seconds(seconds=10, speed=50)   
-motor_right.run_for_seconds(seconds=10, speed=-50)
+motor_links = Motor('A')   
+motor_rechts = Motor('B')   
+motor_links.run_for_seconds(seconds=10, speed=50)   
+motor_rechts.run_for_seconds(seconds=10, speed=-50)
 
 --- /code ---
 
@@ -38,17 +38,17 @@ motor_right.run_for_seconds(seconds=10, speed=-50)
 
 --- task ---
 
-Run your program and check the motors turn.
+Führe dein Programm aus und überprüfe, ob sich die Motoren drehen.
 
 --- /task ---
 
-Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left-hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right-hand side.
+Dein aktuelles Programm sollte die Motoren in entgegengesetzte Richtungen bewegen, da die Motoren auf gegenüberliegenden Seiten des Fahrzeugchassis montiert werden. Eine Drehung gegen den Uhrzeigersinn am linken Rad bewegt den Roboter also vorwärts, während auf der rechten Seite eine Drehung im Uhrzeigersinn erforderlich ist.
 
-Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
+Nachdem du die Motoren getestet hast, kannst du Funktionen erstellen, um die Motoren zum Stoppen und Vorwärtsfahren zu bringen.
 
 --- task ---
 
-Remove the two lines of code that make the motors run for 10 seconds, and add these two functions. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
+Entferne die beiden Codezeilen, die die Motoren 10 Sekunden lang laufen lassen, und füge diese beiden Funktionen hinzu. Die Funktion `start()` funktioniert anders als die `run` Funktion der LEGO-Motoren, sodass sie diesmal gleichzeitig laufen.
 
 --- code ---
 ---
@@ -59,17 +59,17 @@ line_highlights: 7-14
 from buildhat import Motor   
 from time import sleep
 
-motor_left = Motor('A')    
-motor_right = Motor('B')
+motor_links = Motor('A')    
+motor_rechts = Motor('B')
 
 def stop():    
-motor_left.stop()    
-motor_right.stop()
+motor_links.stop()    
+motor_rechts.stop()
 
 
-def forward():     
-motor_left.start(50)     
-motor_right.start(-50)
+def vorwaerts():     
+motor_links.start(50)     
+motor_rechts.start(-50)
 
 
 --- /code ---
@@ -78,7 +78,7 @@ motor_right.start(-50)
 
 --- task ---
 
-Test your functions out by adding the following start–stop–start–stop sequence:
+Teste deine Funktionen, indem du die folgende Start-Stopp-Start-Stopp-Sequenz hinzufügst:
 
 --- code ---
 ---
@@ -87,7 +87,7 @@ line_highlights:
 ---
 
 for i in range(2):    
-forward()    
+vorwaerts()    
 sleep(1)    
 stop()    
 sleep(1)
@@ -95,11 +95,11 @@ sleep(1)
 --- /code --- --- /task ---
 
 
-Once that works, add three more functions to move the robot backwards, left, and right.
+Sobald das funktioniert, füge drei weitere Funktionen hinzu, um den Roboter nach hinten, links und rechts zu bewegen.
 
 --- task ---
 
-To move the robot backwards, simply reverse the directions of both motors.
+Kehre einfach die Richtungen beider Motoren um, um den Roboter rückwärts zu bewegen.
 
 --- code ---
 ---
@@ -107,9 +107,9 @@ language: python filename: bt_car.py line_numbers: true line_number_start: 17
 line_highlights:
 ---
 
-def back():    
-motor_left.start(-50)     
-motor_right.start(50)
+def zurueck():    
+motor_links.start(-50)     
+motor_rechts.start(50)
 
 
 --- /code ---
@@ -118,7 +118,7 @@ motor_right.start(50)
 
 --- task ---
 
-To turn the robot to the left, both motors need to turn in the same direction.
+Um den Roboter nach links zu drehen, müssen sich beide Motoren in die gleiche Richtung drehen.
 
 --- code ---
 ---
@@ -126,10 +126,10 @@ language: python filename: bt_car.py line_numbers: true line_number_start: 22
 line_highlights:
 ---
 
-def left(): motor_left.start(50) motor_right.start(50)
+def links(): motor_links.start(50) motor_rechts.start(50)
 
 
-def right(): motor_left.start(-50) motor_right.start(-50)
+def rechts(): motor_links.start(-50) motor_rechts.start(-50)
 
 
 --- /code ---
@@ -138,7 +138,7 @@ def right(): motor_left.start(-50) motor_right.start(-50)
 
 --- task ---
 
-To test your code, you can edit your `for` loop.
+Um deinen Code zu testen, kannst du deine `for` Schleife bearbeiten.
 
 --- code ---
 ---
@@ -147,13 +147,13 @@ line_highlights:
 ---
 
 for i in range(2):    
-forward()     
+vorwaerts()     
 sleep(1)     
-back()     
+zurueck()     
 sleep(1)     
-right()     
+rechts()     
 sleep(1)     
-left()      
+links()      
 sleep(1)      
 stop()
 
@@ -163,7 +163,7 @@ stop()
 
 --- task ---
 
-Run your code and check that the wheels turn correctly.
+Führe deinen Code aus und überprüfe, ob sich die Räder richtig drehen.
 
 --- /task ---
 
