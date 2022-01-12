@@ -1,23 +1,23 @@
 ---
-title: LEGO® remote controlled car
+title: LEGO® 원격조종 자동차
 hero_image: images/banner.png
-description: Make a remote controlled car with LEGO® and the Build HAT
+description: LEGO®와 Build HAT로 원격조종 자동차를 만드세요
 version: 4
 listed: true
 copyedit: true
 last_tested: "2020-02-26"
 steps:
   - 
-    title: Introduction
+    title: 들어가며
   - 
-    title: Set up the LEGO® Spike™ motors
+    title: LEGO® Spike™ 모터설정
   - 
-    title: Set up and test the Bluetooth control
+    title: Bluetooth 설정 및 테스트
   - 
-    title: Control your motors with Blue Dot
+    title: Blue Dot으로 모터 제어하기
   - 
-    title: Assemble your robot
+    title: 로봇 조립
   - 
-    title: Add LEDs
+    title: LED 추가하기
   - 
-    title: What next?
+    title: 더 나아가기
