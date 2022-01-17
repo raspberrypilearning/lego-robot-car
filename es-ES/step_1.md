@@ -1,72 +1,72 @@
-## Introduction
+## Introducción
 
-Use LEGO® and the Raspberry Pi Build HAT to build a robot car, then program it so you can control it with a Bluetooth connection from your Android phone. Then add some LEDs to dazzle your friends.
+Usa LEGO® y Raspberry Pi Build HAT para construir un carro robot, luego prográmalo para que puedas controlarlo con una conexión Bluetooth desde tu teléfono Android. Luego agrega algunos LED para deslumbrar a sus amigos.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">The name [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)</span> was proposed in 1997 by Jim Kardach of Intel. At the time of this proposal, he was reading Frans G. Bengtsson's historical novel *The Long Ships* about Vikings and the 10th-century Danish king Harald Bluetooth. Bluetooth was King Harald's nickname, and he united the Danish tribes into a single kingdom, just as Bluetooth unites communication protocols.
+<span style="color: #0faeb0">El nombre [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)</span> fue propuesto en 1997 por Jim Kardach de Intel. En el momento de esta propuesta, estaba leyendo la novela histórica de Frans G. Bengtsson * The Long Ships * sobre los vikingos y el rey danés del siglo X, Harald Bluetooth. Bluetooth era el apodo del rey Harald, quien unió a las tribus danesas en un solo reino, al igual que Bluetooth une los protocolos de comunicación.
 </p>
 
-You will:
-+ Control LEGO® Technic™ motors using the Raspberry Pi Build HAT
-+ Use Bluetooth to send signals to the Raspberry Pi
-+ Learn how to control LEDs using gpiozero on the Raspberry Pi
+Vas a:
++ Controlar los motores LEGO® Technic ™ usando un Raspberry Pi Build HAT
++ Usar Bluetooth para enviar señales a la Raspberry Pi
++ Aprender a controlar los LEDs usando gpiozero en la Raspberry Pi
 
 --- no-print ---
 
-![A photo of the finished LEGO® wheeled bot with the Raspberry Pi and Build HAT centrally mounted. There is a breadboard with wires attached to LEDs on top of the stack.](images/lego-bot.gif)
+![Una foto del robot con ruedas LEGO® terminado con la Raspberry Pi y Build HAT montados en el centro. Una placa de pruebas con cables conectados a LEDs en la parte superior de la pila.](images/lego-bot.gif)
 
 --- /no-print ---
 
-You will build a wheeled car. Its movement will be determined by two separately driven wheels placed on either side of the car, allowing it to move forwards, backwards, and turn. You can optionally add LEDs to the car to act as brake lights, indicators, or headlights.
+Construirás un carro con ruedas. Su movimiento estará determinado por dos ruedas impulsadas por separado colocadas a cada lado del automóvil, lo que le permitirá moverse hacia adelante, hacia atrás y girar. Opcionalmente, puedes agregar LEDs al automóvil para que actúen como luces de freno, indicadores o faros delanteros.
 
 --- print-only ---
 
-![Complete project.](images/buggy.JPG)
+![Proyecto completo.](images/buggy.JPG)
 
 --- /print-only ---
 
-### You will need
+### Necesitarás
 
-+ A Raspberry Pi computer running the latest Desktop version of Raspberry Pi OS
-+ A Raspberry Pi Build HAT
-+ 2× LEGO® Technic™ motors
-+ An assortment of LEGO®, including two wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
-+ An Android mobile phone or tablet
-+ 5× AA batteries and a holder pack with a barrel jack
++ Una computadora Raspberry Pi que ejecuta la última versión de escritorio del sistema operativo Raspberry Pi
++ Un Build HAT Raspberry Pi
++ 2 × motores LEGO® Technic ™
++ Variedad de LEGO®, incluidas las ruedas (utilizamos una selección del kit [LEGO® Education SPIKE ™ Prime](https://education.lego.com/en-gb/product/spike-prime))
++ Un teléfono móvil o tableta Android
++ 5 pilas AA y un contenedor de pilas con un conector de barril
 
 ### Software
 
-+ Build HAT Python library to control the Build HAT
-+ Blue Dot Python library and Blue Dot Android app
-+ gpiozero Python library
++ La biblioteca build HAT de Python para controlar el build HAT
++ Biblioteca Blue Dot de Python y la aplicación Blue Dot para Android
++ la biblioteca gpiozero de Python
 
 
 --- collapse ---
 ---
-title: Additional information for educators
+title: Información adicional para educadores
 ---
 
-You can download the complete project [here](https://rpf.io/p/en/bt-robot-car-go).
+Puedes descargar el proyecto completo [aquí](https://rpf.io/p/en/bt-robot-car-go){: target = "_ blank.
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/bt-robot-car/print){:target="_blank"}.
+Si necesitas imprimir este proyecto, usa la [versión para imprimir](https://projects.raspberrypi.org/en/projects/bt-robot-car/print){:target="_blank"}.
 
 --- /collapse ---
 
-Before you begin, you'll need to have set up your Raspberry Pi computer and attached your Build HAT:
+Antes de comenzar, deberás configurar tu computadora Raspberry Pi e instalar el Build HAT:
 
 --- task ---
 
-Mount your Raspberry Pi on to the LEGO Build Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
+Monta tu Raspberry Pi en la placa de construcción LEGO usando pernos y tuercas M2, asegurándote de que la Raspberry Pi esté en el lado sin borde':
 
- ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
+ ![Raspberry Pi atornillada a una placa de construcción LEGO magenta.](images/build_11.jpg)
 
 --- /task ---
 
-Mounting the Raspberry Pi this way round enables easy access to the ports as well as the SD card slot. The Build Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+Montar la Raspberry Pi de esta manera permite un fácil acceso a los puertos, así como a la ranura de la tarjeta SD. La placa de construcción te permitirá conectar la Raspberry Pi a la estructura principal de tu tablero más fácilmente.
 
 --- task ---
 
-Line up the Build HAT with the Raspberry Pi, ensuring you can see the `This way up` label. Make sure all the GPIO pins are covered by the HAT, and press down firmly. (The example uses a [stacking header](https://www.adafruit.com/product/2223){:target="_blank"}, which makes the pins longer.)
+Alinea el Build HAT con la Raspberry Pi, asegurándote de que puedes ver la etiqueta `This way up`. Asegúrate de que todos los pines GPIO estén cubiertos por el HAT y presiona firmemente. (El ejemplo usa un encabezado de apilamiento [](https://www.adafruit.com/product/2223){: target = "_ blank"}, lo que alarga los pines)
 
 ![Image of GPIO pins poking through the top of the Build HAT.](images/build_15.jpg) ![Animation showing Buildhat fitting to Raspberry Pi](images/haton.gif)
 
