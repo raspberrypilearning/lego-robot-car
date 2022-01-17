@@ -1,18 +1,18 @@
-## Add some LEDs
+## Añadiendo algunos LEDs
 
-The holes in LEGO® elements are just the right size for holding small LEDs, so you can easily add them to your project. Alternatively, you could use a breadboard.
+Los orificios de los elementos LEGO® tienen el tamaño perfecto para contener LEDs pequeños, por lo que puedes agregarlos fácilmente a tu proyecto. Alternativamente, puedes usar una placa de pruebas.
 
-There are plenty of ways of mounting a breadboard using LEGO®. A couple of ideas are shown below, but you can use whatever elements you have available to you.
+Hay muchas formas de montar una placa de pruebas con LEGO®. A continuación se muestran un par de ideas, pero puedes utilizar los elementos que tengas disponibles.
 
-![A photo of a half-size breadboard mounted onto a LEGO® plate. It is supported by LEGO® beams underneath and then sandwiched into a frame at the sides to keep the top surface where components are plugged in, free.](images/big-breadboard.png)
+![Una foto de una placa de pruebas de tamaño medio montada en una placa LEGO®. Está soportada por vigas LEGO® por debajo y luego intercalada en un marco a los lados para mantener libre la superficie superior donde se conectan los componentes.](images/big-breadboard.png)
 
-You could use a small breadboard and sit it in the space on top of your HAT. Many breadboards have an adhesive strip on the bottom that you could use to stick it firmly onto the HAT, but note that this will partially cover the slit that is used for the camera cable if you wish to add a [Raspberry Pi camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) to your project.
+Puedes usar una pequeña placa de pruebas y colocarla en el espacio encima de su HAT. Muchas placas de prueba tienen una tira adhesiva en la parte inferior que puedes usar para pegarla firmemente en el HAT, pero ten en cuenta que esto cubrirá parcialmente la hendidura que se usa para el cable de la cámara si deseas agregar una [cámara Raspberry Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) a tu proyecto.
 
-![A photo of a green mini breadboard sitting on top of the Build HAT. It is a good fit, but does cover up the camera slit, which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
+![Una foto de una placa de pruebas mini verde encima del Build HAT. Encaja bien, pero cubre la hendidura de la cámara, que está al lado del conector de barril del HAT.](images/breadboard_on_hat.jpg)
 
 --- task ---
 
-Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the example below, Pins 20 and 21 are used on the Raspberry Pi.
+Use su placa de pruebas para conectar dos o más LEDs a tu Raspberry Pi. En el siguiente ejemplo, se utilizan los pines 20 y 21 de la Raspberry Pi.
 
 --- /task ---
 
@@ -20,17 +20,17 @@ Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the exa
 
 [[[rpi-connect-led]]]
 
-If needed, you can add some extra jumper leads to extend the reach of the LEDs.
+Si es necesario, puedes agregar algunos cables de puente adicionales para extender el alcance de los LEDs.
 
-![Two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself; on the right, it is attached using flying jumper leads.](images/legtolegs2.png)
+![Dos fotos de LEDs conectados a una placa de pruebas. A la izquierda, el LED está pegado en la placa de pruebas; a la derecha, se conecta mediante cables de puente.](images/legtolegs2.png)
 
-Additionally, the LEDs can be inserted into the LEGO® element of your choice. If you find that the legs of the LEDs are too close together or keep touching, you can insulate one with some tape to prevent short-circuiting.
+Además, los LEDs se pueden insertar en el elemento LEGO® de tu elección. Si encuentras que las patas de los LEDs están demasiado juntas o se tocan puedes aislar una con cinta para evitar cortocircuitos.
 
-![A photo of an LED inserted into a LEGO® beam element.](images/ledsinlego.png)
+![Una foto de un LED insertado en un elemento de viga LEGO®.](images/ledsinlego.png)
 
 --- task ---
 
-Alter your code to import the `LED` object from `gpiozero` and set up the LEDs.
+Modifica tu código para importar el objeto `LED` de `gpiozero` y configura los LEDs.
 
 --- code ---
 ---
@@ -43,11 +43,11 @@ from bluedot import BlueDot
 from signal import pause     
 from gpiozero import LED
 
-motor_left = Motor('A')     
-motor_right = Motor('B')     
-dot = BlueDot()     
-led_left = LED(20)     
-led_right = LED(21)
+motor_izquierda = Motor('A')     
+motor_derecha = Motor('B')     
+punto = BlueDot()     
+led_izquierda = LED(20)     
+led_derecha = LED(21)
 
 --- /code ---
 
@@ -56,7 +56,7 @@ led_right = LED(21)
 
 --- task ---
 
-Alter your code so that the LEDs light up, dependent on the movement of the car. In the example below, both LEDs light when the car moves backwards or stops. They turn off when the car moves forwards. The left LED will blink when the car moves left and the right LED will blink when the car moves right.
+Modifica tu código para que los LEDs se enciendan, dependiendo del movimiento del automóvil. En el siguiente ejemplo, ambos LEDs se encienden cuando el automóvil se mueve hacia atrás o se detiene. Se apagan cuando el coche avanza. El LED izquierdo parpadeará cuando el automóvil se mueva hacia la izquierda y el LED derecho parpadeará cuando el automóvil se mueva hacia la derecha.
 
 --- code ---
 ---
@@ -64,48 +64,48 @@ language: python filename: bt_car.py line_numbers: true line_number_start: 13
 line_highlights: 16, 17, 23, 24, 30, 31, 37, 38, 44, 45
 ---
 
-def stop():    
-motor_left.stop()     
-motor_right.stop()    
-led_right.on()     
-led_left.on()
+def parar():    
+motor_izquirda.stop()     
+motor_derecha.stop()    
+led_derecha.on()     
+led_izquierda.on()
 
 
-def forward():    
-motor_left.start(-100)    
-motor_right.start(100)    
-led_right.off()    
-led_left.off()
+def avanzar():    
+motor_izquierda.start(-100)    
+motor_derecha.start(100)    
+led_derecha.off()    
+led_izquierda.off()
 
 
-def backward():    
-motor_left.start(100)    
-motor_right.start(-100)    
-led_right.on(0.2)    
-led_left.on(0.2)
+def atras():    
+motor_izquierda.start(100)    
+motor_derecha.start(-100)    
+led_derecha.on(0.2)    
+led_izquierda.on(0.2)
 
 
-def right():    
-motor_left.start(-100)    
-motor_right.start(-100)    
-led_right.blink(0.2)    
-led_left.off()
+def derecha():    
+motor_izquierda.start(-100)    
+motor_derecha.start(-100)    
+led_derecha.blink(0.2)    
+led_izquierda.off()
 
 
-def left():    
-motor_left.start(100)    
-motor_right.start(100)    
-led_right.off()     
-led_left.blink(0.2)
+def izquierda():    
+motor_izquierda.start(100)    
+motor_derecha.start(100)    
+led_derecha.off()     
+led_izquierda.blink(0.2)
 
 --- /code ---
 
 --- /task ---
 
-![The car is static and held in a hand, with LEDs blinking as described in the text above, dependent on wheel motion.](images/led_indicators.gif)
+![El automóvil parado y sostenido en una mano, con los LED parpadeando como se describe en el texto anterior, dependiendo del movimiento de las ruedas.](images/led_indicators.gif)
 
-You can use your imagination to light or blink the LEDs in any way you want.
+Puedes usar tu imaginación para encender o hacer parpadear los LEDs de la forma que desees.
 
-![The finished LEGO® wheeled bot with Raspberry Pi and Build HAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on.](images/brake_lights.gif)
+![El robot con ruedas LEGO® terminado con la Raspberry Pi y el Build HAT montados en el centro. El robot retrocede hacia la cámara y, cuando se detiene, se encienden dos LEDs rojos en la parte posterior.](images/brake_lights.gif)
 
 --- save ---
