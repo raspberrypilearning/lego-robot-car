@@ -1,13 +1,13 @@
-## What next?
+## ¿Qué sigue?
 
-If you would like to enhance your Bluetooth car, then you could think about adding more electronic components:
+Si deseas mejorar su automóvil Bluetooth, podrías pensar en agregar más componentes electrónicos:
 
-+ Add extra LEDs as flashing police 'pursuit' lights, or headlights when the car drives
++ Agrega LEDs adicionales como luces intermitentes de "persecución" de la policía o faros delanteros cuando el automóvil marcha
 
-+ Many vehicles make a sound when they are reversing, so you could add a buzzer to your project
++ Muchos vehículos emiten un sonido cuando están dando marcha atrás, por lo que podrías agregar un zumbator a tu proyecto
 
-+ You could even use an Ultrasonic Distance Sensor (UDS), which detects when the car approaches an obstacle, and automatically stops it from crashing!
++ ¡Incluso podrías usar un sensor de distancia ultrasónico (UDS), que detecta cuando el automóvil se acerca a un obstáculo y evita que choque automáticamente!
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Data Plotter](https://projects.raspberrypi.org/en/projects/lego-plotter) project. In this project, you will make a data plotter that draws on paper!
+Si está siguiendo la [Introducción a LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro), puedes pasar al proyecto [Trazador LEGO](https://projects.raspberrypi.org/en/projects/lego-plotter). ¡En este proyecto, harás un trazador que dibuja en papel!
 
-![Lego Data Plotter](images/plotterbanner.png)
+![Trazador Lego](images/plotterbanner.png)
