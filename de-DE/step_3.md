@@ -35,7 +35,7 @@ Abhängig von der Android-Version, die du verwendest, können die auszuführende
 
 --- task ---
 
-**Einstellungen | Verbindungen | Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder <0>Verfügbare Geräte</0>.
+**Einstellungen | Verbindungen | Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder <0>Verfügbare Geräte.
 
 ![Einstellungen für verbundene Geräte im Bluetooth-Menü in Android.](images/bt_and_1.png)
 
