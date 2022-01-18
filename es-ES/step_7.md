@@ -1,4 +1,4 @@
-## ¿Qué sigue?
+## ¿Qué hacer a continuación?
 
 Si deseas mejorar su automóvil Bluetooth, podrías pensar en agregar más componentes electrónicos:
 
