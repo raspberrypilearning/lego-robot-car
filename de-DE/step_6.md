@@ -1,4 +1,4 @@
-## Add some LEDs
+## LEDs hinzufügen
 
 Die Löcher in LEGO® Elementen haben genau die richtige Größe, um kleine LEDs zu halten, sodass du sie leicht zu deinem Projekt hinzufügen kannst. Alternativ kannst du ein Steckbrett verwenden.
 

@@ -35,7 +35,7 @@ Abhängig von der Android-Version, die du verwendest, können die auszuführende
 
 --- task ---
 
-**Einstellungen | Verbindungen | Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder <0>Verfügbare Geräte</0>.
+**Einstellungen / Verbindungen / Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder **Verfügbare Geräte**.
 
 ![Einstellungen für verbundene Geräte im Bluetooth-Menü in Android.](images/bt_and_1.png)
 
@@ -61,7 +61,7 @@ Auf dem Raspberry Pi solltest du aufgefordert werden, die Kopplungs-Anfrage zu a
 
 Ein Klick auf **OK** sollte eine erfolgreiche Kopplung des Raspberry Pi und der Android-Geräte anzeigen.
 
-![Bestätigungsfeld, das anzeigt, dass das Android-Gerät und der Raspberry Pi gekoppelt sind.](imgaes/bt_rpi_3.png)
+![Bestätigungsfeld, das anzeigt, dass das Android-Gerät und der Raspberry Pi gekoppelt sind.](images/bt_rpi_3.png)
 
 --- /task ---
 
@@ -77,12 +77,15 @@ Erstelle auf deinem Raspberry Pi eine neue Python-Datei namens bluedot_test.py m
 
 --- code ---
 ---
-language: python filename: bluedot_test.py line_numbers: true line_number_start:
+language: python 
+filename: bluedot_test.py 
+line_numbers: true 
+line_number_start:
 line_highlights:
 ---
 
 from bluedot import BlueDot   
-dot = BlueDot()
+punkt = BlueDot()
 
 print('Warten...')   
 punkt.wait_for_press()    
@@ -111,7 +114,7 @@ Klicke auf **raspberrypi** und du solltest dann einen großen blauen Punkt auf d
 title: Bluedot wählt meinen Raspberry Pi nicht aus
 ---
 
- Damit BlueDot eine Verbindung zu deinem Raspberry Pi herstellen kann, muss ein Server auf dem Raspberry Pi laufen. Dies bedeutet, dass in deinem Python-Programm bereits ein BlueDot-Objekt (`dot = BlueDot()`) erstellt worden sein muss und auf Verbindungen wartet.
+ Damit BlueDot eine Verbindung zu deinem Raspberry Pi herstellen kann, muss ein Server auf dem Raspberry Pi laufen. Dies bedeutet, dass in deinem Python-Programm bereits ein BlueDot-Objekt (`punkt = BlueDot()`) erstellt worden sein muss und auf Verbindungen wartet.
 
  Stelle sicher, dass du dein Programm ausführst, bevor du versuchst, eine Verbindung mit Bluedot herzustellen, und dass es keine Fehler hat.
 

@@ -1,4 +1,4 @@
-## Set up the LEGO® Spike™ motors
+## Einrichten der LEGO® Spike™ Motoren
 
 Es ist einfacher, dein Programm zu testen und zu entwickeln, bevor du deinen Roboter baust. Dies verringert die Gefahr, dass dein wunderschönes Modell ruiniert wird, wenn ein Motor den Roboter unerwartet in die falsche Richtung schickt und er von deinem Schreibtisch rauscht (obwohl das Gute an LEGO® natürlich ist, dass du ihn immer wieder aufbauen kannst).
 
