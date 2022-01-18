@@ -35,7 +35,7 @@ Abhängig von der Android-Version, die du verwendest, können die auszuführende
 
 --- task ---
 
-**Einstellungen | Verbindungen | Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder <0>Verfügbare Geräte.
+**Einstellungen | Verbindungen | Bluetooth** findest du deine Bluetooth-Einstellungen und dann **Verbundene Geräte** oder <0>Verfügbare Geräte</0>.
 
 ![Einstellungen für verbundene Geräte im Bluetooth-Menü in Android.](images/bt_and_1.png)
 
@@ -67,7 +67,7 @@ Ein Klick auf **OK** sollte eine erfolgreiche Kopplung des Raspberry Pi und der 
 
 Möglicherweise wirst du auch aufgefordert, einen Code zu bestätigen, bevor du die Geräte koppeln darfst.
 
-![Box asking for code confirmation on the Android device.](images/android3.png)
+![Box mit Frage nach Code-Bestätigung auf dem Android-Gerät.](images/android3.png)
 
 ### Blue Dot testen
 
@@ -77,10 +77,7 @@ Erstelle auf deinem Raspberry Pi eine neue Python-Datei namens bluedot_test.py m
 
 --- code ---
 ---
-language: python 
-filename: bluedot_test.py 
-line_numbers: true 
-line_number_start:
+language: python filename: bluedot_test.py line_numbers: true line_number_start:
 line_highlights:
 ---
 
@@ -114,7 +111,7 @@ Klicke auf **raspberrypi** und du solltest dann einen großen blauen Punkt auf d
 title: Bluedot wählt meinen Raspberry Pi nicht aus
 ---
 
- Damit BlueDot eine Verbindung zu deinem Raspberry Pi herstellen kann, muss ein Server auf dem Raspberry Pi laufen. This means that a BlueDot object (`dot = BlueDot()`) must have already been created in your Python program and be waiting for connections.
+ Damit BlueDot eine Verbindung zu deinem Raspberry Pi herstellen kann, muss ein Server auf dem Raspberry Pi laufen. Dies bedeutet, dass in deinem Python-Programm bereits ein BlueDot-Objekt (`dot = BlueDot()`) erstellt worden sein muss und auf Verbindungen wartet.
 
  Stelle sicher, dass du dein Programm ausführst, bevor du versuchst, eine Verbindung mit Bluedot herzustellen, und dass es keine Fehler hat.
 

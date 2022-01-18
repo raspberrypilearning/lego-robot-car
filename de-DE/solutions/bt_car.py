@@ -5,7 +5,7 @@ from gpiozero import LED
 
 motor_links = Motor('A')
 motor_rechts = Motor('B')
-dot = BlueDot()
+punkt = BlueDot()
 led_links = LED(20)
 led_rechts = LED(21)
 
@@ -56,8 +56,8 @@ def bewege(pos):
         rechts()
 
 
-dot.when_pressed = move
-dot.when_released = stop
-dot.when_moved = move
+punkt.when_pressed = bewege
+punkt.when_released = stop
+punkt.when_moved = bewege
 
 pause()
