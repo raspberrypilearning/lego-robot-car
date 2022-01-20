@@ -6,7 +6,7 @@ LEGO®를 사용하여 브레드보드를 장착하는 방법에는 여러 가�
 
 ![LEGO® 플레이트에 장착된 하프 사이즈 브레드보드의 사진 아래에 있는 LEGO® 빔으로 지지된 다음 측면의 프레임에 끼워져, 구성 요소가 연결된 상단 표면을 자유롭게 유지](images/big-breadboard.png)
 
-You could use a small breadboard and sit it in the space on top of your HAT. 많은 브레드보드에는 바닥에 접착 스트립이 있어 HAT에 단단히 붙일 수 있지만 [Raspberry Pi 카메라](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) 를 프로젝트에 추가하려는 경우 카메라 케이블에 사용되는 슬릿을 일부 덮을 수 있습니다.
+작은 브레드보드를 사용하여 HAT 위에 있는 공간에 앉힐 수도 있습니다. 많은 브레드보드에는 바닥에 접착 스트립이 있어 HAT에 단단히 붙일 수 있지만 [Raspberry Pi 카메라](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) 를 프로젝트에 추가하려는 경우 카메라 케이블에 사용되는 슬릿을 일부 덮을 수 있습니다.
 
 ![Build HAT 위에 앉아 있는 녹색 미니 브레드보드의 사진 HAT의 배럴 잭 옆에 있는 카메라 슬릿 덮기](images/breadboard_on_hat.jpg)
 
