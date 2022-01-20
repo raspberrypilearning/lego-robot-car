@@ -18,7 +18,7 @@ M2 볼트와 너트를 사용하여 Raspberry Pi와 Build HAT를 LEGO® 부품�
 
 [[[attach_rpi_to_lego]]]
 
-You can power the Raspberry Pi and Build HAT using a battery connected to a barrel jack. 최소 5개의 AA 배터리 또는 9V 배터리가 필요합니다.
+배럴 잭에 연결된 배터리 팩을 사용하여 Raspberry Pi에 전원을 공급하고 Build HAT를 빌드할 수 있습니다. 최소 5개의 AA 배터리 또는 9V 배터리가 필요합니다.
 
 ![배럴 잭에 연결된 팩에 5개의 AA 배터리](images/AA_battery.jpg)
 
@@ -52,7 +52,7 @@ Raspberry Pi에 전원을 공급한 다음 `bt_car.py` 프로그램을 실행하
 
 다음으로 Raspberry Pi를 **헤드리스** 상태에서 실행할 수 있도록 해야 합니다. 즉, 모니터, 키보드 또는 마우스를 연결하지 않고도 코드를 실행할 수 있어야 한다는 말입니다.
 
-First of all, make sure your Raspberry Pi is [connected to a WiFi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
+우선, Raspberry Pi가 [WiFi 네트워크에 연결](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md)되어 있는지 확인합니다.
 
 **cron** 이라는 프로그램을 사용하여 Raspberry Pi가 부팅될 때마다 Python 스크립트가 실행되도록 만들 수 있습니다.
 
