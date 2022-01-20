@@ -1,6 +1,6 @@
 ## Bluetooth 설정 및 테스트
 
-원격으로 자동차를 조종하려면 Blue Dot 라이브러리와 Android 앱을 사용해야 합니다. You should only have to pair your raspberry pi and mobile device once. 그 후에는 쉽게 연결할 수 있습니다.
+원격으로 자동차를 조종하려면 Blue Dot 라이브러리와 Android 앱을 사용해야 합니다. Raspberry Pi와 스마트폰은 한 번만 페어링하면 됩니다. 그 후에는 쉽게 연결할 수 있습니다.
 
 --- collapse ---
 ---
@@ -27,7 +27,7 @@ sudo pip3 install bluedot
 
 바탕 화면의 오른쪽 상단 모서리에 있는 Bluetooth 아이콘을 클릭하고 Bluetooth가 **On** 로 설정되어 있고 장치가 **검색 가능**인지 확인하십시오.
 
-![Raspberry Pi Bluetooth menu.](images/bt_rpi_1.png)
+![Raspberry Pi Bluetooth 메뉴](images/bt_rpi_1.png)
 
 --- /task ---
 
@@ -35,7 +35,7 @@ sudo pip3 install bluedot
 
 --- task ---
 
-In **Settings**, find your Bluetooth settings and then **Connected Devices**.
+**설정**에서 Bluetooth 를 찾은 다음 **연결된 장치**를 찾습니다.
 
 ![Android의 Bluetooth 메뉴에서 연결된 장치 설정](images/bt_and_1.png)
 
@@ -49,7 +49,7 @@ In **Settings**, find your Bluetooth settings and then **Connected Devices**.
 
 그런 다음 대화 상자에서 **페어링** 을 누릅니다.
 
-![Pair with Raspberry Pi? 취소 및 페어링 옵션과 함께 표시](images/bt_and_3.png)
+![Raspberry Pi와 페어링? 취소 및 페어링 옵션과 함께 표시](images/bt_and_3.png)
 
 --- /task ---
 
