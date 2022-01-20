@@ -48,7 +48,7 @@ motor_right.run_for_seconds(seconds=10, speed=-50)
 
 --- task ---
 
-모터가 10초 동안 작동하도록 하는 두 줄의 코드를 제거하고 이 두 함수를 추가하세요. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
+모터가 10초 동안 작동하도록 하는 두 줄의 코드를 제거하고 이 두 함수를 추가하세요. LEGO 모터에서 `start()` 함수는 `run` 함수와 다르게 작동하므로 이번에는 함께 실행됩니다.
 
 --- code ---
 ---
