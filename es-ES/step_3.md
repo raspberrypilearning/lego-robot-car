@@ -85,10 +85,10 @@ line_highlights:
 ---
 
 from bluedot import BlueDot   
-dot = BlueDot()
+punto = BlueDot()
 
 print('Esperando...')   
-dot.wait_for_press()    
+punto.wait_for_press()    
 print("¡Funcionó!")
 
 --- /code ---
@@ -114,7 +114,7 @@ Haz clic en **raspberrypi** en el menú y deberías ver un gran punto azul en la
 title: Bluedot no selecciona mi Raspberry Pi
 ---
 
- Para que BlueDot se conecte a tu Raspberry Pi, es necesario que se esté ejecutando un servidor en la Raspberry Pi. Esto significa que un objeto BlueDot (`dot = BlueDot ()`) tiene que haberse creado en tu programa Python y tiene que estar esperando conexiones.
+ Para que BlueDot se conecte a tu Raspberry Pi, es necesario que se esté ejecutando un servidor en la Raspberry Pi. Esto significa que un objeto BlueDot (`punto = BlueDot ()`) tiene que haberse creado en tu programa Python y tiene que estar esperando conexiones.
 
  Asegúrate de que estás ejecutando tu programa antes de intentar conectarte con Bluedot y que no tenga errores.
 
