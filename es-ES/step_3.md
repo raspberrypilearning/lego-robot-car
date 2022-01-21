@@ -61,7 +61,7 @@ En la Raspberry Pi, vas a ver un mensaje pidiendo que aceptes la solicitud de si
 
 Al hacer clic en **Aceptar** debería mostrar una sincronización exitosa entre Raspberry Pi el dispositivos Android.
 
-![Cuadro de confirmación que muestra que el dispositivo Android y la Raspberry Pi están sincronizados.](imgaes/bt_rpi_3.png)
+![Cuadro de confirmación que muestra que el dispositivo Android y la Raspberry Pi están sincronizados.](images/bt_rpi_3.png)
 
 --- /task ---
 
