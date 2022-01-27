@@ -1,7 +1,7 @@
 ---
-title: Carro LEGO® a control remoto
+title: Coche LEGO® a control remoto
 hero_image: images/banner.png
-description: Crea un carro a control remoto con LEGO® y Build HAT
+description: Crea un coche a control remoto con LEGO® y Build HAT
 version: 4
 listed: true
 copyedit: true
@@ -9,7 +9,7 @@ last_tested: "2020-02-26"
 steps:
   - title: Introducción
   - title: Configuración de los motores LEGO® Spike ™
-  - title: Configura y pruebe el control de Bluetooth
+  - title: Configura y prueba el control de Bluetooth
   - title: Controla tus motores con Blue Dot
   - title: Armando tu robot
   - title: Añadiendo LEDs
