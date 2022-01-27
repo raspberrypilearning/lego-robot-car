@@ -1,4 +1,4 @@
-## Configura y pruebe el control de Bluetooth
+## Configura y prueba el control de Bluetooth
 
 Para manejar tu carro desde lejos, utilizarás la biblioteca y la aplicación de Android Blue Dot. Solo deberías tener que sincronizar tu raspberry pi y tu dispositivo móvil una vez. Después de eso, deberían conectarse fácilmente cada vez.
 

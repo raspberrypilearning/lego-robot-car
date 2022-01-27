@@ -1,6 +1,6 @@
 ## Introducción
 
-Usa LEGO® y Raspberry Pi Build HAT para construir un carro robot, luego prográmalo para que puedas controlarlo con una conexión Bluetooth desde tu teléfono Android. Luego agrega algunos LED para deslumbrar a sus amigos.
+Usa LEGO® y Raspberry Pi Build HAT para construir un coche robot, luego prográmalo para que puedas controlarlo con una conexión Bluetooth desde tu teléfono Android. Luego agrega algunos LED para deslumbrar a sus amigos.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 <span style="color: #0faeb0">El nombre [Bluetooth](https://es.wikipedia.org/wiki/Bluetooth)</span> fue propuesto en 1997 por Jim Kardach de Intel. En el momento de esta propuesta, estaba leyendo la novela histórica de Frans G. Bengtsson *The Long Ships* sobre los vikingos y el rey danés del siglo X, Harald Bluetooth. Bluetooth era el apodo del rey Harald, quien unió a las tribus danesas en un solo reino, al igual que Bluetooth une los protocolos de comunicación.
@@ -17,7 +17,7 @@ Vas a:
 
 --- /no-print ---
 
-Construirás un carro con ruedas. Su movimiento estará determinado por dos ruedas impulsadas por separado colocadas a cada lado del automóvil, lo que le permitirá moverse hacia adelante, hacia atrás y girar. Opcionalmente, puedes agregar LEDs al automóvil para que actúen como luces de freno, indicadores o faros delanteros.
+Construirás un coche con ruedas. Su movimiento estará determinado por dos ruedas impulsadas por separado colocadas a cada lado del automóvil, lo que le permitirá moverse hacia adelante, hacia atrás y girar. Opcionalmente, puedes agregar LEDs al automóvil para que actúen como luces de freno, indicadores o faros delanteros.
 
 --- print-only ---
 
@@ -27,7 +27,7 @@ Construirás un carro con ruedas. Su movimiento estará determinado por dos rued
 
 ### Necesitarás
 
-+ Una computadora Raspberry Pi que ejecuta la última versión de escritorio del sistema operativo Raspberry Pi
++ Un ordenador Raspberry Pi que ejecuta la última versión de escritorio del sistema operativo Raspberry Pi
 + Un Build HAT Raspberry Pi
 + 2 × motores LEGO® Technic ™
 + Variedad de LEGO®, incluidas las ruedas (utilizamos una selección del kit [LEGO® Education SPIKE ™ Prime](https://education.lego.com/en-gb/product/spike-prime))
@@ -52,7 +52,7 @@ Si necesitas imprimir este proyecto, usa la [versión para imprimir](https://pro
 
 --- /collapse ---
 
-Antes de comenzar, deberás configurar tu computadora Raspberry Pi e instalar el Build HAT:
+Antes de comenzar, deberás configurar tu ordenador Raspberry Pi e instalar el Build HAT:
 
 --- task ---
 

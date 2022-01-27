@@ -26,7 +26,7 @@ Puedes alimentar la Raspberry Pi y Build HAT con una batería conectada a un con
 
 Las siguientes fotos muestran algunos diseños diferentes de cómo se podría construir tu carro LEGO®, que incorporan la Raspberry Pi, Build HAT y el paquete de baterías.
 
-![Un carro robot básico desde cuatro ángulos diferentes.](images/basic_bot.png)
+![Un coche robot básico desde cuatro ángulos diferentes.](images/basic_bot.png)
 
 ![Cuatro vistas de un posible diseño de carro robot.](images/bot-grid_2.png)
 
@@ -50,7 +50,7 @@ Enciende su Raspberry Pi y luego ejecuta tu programa `bt_car.py`. Comprueba que 
 
 Es posible que debas hacer cambios en tu código, dependiendo de qué lado del automóvil y en qué dirección están conectados tus motores.
 
-A continuación, debes hacer que tu Raspberry Pi funcione **sin cabeza**. Esto significa ejecutar tu código sin necesidad de tener un monitor, teclado o mouse conectados.
+A continuación, debes hacer que tu Raspberry Pi funcione **sin cabeza**. Esto significa ejecutar tu código sin necesidad de tener un monitor, teclado o ratón conectados.
 
 En primer lugar, asegúrate de que tu Raspberry Pi esté [conectada a una red WiFi](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
 

@@ -101,7 +101,7 @@ La función `mover` tiene un solo parámetro, que se llama `pos`. Éste se pasar
 
 --- task ---
 
-Agrega dos llamadas a métodos al final de tu código. Esto hará que el automóvil avance y se detenga. La llamada final se asegura de que el programa no termine al final del script.
+Agrega dos llamadas a métodos al final de tu programa. Esto hará que el automóvil avance y se detenga. La llamada final se asegura de que el programa no termine al final del programa.
 
 --- code ---
 ---
@@ -122,7 +122,7 @@ pause()
 
 --- task ---
 
-Ejecuta tu código. En la aplicación Blue Dot de tu dispositivo, presiona el punto azul cerca de la parte superior y los motores deberían girar. Cuando quitas el dedo del punto azul, los motores deben detenerse.
+Ejecuta tu programa. En la aplicación Blue Dot de tu dispositivo, presiona el punto azul cerca de la parte superior y los motores deberían girar. Cuando quitas el dedo del punto azul, los motores deben detenerse.
 
 --- /task ---
 
@@ -130,7 +130,7 @@ Por el momento, los motores solo harán girar las ruedas hacia adelante. Usando 
 
 --- task ---
 
-Agregue a tu función `mover` para que los motores muevan el carro hacia atrás, hacia la izquierda y hacia la derecha.
+Agrega a tu función `mover` para que los motores muevan el carro hacia atrás, hacia la izquierda y hacia la derecha.
 
 --- code ---
 ---
@@ -159,7 +159,7 @@ def mover(pos):
 
 --- task ---
 
-Ejecuta tu código nuevamente y pruébalo con la aplicación Blue Dot. Al presionar en la derecha, en la izquierda y en la parte inferior del punto azul, los motores ahora se deben mover en diferentes direcciones.
+Ejecuta tu programa nuevamente y pruébalo con la aplicación Blue Dot. Al presionar en la derecha, en la izquierda y en la parte inferior del punto azul, los motores ahora se deben mover en diferentes direcciones.
 
 --- /task ---
 

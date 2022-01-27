@@ -6,13 +6,13 @@ Hay muchas formas de montar una placa de pruebas con LEGO®. A continuación se 
 
 ![Una foto de una placa de pruebas de tamaño medio montada en una placa LEGO®. Está soportada por vigas LEGO® por debajo y luego intercalada en un marco a los lados para mantener libre la superficie superior donde se conectan los componentes.](images/big-breadboard.png)
 
-Puedes usar una pequeña placa de pruebas y colocarla en el espacio encima de su HAT. Muchas placas de prueba tienen una tira adhesiva en la parte inferior que puedes usar para pegarla firmemente en el HAT, pero ten en cuenta que esto cubrirá parcialmente la hendidura que se usa para el cable de la cámara si deseas agregar una [cámara Raspberry Pi](https://projects.raspberrypi.org/es-ES/projects/getting-started-with-picamera) a tu proyecto.
+Puedes usar una pequeña placa de pruebas y colocarla en el espacio encima del HAT. Muchas placas de prueba tienen una tira adhesiva en la parte inferior que puedes usar para pegarla firmemente en el HAT, pero ten en cuenta que esto cubrirá parcialmente la hendidura que se usa para el cable de la cámara si deseas agregar una [cámara Raspberry Pi](https://projects.raspberrypi.org/es-ES/projects/getting-started-with-picamera) a tu proyecto.
 
 ![Una foto de una placa de pruebas mini verde encima del Build HAT. Encaja bien, pero cubre la hendidura de la cámara, que está al lado del conector de barril del HAT.](images/breadboard_on_hat.jpg)
 
 --- task ---
 
-Use su placa de pruebas para conectar dos o más LEDs a tu Raspberry Pi. En el siguiente ejemplo, se utilizan los pines 20 y 21 de la Raspberry Pi.
+Usa tu placa de pruebas para conectar dos o más LEDs a tu Raspberry Pi. En el siguiente ejemplo, se utilizan los pines 20 y 21 de la Raspberry Pi.
 
 --- /task ---
 
