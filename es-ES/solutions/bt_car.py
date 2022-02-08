@@ -5,7 +5,7 @@ from gpiozero import LED
 
 motor_izquierda = Motor ('A')
 motor_derecha = Motor ('B')
-dot = BlueDot()
+punto = BlueDot()
 led_izquierda = LED(20)
 led_derecha = LED(21)
 
@@ -56,8 +56,8 @@ def mover(pos):
         derecha()
 
 
-dot.when_pressed = move
-dot.when_released = stop
-dot.when_moved = move
+punto.when_pressed = mover
+punto.when_released = parar
+punto.when_moved = mover
 
 pause()
