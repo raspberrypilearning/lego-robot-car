@@ -1,10 +1,10 @@
-## ¿Qué hacer a continuación?
+## ¿Qué sigue?
 
-Si deseas mejorar su automóvil Bluetooth, podrías pensar en agregar más componentes electrónicos:
+Si deseas mejorar tu automóvil Bluetooth, podrías pensar en agregar más componentes electrónicos:
 
 + Agrega LEDs adicionales como luces intermitentes de "persecución" de la policía o faros delanteros cuando el automóvil marcha
 
-+ Muchos vehículos emiten un sonido cuando están dando marcha atrás, por lo que podrías agregar un zumbator a tu proyecto
++ Muchos vehículos emiten un sonido cuando están dando marcha atrás, por lo que podrías agregar un altavoz a tu proyecto
 
 + ¡Incluso podrías usar un sensor de distancia ultrasónico (UDS), que detecta cuando el automóvil se acerca a un obstáculo y evita que choque automáticamente!
 
