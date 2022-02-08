@@ -2,9 +2,9 @@
 
 Es más fácil probar y desarrollar tu programa antes de construir tu robot. Esto reduce el riesgo de arruinar tu maravilloso modelo cuando un motor envía inesperadamente al robot en la dirección incorrecta y se sale de tu escritorio (aunque, por supuesto, lo bueno de usar LEGO® es que siempre puedes reconstruir).
 
-El build HAT de Raspberry Pi y su biblioteca Python te permiten controlar los motores LEGO® Technic ™ directamente desde tu computadora Raspberry Pi.
+El build HAT de Raspberry Pi y su biblioteca Python te permiten controlar los motores LEGO® Technic ™ directamente desde tu ordenador Raspberry Pi.
 
-Enchufe dos motores en los puertos A y B del Build HAT de la Raspberry Pi. Conecta tus baterías al conector de barril del Build HAT y enciéndelo.
+Enchufa dos motores en los puertos A y B del Build HAT de la Raspberry Pi. Conecta tus baterías al conector de barril del Build HAT y enciéndelo.
 
 ### Haz girar los motores
 
