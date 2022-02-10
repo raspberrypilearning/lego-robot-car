@@ -1,23 +1,23 @@
 ---
-title: LEGO® remote controlled car
+title: 乐高（LEGO®） 遥控汽车
 hero_image: images/banner.png
-description: Make a remote controlled car with LEGO® and the Build HAT
+description: 使用乐高（LEGO®）和 Build HAT 创建一个遥控汽车
 version: 4
 listed: true
 copyedit: true
 last_tested: "2020-02-26"
 steps:
   - 
-    title: Introduction
+    title: 介绍
   - 
-    title: Set up the LEGO® Spike™ motors
+    title: 设置乐高（LEGO®）Spike™ 马达
   - 
-    title: Set up and test the Bluetooth control
+    title: 设置和测试蓝牙控制
   - 
-    title: Control your motors with Blue Dot
+    title: 用Blue Dot控制你的马达
   - 
-    title: Assemble your robot
+    title: 组装您的机器人
   - 
-    title: Add LEDs
+    title: 添加 LED
   - 
-    title: What next?
+    title: 接下来还有什么？
