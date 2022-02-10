@@ -1,18 +1,18 @@
-## Add some LEDs
+## 添加一些 LED
 
-The holes in LEGO® elements are just the right size for holding small LEDs, so you can easily add them to your project. Alternatively, you could use a breadboard.
+乐高（LEGO®）组件的孔正好适合安装小号 LED，因此您可以轻松地将它们添加到您的项目中。 或者，您可以使用面包板。
 
-There are plenty of ways of mounting a breadboard using LEGO®. A couple of ideas are shown below, but you can use whatever elements you have available to you.
+有很多方法可以在乐高（LEGO®）上安装面包板。 下面显示了一些想法，但您可以使用现有的任意组件。
 
-![A photo of a half-size breadboard mounted onto a LEGO® plate. It is supported by LEGO® beams underneath and then sandwiched into a frame at the sides to keep the top surface where components are plugged in, free.](images/big-breadboard.png)
+![一张安装在乐高（LEGO®）板上的半尺寸面包板的照片。 它由下方的乐高（LEGO®）横梁支撑，夹在两侧的框架之中，以保持用于连接其他组件的顶面自由。](images/big-breadboard.png)
 
-You could use a small breadboard and sit it in the space on top of your HAT. Many breadboards have an adhesive strip on the bottom that you could use to stick it firmly onto the HAT, but note that this will partially cover the slit that is used for the camera cable if you wish to add a [Raspberry Pi camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) to your project.
+您可以使用一个小面包板并将其放在 HAT 顶部的空间中。 许多面包板的底部都有一条胶带，您可以用它将其牢固地粘在 HAT 上。但请注意，如果您希望添加[Raspberry Pi 相机](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) 到您的项目中，面包板将会部分覆盖为相机数据线留出的缝隙。
 
-![A photo of a green mini breadboard sitting on top of the Build HAT. It is a good fit, but does cover up the camera slit, which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
+![一张坐在 Build HAT 顶部的绿色迷你面包板的照片。 虽然它非常合适，但它的确遮盖了 HAT 上在桶形接口旁边为相机线预留的缝隙。](images/breadboard_on_hat.jpg)
 
 --- task ---
 
-Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the example below, Pins 20 and 21 are used on the Raspberry Pi.
+使用面包板连接两个或更多 LED 到 Raspberry Pi。 在下面的示例中使用了Raspberry Pi的引脚 20 和 21。
 
 --- /task ---
 
@@ -20,17 +20,17 @@ Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the exa
 
 [[[rpi-connect-led]]]
 
-If needed, you can add some extra jumper leads to extend the reach of the LEDs.
+有需要的话，您可以添加一些额外的跳线来延长LED的连线。
 
-![Two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself; on the right, it is attached using flying jumper leads.](images/legtolegs2.png)
+![连接到面包板的 LED 的两张照片。 左侧的LED 嵌入了面包板本身；右侧的LED则是使用飞线连接。](images/legtolegs2.png)
 
-Additionally, the LEDs can be inserted into the LEGO® element of your choice. If you find that the legs of the LEDs are too close together or keep touching, you can insulate one with some tape to prevent short-circuiting.
+此外，LED 可以插入您选择的乐高（LEGO®）组件中。 如果您发现 LED 的管脚靠得太近或相互接触，您可以用胶带将其中一个绝缘以防止短路。
 
-![A photo of an LED inserted into a LEGO® beam element.](images/ledsinlego.png)
+![LED插入了乐高（LEGO®）横梁的照片。](images/ledsinlego.png)
 
 --- task ---
 
-Alter your code to import the `LED` object from `gpiozero` and set up the LEDs.
+更改您的代码，从 `gpiozero`中导入 `LED` 对象并设置 LED。
 
 --- code ---
 ---
@@ -56,7 +56,7 @@ led_right = LED(21)
 
 --- task ---
 
-Alter your code so that the LEDs light up, dependent on the movement of the car. In the example below, both LEDs light when the car moves backwards or stops. They turn off when the car moves forwards. The left LED will blink when the car moves left and the right LED will blink when the car moves right.
+更改您的代码，使 LED 可以依据汽车的运动而点亮。 在下面的示例中，当汽车向后移动或停止时，两个 LED 都会亮起。 当汽车向前移动时，它们会关闭。 当汽车向左移动时，左侧 LED 将闪烁，当汽车向右移动时，右侧 LED 将闪烁。
 
 --- code ---
 ---
@@ -102,10 +102,10 @@ led_left.blink(0.2)
 
 --- /task ---
 
-![The car is static and held in a hand, with LEDs blinking as described in the text above, dependent on wheel motion.](images/led_indicators.gif)
+![汽车被静止低握在手中，LED 如上文描述的那样，依照车轮的运动而闪烁。](images/led_indicators.gif)
 
-You can use your imagination to light or blink the LEDs in any way you want.
+您可以发挥您的想象力，以您想要的方式点亮或闪烁 LED。
 
-![The finished LEGO® wheeled bot with Raspberry Pi and Build HAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on.](images/brake_lights.gif)
+![中部安装了Raspberry Pi 和 Build HAT的乐高（LEGO®）轮式机器人的照片。 机器人向摄像头的方向倒车，当它停止时，后面的两个红色 LED 会亮起。](images/brake_lights.gif)
 
 --- save ---
