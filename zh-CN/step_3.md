@@ -61,7 +61,7 @@ sudo pip3 install bluedot
 
 单击 **OK** 后，Raspberry Pi 应显示和 Android 设备成功配对。
 
-![显示 Android 设备和 Raspberry Pi 已配对的确认框。](imgaes/bt_rpi_3.png)
+![显示 Android 设备和 Raspberry Pi 已配对的确认框。](images/bt_rpi_3.png)
 
 --- /task ---
 

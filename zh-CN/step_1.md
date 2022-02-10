@@ -1,4 +1,4 @@
-## 简介
+## 介绍
 
 使用乐高（LEGO®）和 Raspberry Pi Build HAT 搭建机器人汽车，对其进行编程以便通过 Android 手机的蓝牙连接来控制它。 然后添加一些 LED 让您的朋友眼花缭乱。
 
@@ -43,7 +43,7 @@
 
 --- collapse ---
 ---
-标题: 为教师提供的额外信息
+title: 为教师提供的额外信息
 ---
 
 您可以在 [此处](https://rpf.io/p/zh-CN/bt-robot-car-go){:target="_blank"}下载已完成的项目。
@@ -98,7 +98,7 @@ Raspberry Pi 启动后，单击 Raspberry 菜单按钮，然后选择“首选�
 
 --- collapse ---
 ---
-标题：安装 buildhat Python 库
+title: 安装 buildhat Python 库
 ---
 
 按下<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>，在 Raspberry Pi 上打开一个终端窗口。
