@@ -1,10 +1,10 @@
-## Control your motors with Blue Dot
+## 用Blue Dot控制您的马达
 
-The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
+Blue Dot 应用程序和 Python 库可用于从您的设备控制您的乐高（LEGO®）Technic™ 马达。
 
 --- task ---
 
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
+再次打开 `bt_car.py` 文件，并在文件顶部设置Blue Dot。 您还应该将导入 `sleep` 语句替换为 `from signal import pause`。
 
 --- code ---
 ---
@@ -25,7 +25,7 @@ dot = BlueDot()
 
 --- task ---
 
-Remove the `for` loop from your current code, so that the complete code looks like this:
+从当前代码中删除 `for` 循环，完整代码如下所示：
 
 --- code ---
 ---
@@ -71,7 +71,7 @@ motor_right.start(100)
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
+现在在您的程序底部添加一个使用 Blue Dot **调用** `forward` 函数的函数。
 
 --- code ---
 ---
@@ -87,11 +87,11 @@ forward()
 
 --- /task ---
 
-The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+`move` 函数有一个参数，称为 `pos`。 这个参数依据Blue Dot被触摸的位置而设置并自动传递给函数。
 
 --- task ---
 
-Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
+在您代码底部添加两个调用。 这将用于控制汽车前进和停止。 最后的调用确保程序不只是在脚本的底部结束。
 
 --- code ---
 ---
@@ -109,15 +109,15 @@ pause()
 
 --- task ---
 
-Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+运行您的代码。 按下设备上的Blue Dot应用程序顶部附近的蓝点，马达应该会转动。 当您将手指从蓝点上移开时，马达应该会停止运行。
 
 --- /task ---
 
-At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
+目前，马达只会使向前驱动车轮。 通过使用 `pos` 参数，您可以使它们向各个方向转动。
 
 --- task ---
 
-Add to your `move` function so that the motors will move the car backwards, left, and right.
+添加到 `move` 函数中，以便马达可以向后、向左和向右移动汽车。
 
 --- code ---
 ---
@@ -143,15 +143,15 @@ right()
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
+再次运行您的代码，并使用 Blue Dot 应用程序对其进行测试。 现在按下蓝点的右侧、左侧和底部应该可以向不同的方向移动马达。
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
+您可以在代码中添加一行，使得 Blue Dot 不仅响应按下的操作，还可以响应您的手指在蓝点上的移动。
 
 --- task ---
 
-Add this single line so that the motors respond to motion over the blue dot.
+添加这行代码，就可以使马达响应蓝点上的移动。
 
 --- code ---
 ---
@@ -170,10 +170,10 @@ dot.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+运行您的程序并尝试按下 Android 设备上的蓝点，然后将手指移动到蓝点上的不同位置。 马达应该开始向不同方向转动，并在您将手指从蓝点上移开时停止。
 
 --- /task ---
 
-To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
+要阅读 BlueDot 的完整文档， [点击此处](https://bluedot.readthedocs.io/en/latest/)。
 
 --- save ---
