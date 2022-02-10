@@ -1,0 +1,16 @@
+---
+title: 乐高（LEGO®） 遥控汽车
+hero_image: images/banner.png
+description: 使用乐高（LEGO®）和 Build HAT 创建一个遥控汽车
+version: 4
+listed: true
+copyedit: true
+last_tested: "2020-02-26"
+steps:
+  - title: 介绍
+  - title: 设置乐高（LEGO®）Spike™ 马达
+  - title: 设置和测试蓝牙控制
+  - title: 用Blue Dot控制你的马达
+  - title: 组装您的机器人
+  - title: 添加 LED
+  - title: 接下来还有什么？
