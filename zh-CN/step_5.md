@@ -1,92 +1,92 @@
-## Assemble your robot
+## 组装您的机器人
 
-Now you have the motor code working, it is time to construct and test your robot.
+现在您控制马达的代码工作了，是时候构建并测试您的机器人了。
 
-The basic design needs to fulfil five main requirements:
+基本设计需要满足五个主要要求：
 
-- A mounted Raspberry Pi and Build HAT
-- Two motors mounted parallel to each other
-- Two wheels
-- A caster or balance point at the front
-- A secured battery pack with barrel connector
+- 安装好的 Raspberry Pi 和 Build HAT
+- 两个相互平行安装的马达
+- 两个轮子
+- 一个在前面的脚轮或支撑点
+- 一个带有桶形连接器的安全电池组
 
-The Raspberry Pi and Build HAT can be secured to LEGO® pieces by using M2 machine screws and nuts.
+Raspberry Pi 和 Build HAT 可以使用 M2 机器螺钉和螺母固定到乐高（LEGO®）上。
 
-![An M2 machine screw and nut.](images/m2_machine_screws.jpg)
+![一个 M2 螺钉和螺母。](images/m2_machine_screws.jpg)
 
-![A LEGO® piece attached to a Raspberry Pi using an M2 machine screw.](images/m2_rpi_attached.jpg)
+![使用 M2 螺钉连接到 Raspberry Pi 的乐高（LEGO®）。](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
-You can power the Raspberry Pi and Build HAT using a battery connected to a barrel jack. A minimum of five AA batteries or a 9V battery will be required.
+您可以通过桶形插孔使用电池为 Raspberry Pi 和 Build HAT 供电。 至少需要五节 AA 电池或一个 9V 电池。
 
-![Five AA batteries in a pack, connected to a barrel jack.](images/AA_battery.jpg)
+![连接到桶形插孔的一包五节 AA 电池。](images/AA_battery.jpg)
 
-![A 9V battery connected to a barrel jack.](images/9V_battery.jpg)
+![连接到桶形插孔的 9V 电池。](images/9V_battery.jpg)
 
-The following photos show some different designs for how your LEGO® car could be built, which incorporate the Raspberry Pi, Build HAT, and battery pack.
+以下照片展示了一些不同拼搭设计的乐高（LEGO®）汽车，其中包含了 Raspberry Pi、Build HAT 和电池组。
 
-![A basic robot car from four different angles.](images/basic_bot.png)
+![从四个不同视角看到的一个简单的机器人汽车。](images/basic_bot.png)
 
-![Four views of a possible robot car design.](images/bot-grid_2.png)
+![一个机器人汽车设计的四个视图。](images/bot-grid_2.png)
 
-![Complex jeep buggy from three angles.](images/buggy3grid.jpg)
+![从三个角度看到的复杂的吉普车。](images/buggy3grid.jpg)
 
 --- task ---
 
-Use whatever LEGO® elements you have to construct the robot and use your imagination.
+使用您拥有的任何乐高（LEGO®）组件并发挥您的想象力来构建机器人。
 
 --- /task ---
 
-### Testing
+### 测试
 
-Once you robot is assembled, you should test it using Bluetooth with your Android device.
+机器人组装好后，您应该使用蓝牙与您的 Android 设备进行测试。
 
 --- task ---
 
-Power your Raspberry Pi, and then run your `bt_car.py` program. Test that you car works when using Bluetooth and the Blue Dot app from your Android device.
+启动您的Raspberry Pi，然后运行 `bt_car.py` 程序。 在您的 Android 设备上使用蓝牙和 Blue Dot 应用程序测试您的汽车是否正常工作。
 
 --- /task ---
 
-You may need to make changes to your code, depending on which side your of the car, and which way around your motors are connected.
+依据您马达在汽车上的位置和连接方式，您可能需要更改您的代码。
 
-Next, you need to make you Raspberry Pi run **headless**. This means running your code without needing to have a monitor, keyboard, or mouse connected.
+接下来，您需要让您的 Raspberry Pi  **无屏启动**。 这意味着无需连接显示器、键盘或鼠标即可运行代码。
 
-First of all, make sure your Raspberry Pi is [connected to a WiFi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
+首先，确保您的树莓派 [连接到 WiFi 网络](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md)。
 
-Now, you can use a program called **cron** to make your Python script run everytime the Raspberry Pi is booted.
+现在，您可以使用一个名为 **cron** 的程序来让您的 Python 脚本在每次启动 Raspberry Pi 时运行。
 
 --- task ---
 
-Open a terminal by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> on your keyboard.
+按下<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>，在 Raspberry Pi 上打开一个终端窗口。
 
 --- /task ---
 
 --- task ---
 
-Type `crontab -e` into the terminal window. If this is the first time you have ever used **crontab**, then it will ask you which editor you would like to use.
+在终端窗口中键入 `crontab -e` 如果这是您第一次使用 **crontab**，那么它会询问您要使用哪个编辑器。
 
 ```bash
 pi@raspberrypi:~ $ crontab -e
 no crontab for pi - using an empty one
 
 Select an editor. To change this later, run 'select-editor'.
-  1. /bin/nano        <---- easiest
+  1. /bin/nano        <---- 最简单的
   2. /usr/bin/vim.tiny
-  3. /bin/ed
+  3.  /bin/ed
 
 Choose 1-3 [1]: 
 ```
 
-Unless you are experienced with **vim**, choose `1. /bin/nano`.
+除非您对**vim**很熟悉，否则请选择 `1。 /bin/nano`.
 
 --- /task ---
 
-Nano will open up and show the default template file.
+Nano 启动后将显示默认模板文件。
 
 --- task ---
 
-Use the cursor keys to scroll to the bottom of the file. You can then add this single line, which will wait for 30 seconds and then run your `bt_car.py` file.
+使用光标键滚动到文件底部。 然后您可以添加这一行代码，它将在每次重启后，等待 30 秒，然后运行您的 `bt_car.py` 文件。
 
 ```bash
 # m h  dom mon dow   command
@@ -97,7 +97,7 @@ Use the cursor keys to scroll to the bottom of the file. You can then add this s
 
 --- task ---
 
-Reboot your Raspberry Pi, wait for 30 seconds, and then use your Blue Dot app on your Android device to connect to your car and control it.
+重新启动您的 Raspberry Pi，等待 30 秒，然后使用 Android 设备上的 Blue Dot 应用程序连接并控制您的汽车。
 
 --- /task ---
 
