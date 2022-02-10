@@ -1,22 +1,22 @@
-## Set up the LEGO® Spike™ motors
+## 设置乐高（LEGO®）Spike™ 马达
 
-It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
+在构建机器人之前就开始开发和测试程序会更容易。 这可以降低破坏您完美的模型的风险，比如当马达意外将机器人送至错误的方向，导致它从您的办公桌上滑落（当然，使用乐高（LEGO®）的好处是您可以随时重建它）。
 
-The Raspberry Pi Build HAT and its Python library allow you to control LEGO® Technic™ motors directly from your Raspberry Pi computer.
+Raspberry Pi Build HAT 及配套的 Python 库允许您直接用Raspberry Pi 控制乐高（LEGO®）Technic™ 马达。
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT. Connect your battery pack to the barrel jack on the Build HAT and turn it on.
+将两个马达分别插入 Raspberry Pi Build HAT 上的端口 A 和 B。 将您的电池组连接到 Build HAT 上的筒形插孔并开启电源。
 
-### Make the motors spin
+### 让马达转起来
 
 --- task ---
 
-Open Thonny on your Raspberry Pi from the **Programming** menu.
+从Raspberry Pi 上的Programming 菜单中启动 **Thonny**。
 
 --- /task ---
 
 --- task ---
 
-Use the following code to spin both motors at 50% of their maximum speed for 10 seconds. (They will run one at a time, not together.)
+使用以下代码让两个马达以最大速度的 50% 的速率旋转10 秒。 （他们将逐个运行，而不是一起运行。）
 
 --- code ---
 ---
@@ -38,17 +38,17 @@ motor_right.run_for_seconds(seconds=10, speed=-50)
 
 --- task ---
 
-Run your program and check the motors turn.
+运行程序并检查马达的转动。
 
 --- /task ---
 
-Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left-hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right-hand side.
+因为马达将安装在汽车底盘的两侧，您当前的程序应该以相反的方向转动马达。 因此，逆时针旋转左轮将使机器人向前移动，右轮则需要顺时针旋转。
 
-Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
+现在您已经测试了马达，您可以创建函数来使马达停止和向前驱动。
 
 --- task ---
 
-Remove the two lines of code that make the motors run for 10 seconds, and add these two functions. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
+去掉那两行让马达运行10秒的代码，加上这两个函数。 乐高（LEGO®）马达的`start()` 函数和`run` 函数的工作方式不同，所以这次两个马达将一起运行。
 
 --- code ---
 ---
@@ -78,7 +78,7 @@ motor_right.start(-50)
 
 --- task ---
 
-Test your functions out by adding the following start–stop–start–stop sequence:
+添加以下 ”开始-暂停-开始-暂停“ 序列来测试您的函数：
 
 --- code ---
 ---
@@ -95,11 +95,11 @@ sleep(1)
 --- /code --- --- /task ---
 
 
-Once that works, add three more functions to move the robot backwards, left, and right.
+如果成功了，再添加三个函数来分别实现向后、向左和向右移动机器人。
 
 --- task ---
 
-To move the robot backwards, simply reverse the directions of both motors.
+要向后移动机器人，只需反转两个马达的旋转方向即可。
 
 --- code ---
 ---
@@ -118,7 +118,7 @@ motor_right.start(50)
 
 --- task ---
 
-To turn the robot to the left, both motors need to turn in the same direction.
+要将机器人向左转动，两个马达需要向同一方向转动。
 
 --- code ---
 ---
@@ -138,7 +138,7 @@ def right(): motor_left.start(-50) motor_right.start(-50)
 
 --- task ---
 
-To test your code, you can edit your `for` loop.
+您可以编辑 `for` 循环来测试您的代码。
 
 --- code ---
 ---
@@ -163,7 +163,7 @@ stop()
 
 --- task ---
 
-Run your code and check that the wheels turn correctly.
+运行您的代码，检查轮子是否正确转动。
 
 --- /task ---
 
