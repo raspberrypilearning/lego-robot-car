@@ -1,18 +1,18 @@
-## Add some LEDs
+## Добавим несколько светодиодов
 
-The holes in LEGO® elements are just the right size for holding small LEDs, so you can easily add them to your project. Alternatively, you could use a breadboard.
+Отверстия в элементах LEGO® как раз подходят для небольших светодиодов, поэтому ты можешь легко добавить их в свой проект. Как вариант, можно использовать макетную плату.
 
-There are plenty of ways of mounting a breadboard using LEGO®. A couple of ideas are shown below, but you can use whatever elements you have available to you.
+Существует множество способов монтажа макетной платы с помощью LEGO®. Несколько идей показаны ниже, но ты можешь использовать любые доступные тебе элементы.
 
-![A photo of a half-size breadboard mounted onto a LEGO® plate. It is supported by LEGO® beams underneath and then sandwiched into a frame at the sides to keep the top surface where components are plugged in, free.](images/big-breadboard.png)
+![Фотография макетной платы половинного размера, установленной на пластину LEGO®. Он поддерживается балками LEGO® снизу, а затем вставлен в раму по бокам, чтобы верхняя поверхность, к которой подключены компоненты, оставалась свободной.](images/big-breadboard.png)
 
-You could use a small breadboard and sit it in the space on top of your HAT. Many breadboards have an adhesive strip on the bottom that you could use to stick it firmly onto the HAT, but note that this will partially cover the slit that is used for the camera cable if you wish to add a [Raspberry Pi camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) to your project.
+Ты можешь использовать небольшую макетную плату и поместить ее в пространство над Build HAT. Многие макетные платы имеют клейкую ленту в нижней части, которую ты можешь использовать, чтобы плотно приклеить ее к HAT, но обрати внимание, что она частично закроет щель, которая используется для кабеля камеры, если ты захочешь добавить [камеру Raspberry Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) к твоему проекту.
 
-![A photo of a green mini breadboard sitting on top of the Build HAT. It is a good fit, but does cover up the camera slit, which is next to the barrel jack on the HAT.](images/breadboard_on_hat.jpg)
+![Фотография зеленой мини-макетной платы, установленной поверх Build HAT. Это хорошая посадка, но она закрывает прорезь для камеры, которая находится рядом с циллиндрическим разъемом на плате Build HAT.](images/breadboard_on_hat.jpg)
 
 --- task ---
 
-Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the example below, Pins 20 and 21 are used on the Raspberry Pi.
+Используй макетную плату для подключения двух или более светодиодов к Raspberry Pi. В приведенном ниже примере используются контакты 20 и 21 на Raspberry Pi.
 
 --- /task ---
 
@@ -20,17 +20,17 @@ Use your breadboard to connect two or more LEDs to your Raspberry Pi. In the exa
 
 [[[rpi-connect-led]]]
 
-If needed, you can add some extra jumper leads to extend the reach of the LEDs.
+При необходимости ты можешь добавить несколько дополнительных перемычек, чтобы увеличить радиус действия светодиодов.
 
-![Two photos of LEDs connected to a breadboard. On the left, the LED is stuck into the breadboard itself; on the right, it is attached using flying jumper leads.](images/legtolegs2.png)
+![Две фотографии светодиодов, подключенных к макетной плате. Слева светодиод воткнут в макетную плату; справа он прикреплен с помощью проводов перемычек.](images/legtolegs2.png)
 
-Additionally, the LEDs can be inserted into the LEGO® element of your choice. If you find that the legs of the LEDs are too close together or keep touching, you can insulate one with some tape to prevent short-circuiting.
+Кроме того, светодиоды можно вставить в элемент LEGO® по твоему выбору. Если ты обнаружишь, что ножки светодиодов расположены слишком близко друг к другу или продолжают соприкасаться, ты можешь изолировать одну из них с помощью изоленты, чтобы предотвратить короткое замыкание.
 
-![A photo of an LED inserted into a LEGO® beam element.](images/ledsinlego.png)
+![Фотография светодиода, вставленного в лучевой элемент LEGO®.](images/ledsinlego.png)
 
 --- task ---
 
-Alter your code to import the `LED` object from `gpiozero` and set up the LEDs.
+Дополни свой свой код, чтобы импортировать объект `LED` из `gpiozero` и настроить светодиоды.
 
 --- code ---
 ---
@@ -56,7 +56,7 @@ led_right = LED(21)
 
 --- task ---
 
-Alter your code so that the LEDs light up, dependent on the movement of the car. In the example below, both LEDs light when the car moves backwards or stops. They turn off when the car moves forwards. The left LED will blink when the car moves left and the right LED will blink when the car moves right.
+Дополни свой код так, чтобы светодиоды загорались в зависимости от движения автомобиля. В приведенном ниже примере оба светодиода загораются, когда автомобиль движется назад или останавливается. Они отключаются, когда машина движется вперед. Левый светодиод будет мигать, когда автомобиль движется влево, а правый светодиод будет мигать, когда автомобиль движется вправо.
 
 --- code ---
 ---
@@ -102,10 +102,10 @@ led_left.blink(0.2)
 
 --- /task ---
 
-![The car is static and held in a hand, with LEDs blinking as described in the text above, dependent on wheel motion.](images/led_indicators.gif)
+![Автомобиль статичен и удерживается в руке, при этом светодиоды мигают, как описано в тексте выше, в зависимости от движения колес.](images/led_indicators.gif)
 
-You can use your imagination to light or blink the LEDs in any way you want.
+Ты можешь использовать свое воображение, чтобы зажечь или помигать светодиодами так, как ты хочешь.
 
-![The finished LEGO® wheeled bot with Raspberry Pi and Build HAT centrally mounted. The robot reverses towards the camera and as it stops, two red LEDs at the back turn on.](images/brake_lights.gif)
+![Фотография готового бота на колесах LEGO® с Raspberry Pi и Build HAT, установленными по центру. Робот поворачивается к камере, и когда он останавливается, загораются два красных светодиода сзади.](images/brake_lights.gif)
 
 --- save ---
