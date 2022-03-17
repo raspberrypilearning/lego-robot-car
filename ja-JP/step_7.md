@@ -1,13 +1,13 @@
-## What next?
+## 次は何をしますか？
 
-If you would like to enhance your Bluetooth car, then you could think about adding more electronic components:
+Bluetooth カーを強化したい場合は、電子部品をさらに追加することを検討しましょう。
 
-+ Add extra LEDs as flashing police 'pursuit' lights, or headlights when the car drives
++ 点滅する警察の「追跡」ライト、または車を運転中のヘッドライト用のLEDを追加できます
 
-+ Many vehicles make a sound when they are reversing, so you could add a buzzer to your project
++ 多くの車両は後進する時に音を出すので、プロジェクトにブザーを追加もできます
 
-+ You could even use an Ultrasonic Distance Sensor (UDS), which detects when the car approaches an obstacle, and automatically stops it from crashing!
++ 超音波距離センサー (UDS) を使用して車が障害物に近づいたことを検出して、衝突を防ぐために自動停止することもできます!
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Data Plotter](https://projects.raspberrypi.org/en/projects/lego-plotter) project. In this project, you will make a data plotter that draws on paper!
+[LEGO BuildHATの紹介](https://projects.raspberrypi.org/en/pathways/lego-intro)のパスに沿って進めている場合は、[LEGO データプロッター](https://projects.raspberrypi.org/en/projects/lego-plotter)のプロジェクトに進むことができます。 このプロジェクトでは、紙に描くデータプロッターを作成します。
 
-![Lego Data Plotter](images/plotterbanner.png)
+![レゴデータプロッター](images/plotterbanner.png)
