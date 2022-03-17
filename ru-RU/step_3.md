@@ -1,79 +1,79 @@
-## Set up and test the Bluetooth control
+## Настрой и протестируй управление посредством Bluetooth
 
-To remotely pilot your car, you're going to use the Blue Dot library and Android app. You should only have to pair your raspberry pi and mobile device once. After that, they should connect easily each time.
+Для дистанционного управления автомобилем ты воспользуешься библиотекой Blue Dot и приложением для Android. Тебе нужно будет выполнить сопряжение raspberry pi и мобильного устройства только один раз. После этого они должны каждый раз легко соединяться.
 
 --- collapse ---
 ---
-title: Install the Blue Dot Python library
+title: Установка библиотеки Python Blue Dot
 ---
 
 --- task ---
 
-Open your terminal window. At the prompt type
+Открой окно твоего терминала. В командной строке введи
 ```
 sudo pip3 install bluedot
 ```
-and press <kbd>Enter</kbd>.
+и нажми <kbd>Ввод</kbd>.
 
 --- /task ---
 
-You should see your terminal return that the latest version of Blue Dot is installed.
+Вы должен увидеть, что твой терминал сообщит, что установлена последняя версия Blue Dot.
 
 --- /collapse ---
 
-### Pairing your Raspberry Pi with your Android device
+### Сопряжение Raspberry Pi с твоим устройством Android
 
 --- task ---
 
-Click on the Bluetooth icon in the top right-hand corner of the desktop and make sure that Bluetooth is turned **On** and that the device is **Discoverable**.
+Щелкни значок Bluetooth в правом верхнем углу рабочего стола и убедись, что для Bluetooth установлено значение **Включено** и устройство **Доступно для обнаружения**.
 
-![Raspberry Pi Bluetooth menu.](images/bt_rpi_1.png)
+![Меню Bluetooth Raspberry Pi.](images/bt_rpi_1.png)
 
 --- /task ---
 
-Depending on the version of Android you are running, the steps to follow on your device may vary slightly but should be close to:
+В зависимости от версии Android, которую ты используешь, действия на твоем устройстве могут незначительно отличаться, но должны быть примерно такими:
 
 --- task ---
 
-In **Settings**, find your Bluetooth settings and then **Connected Devices**.
+В **Настройки** найди настройки Bluetooth, а затем **Подключенные устройства**.
 
-![Connected devices settings on Bluetooth menu in Android.](images/bt_and_1.png)
-
---- /task ---
-
---- task ---
-
-Choose **Pair new device** and then select your Raspberry Pi device from the devices shown.
-
-![Device options with Raspberry Pi shown.](images/bt_and_2.png)
-
-Then choose **Pair** from the dialogue box.
-
-![Pair with Raspberry Pi? options shown, along with Cancel and Pair options.](images/bt_and_3.png)
+![Настройки подключенных устройств в меню Bluetooth в Android.](images/bt_and_1.png)
 
 --- /task ---
 
 --- task ---
 
-On the Raspberry Pi, you should be prompted to accept the pairing request.
+Выбери **Подключить новое устройство**, а затем выбери свое устройство Raspberry Pi из показанных устройств.
 
-![Dialogue box asking if you want to pair the Android and the Raspberry Pi devices.](images/bt_rpi_2.png)
+![Настройки устройства с показанной Raspberry Pi.](images/bt_and_2.png)
 
-Clicking on **OK** should show a successful pairing of the Raspberry Pi and the Android devices.
+Затем выбери **Подключить** в диалоговом окне.
 
-![Confirmation box showing that the Android device and the Raspberry Pi are paired.](imgaes/bt_rpi_3.png)
+![Соединиться с Raspberry Pi? показаны опции, а также функции «Отмена» и «Сопряжение».](images/bt_and_3.png)
 
 --- /task ---
 
-Sometimes you might be asked to confirm a code before you are allowed to pair the devices.
+--- task ---
 
-![Box asking for code confirmation on the Android device.](images/android3.png)
+На Raspberry Pi тебе будет предложено принять запрос на сопряжение.
 
-### Testing Blue Dot
+![Диалоговое окно с вопросом, хочешь ли ты выполнить сопряжение устройств Android и Raspberry Pi.](images/bt_rpi_2.png)
+
+Нажатие на **OK** должно показать успешное сопряжение Raspberry Pi и устройств Android.
+
+![Окно подтверждения, показывающее, что устройство Android и Raspberry Pi сопряжены.](imgaes/bt_rpi_3.png)
+
+--- /task ---
+
+Иногда тебя могут попросить подтвердить код, прежде чем ты получишь разрешение на сопряжение устройств.
+
+![Окно с запросом подтверждения кода на Android-устройстве.](images/android3.png)
+
+### Тестирование Blue Dot
 
 --- task ---
 
-Create a new Python file on your Raspberry Pi called bluedot_test.py, with the following code.
+Создай новый файл Python на Raspberry Pi с именем bluedot_test.py со следующим кодом.
 
 --- code ---
 ---
@@ -84,9 +84,9 @@ line_highlights:
 from bluedot import BlueDot   
 dot = BlueDot()
 
-print('Waiting...')   
+print('Жду...')   
 dot.wait_for_press()    
-print("It worked!")
+print("Заработало!")
 
 --- /code ---
 
@@ -94,26 +94,26 @@ print("It worked!")
 
 --- task ---
 
-Run the program and then, on your Android device, open the [Blue Dot](https://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot&hl=en_GB&gl=US) app. The first screen will show you a list of Bluetooth devices that have been paired with your device.
+Запусти программу, а затем на своем устройстве Android открой приложение [Blue Dot](https://play.google.com/store/apps/details?id=com.stuffaboutcode.bluedot&hl=en_GB&gl=US). Первый экран покажет тебе список устройств Bluetooth, которые были сопряжены с твоим устройством.
 
-![A screenshot of the bluetooth devices available from an Android phone. The top item on the list says raspberrypi.](images/android4.jpeg)
+![Скриншот устройств Bluetooth, доступных на телефоне Android. Верхний пункт «raspberrypi» в списке.](images/android4.jpeg)
 
 --- /task ---
 
 --- task ---
 
-Click on **raspberrypi** from the menu and you should then see a big blue dot on your screen. Tap the dot.
+Нажми **raspberrypi** в меню, и ты увидишь большую синюю точку на экране. Коснись точки.
 
-![The Blue Dot app.](images/bt_and_5.png)
+![Приложение Blue Dot.](images/bt_and_5.png)
 
 --- collapse ---
 ---
-title: Bluedot won't select my Raspberry Pi
+title: Bluedot не работает с моей Raspberry Pi
 ---
 
- In order for BlueDot to connect to your Raspberry Pi, a server needs to be running on the Raspberry Pi. This means that a BlueDot object (`dot = BlueDot()`) must have already been created in your Python program and be waiting for connections.
+ Чтобы BlueDot могла подключиться к твоей Raspberry Pi, на Raspberry Pi должен быть запущен сервер. Это означает, что объект BlueDot (`dot = BlueDot()`) уже должен быть создан в твоей программе на Python и ожидать соединения.
 
- Make sure that you are running your program before trying to connect with Bluedot and that it has no errors.
+ Убедись, что ты запускаешь свою программу, прежде чем пытаться подключиться к Bluedot, и что в ней нет ошибок.
 
 --- /collapse ---
 
@@ -121,8 +121,8 @@ title: Bluedot won't select my Raspberry Pi
 
 --- task ---
 
-On the Raspberry Pi, you should see that your program has accepted the Bluetooth connection and has successfully responded to you pressing the blue dot.
+На Raspberry Pi ты должен увидеть, что твоя программа приняла соединение Bluetooth и успешно ответила на нажатие синей точки.
 
-![A screenshot of the Thonny Python IDE showing that a device is connected then disconnected.](images/thonny1.png)
+![Скриншот Thonny Python IDE, показывающий, что устройство подключено, а затем отключено.](images/thonny1.png)
 
 --- /task ---
