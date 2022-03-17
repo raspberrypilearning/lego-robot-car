@@ -1,92 +1,92 @@
-## Assemble your robot
+## Сборка твоего робота
 
-Now you have the motor code working, it is time to construct and test your robot.
+Теперь у тебя есть рабочий код мотора, пришло время построить и протестировать твоего робота.
 
-The basic design needs to fulfil five main requirements:
+Базовый проект должен удовлетворять пяти основным требованиям:
 
-- A mounted Raspberry Pi and Build HAT
-- Two motors mounted parallel to each other
-- Two wheels
-- A caster or balance point at the front
-- A secured battery pack with barrel connector
+- Смонтированные Raspberry Pi и Build HAT
+- Два мотора, установленные параллельно друг другу
+- Два колеса
+- Кастер или точка баланса спереди
+- Защищенный аккумуляторный блок с циллиндрическим разъемом
 
-The Raspberry Pi and Build HAT can be secured to LEGO® pieces by using M2 machine screws and nuts.
+Raspberry Pi и Build HAT можно прикрепить к деталям LEGO® с помощью винтов и гаек M2.
 
-![An M2 machine screw and nut.](images/m2_machine_screws.jpg)
+![Крепежный винт М2 и гайка.](images/m2_machine_screws.jpg)
 
-![A LEGO® piece attached to a Raspberry Pi using an M2 machine screw.](images/m2_rpi_attached.jpg)
+![Деталь LEGO®, прикрепленная к Raspberry Pi с помощью крепежного винта M2.](images/m2_rpi_attached.jpg)
 
 [[[attach_rpi_to_lego]]]
 
-You can power the Raspberry Pi and Build HAT using a battery connected to a barrel jack. A minimum of five AA batteries or a 9V battery will be required.
+Ты можешь питать Raspberry Pi и Build HAT от батареи, подключенной к разъему в виде цилиндра. Потребуется минимум пять батареек типа АА или батарея на 9 В.
 
-![Five AA batteries in a pack, connected to a barrel jack.](images/AA_battery.jpg)
+![Пять батареек типа АА в упаковке, подключенные к циллиндрическому разъему.](images/AA_battery.jpg)
 
-![A 9V battery connected to a barrel jack.](images/9V_battery.jpg)
+![Аккумулятор 9 В, подключенный к циллиндрическому гнезду.](images/9V_battery.jpg)
 
-The following photos show some different designs for how your LEGO® car could be built, which incorporate the Raspberry Pi, Build HAT, and battery pack.
+На следующих фотографиях показаны различные варианты сборки автомобиля LEGO®, включающие в себя Raspberry Pi, Build HAT и аккумулятор.
 
-![A basic robot car from four different angles.](images/basic_bot.png)
+![Базовая машина-робот с четырех разных ракурсов.](images/basic_bot.png)
 
-![Four views of a possible robot car design.](images/bot-grid_2.png)
+![Четыре вида возможных дизайнов автомобиля-робота.](images/bot-grid_2.png)
 
-![Complex jeep buggy from three angles.](images/buggy3grid.jpg)
+![Сложный джип-багги с трех ракурсов.](images/buggy3grid.jpg)
 
 --- task ---
 
-Use whatever LEGO® elements you have to construct the robot and use your imagination.
+Используй любые элементы LEGO®, которые у тебя есть, чтобы построить робота, и подключай свое воображение.
 
 --- /task ---
 
-### Testing
+### Тестирование
 
-Once you robot is assembled, you should test it using Bluetooth with your Android device.
+После того, как твой робот собран, ты должен протестировать его с помощью Bluetooth на твоем Android-устройстве.
 
 --- task ---
 
-Power your Raspberry Pi, and then run your `bt_car.py` program. Test that you car works when using Bluetooth and the Blue Dot app from your Android device.
+Включи Raspberry Pi, а затем запусти программу `bt_car.py`. Проверь, работает ли твой автомобиль при использовании Bluetooth и приложения Blue Dot на вашем устройстве Android.
 
 --- /task ---
 
-You may need to make changes to your code, depending on which side your of the car, and which way around your motors are connected.
+Возможно, тебе придется внести изменения в твой код, в зависимости от того, с какой стороны автомобиля и каким образом подключены твои двигатели.
 
-Next, you need to make you Raspberry Pi run **headless**. This means running your code without needing to have a monitor, keyboard, or mouse connected.
+Затем тебе нужно заставить Raspberry Pi запускаться в **безголовом** режиме. Это означает запуск твоего кода без необходимости подключения монитора, клавиатуры или мыши.
 
-First of all, make sure your Raspberry Pi is [connected to a WiFi network](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
+Прежде всего, убедись, что твоя Raspberry Pi [подключена к сети Wi-Fi](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md).
 
-Now, you can use a program called **cron** to make your Python script run everytime the Raspberry Pi is booted.
+Теперь ты можешь использовать программу под названием **cron**, чтобы твой скрипт на Python запускался каждый раз при загрузке Raspberry Pi.
 
 --- task ---
 
-Open a terminal by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> on your keyboard.
+Открой терминал, нажав <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> на клавиатуре.
 
 --- /task ---
 
 --- task ---
 
-Type `crontab -e` into the terminal window. If this is the first time you have ever used **crontab**, then it will ask you which editor you would like to use.
+Введи `crontab -e` в окно терминала. Если ты впервые используешь **crontab**, он спросит тебя, какой редактор ты бы хотел использовать.
 
 ```bash
 pi@raspberrypi:~ $ crontab -e
 no crontab for pi - using an empty one
 
-Select an editor. To change this later, run 'select-editor'.
-  1. /bin/nano        <---- easiest
+Select an editor. Чтобы изменить это позже, запусти «select-editor».
+  1. /bin/nano        <---- самый простой
   2. /usr/bin/vim.tiny
   3. /bin/ed
 
-Choose 1-3 [1]: 
+Выберите 1-3 [1]: 
 ```
 
-Unless you are experienced with **vim**, choose `1. /bin/nano`.
+Если у тебя нет опыта работы с **vim**, выбери `1. /bin/nano`.
 
 --- /task ---
 
-Nano will open up and show the default template file.
+Nano откроется и покажет файл шаблона по умолчанию.
 
 --- task ---
 
-Use the cursor keys to scroll to the bottom of the file. You can then add this single line, which will wait for 30 seconds and then run your `bt_car.py` file.
+Используй клавиши курсора, чтобы прокрутить файл до конца. Затем ты можешь добавить эту единственную строку, которая будет ждать 30 секунд, а затем запустит твой файл `bt_car.py`.
 
 ```bash
 # m h  dom mon dow   command
@@ -97,7 +97,7 @@ Use the cursor keys to scroll to the bottom of the file. You can then add this s
 
 --- task ---
 
-Reboot your Raspberry Pi, wait for 30 seconds, and then use your Blue Dot app on your Android device to connect to your car and control it.
+Перезагрузи Raspberry Pi, подожди 30 секунд, а затем используй приложение Blue Dot на устройстве Android, чтобы подключиться к машинке и управлять ею.
 
 --- /task ---
 
