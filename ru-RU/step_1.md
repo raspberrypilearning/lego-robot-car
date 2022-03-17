@@ -1,111 +1,111 @@
-## Introduction
+## Введение
 
-Use LEGO® and the Raspberry Pi Build HAT to build a robot car, then program it so you can control it with a Bluetooth connection from your Android phone. Then add some LEDs to dazzle your friends.
+Используй LEGO® и плату Raspberry Pi Build HAT, чтобы построить автомобиль-робот, а затем запрограммируй его, чтобы ты мог управлять им с помощью Bluetooth-соединения со своего телефона Android. Затем добавь светодиоды, чтобы ослепить своих друзей.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">The name [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)</span> was proposed in 1997 by Jim Kardach of Intel. At the time of this proposal, he was reading Frans G. Bengtsson's historical novel *The Long Ships* about Vikings and the 10th-century Danish king Harald Bluetooth. Bluetooth was King Harald's nickname, and he united the Danish tribes into a single kingdom, just as Bluetooth unites communication protocols.
+<span style="color: #0faeb0">Название [Bluetooth](https://ru.wikipedia.org/wiki/Bluetooth)</span> было предложено в 1997 году Джимом Кардачем из Intel. Во время этого предложения он читал исторический роман Франца Г. Бенгтссона «Длинные корабли» о викингах и датском короле 10-го века Гарольде Блютузе. Блютуз (Bluetooth) было прозвищем короля Гарольда, и он объединил датские племена в единое королевство, точно так же, как Bluetooth объединяет протоколы связи.
 </p>
 
-You will:
-+ Control LEGO® Technic™ motors using the Raspberry Pi Build HAT
-+ Use Bluetooth to send signals to the Raspberry Pi
-+ Learn how to control LEDs using gpiozero on the Raspberry Pi
+Ты будешь:
++ Управлять двигателями LEGO® Technic™ с помощью Raspberry Pi Build HAT
++ Использовать Bluetooth для отправки сигналов на Raspberry Pi
++ Узнаешь, как управлять светодиодами с помощью библиотеки gpiozero на Raspberry Pi
 
 --- no-print ---
 
-![A photo of the finished LEGO® wheeled bot with the Raspberry Pi and Build HAT centrally mounted. There is a breadboard with wires attached to LEDs on top of the stack.](images/lego-bot.gif)
+![Фотография готового бота на колесах LEGO® с Raspberry Pi и Build HAT, установленными по центру. В верхней части стека находится макетная плата с проводами, прикрепленными к светодиодам.](images/lego-bot.gif)
 
 --- /no-print ---
 
-You will build a wheeled car. Its movement will be determined by two separately driven wheels placed on either side of the car, allowing it to move forwards, backwards, and turn. You can optionally add LEDs to the car to act as brake lights, indicators, or headlights.
+Ты построишь машину с колесами. Его движение будет определяться двумя отдельно ведущими колесами, расположенными по обе стороны от автомобиля, что позволяет ему двигаться вперед, назад и разворачиваться. При желании ты можешь добавить в автомобиль светодиоды, которые будут действовать как стоп-сигналы, индикаторы или фары.
 
 --- print-only ---
 
-![Complete project.](images/buggy.JPG)
+![Завершенный проект.](images/buggy.JPG)
 
 --- /print-only ---
 
-### You will need
+### Тебе понадобится
 
-+ A Raspberry Pi computer running the latest Desktop version of Raspberry Pi OS
-+ A Raspberry Pi Build HAT
-+ 2× LEGO® Technic™ motors
-+ An assortment of LEGO®, including two wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
-+ An Android mobile phone or tablet
-+ 5× AA batteries and a holder pack with a barrel jack
++ Компьютер Raspberry Pi с последней настольной версией операционной системы Raspberry Pi
++ Плата Raspberry Pi Build HAT
++ 2× двигателя LEGO® Technic™
++ Детали LEGO®, включая 2 колеса (мы использовали детали из [набора LEGO® Education SPIKE™ Prime](https://education.lego.com/en-gb/product/spike-prime))
++ Мобильный телефон или планшет на базе ОС Android
++ 5× батареек AA и батарейный отсек с гнездом цилиндрической формы
 
-### Software
+### Программное обеспечение
 
-+ Build HAT Python library to control the Build HAT
-+ Blue Dot Python library and Blue Dot Android app
-+ gpiozero Python library
++ Библиотека Python Build HAT для управления платой Build HAT
++ Библиотека Python Blue Dot и приложение Blue Dot для Android
++ библиотека Python gpiozero
 
 
 --- collapse ---
 ---
-title: Additional information for educators
+title: Дополнительная информация для преподавателей
 ---
 
-You can download the complete project [here](https://rpf.io/p/en/bt-robot-car-go).
+Ты можешь скачать завершенный проект [здесь](https://rpf.io/p/en/bt-robot-car-go).
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/bt-robot-car/print){:target="_blank"}.
+Если вы хотите напечатать этот проект, то воспользуйтесь [версией для печати](https://projects.raspberrypi.org/en/projects/bt-robot-car/print) {:target="_blank"}.
 
 --- /collapse ---
 
-Before you begin, you'll need to have set up your Raspberry Pi computer and attached your Build HAT:
+Прежде чем ты начнешь, тебе необходимо настроить твой компьютер Raspberry Pi и подключить свою плату Build HAT:
 
 --- task ---
 
-Mount your Raspberry Pi on to the LEGO Build Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
+Установи Raspberry Pi на Cтроительную Пластину LEGO с помощью болтов и гаек M2, убедившись, что Raspberry Pi лежит на стороне пластины без «борта»:
 
- ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
+ ![Raspberry Pi прикрученный к пурпурной Строительной Панели LEGO.](images/build_11.jpg)
 
 --- /task ---
 
-Mounting the Raspberry Pi this way round enables easy access to the ports as well as the SD card slot. The Build Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+Установка Raspberry Pi таким образом обеспечивает легкий доступ к портам, а также к слоту для SD-карты. Строительная Платформа позволит тебе более легко подключить Raspberry Pi к основной структуре вашей панели инструментов.
 
 --- task ---
 
-Line up the Build HAT with the Raspberry Pi, ensuring you can see the `This way up` label. Make sure all the GPIO pins are covered by the HAT, and press down firmly. (The example uses a [stacking header](https://www.adafruit.com/product/2223){:target="_blank"}, which makes the pins longer.)
+Совмести плату Build HAT с Raspberry Pi, убедившись, что ты видишь надпись на английском `This way up`. Убедись, что все контакты GPIO закрыты платой HAT, и с усилием надави на плату. (В примере используется [проводные клеммы](https://www.adafruit.com/product/2223){:target="_blank"}, которые делают выводы длиннее)
 
-![Image of GPIO pins poking through the top of the Build HAT.](images/build_15.jpg) ![Animation showing Buildhat fitting to Raspberry Pi](images/haton.gif)
+![Изображение контактов GPIO, торчащих из верхней части платы Build HAT.](images/build_15.jpg) ![Анимация, показывающая установку платы Buildhat подходит для Raspberry Pi](images/haton.gif)
 
 --- /task ---
 
-You should now power your Raspberry Pi using the 7.5V barrel jack on the Build HAT, which will allow you to use the motors.
+Теперь ты должен подать питание на Raspberry Pi с помощью цилиндрического разъема 7,5 В на плате Build HAT, что позволит тебе использовать двигатели.
 
 --- task ---
 
-If you have not already done so, set up your Raspberry Pi by following these instructions:
+Если ты еще этого не сделал, настрой Raspberry Pi, следуя этим инструкциям:
 
-[Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
-
---- /task ---
-
---- task ---
-
-Once the Raspberry Pi has booted, open the Raspberry Pi Configuration tool by clicking on the Raspberry Menu button and then selecting “Preferences” and then “Raspberry Pi Configuration”.
-
-Click on the “interfaces” tab and adjust the Serial settings as shown below:
-
-![Image showing Raspberry Pi OS config screen with serial port enabled and serial console disabled](images/configshot.jpg)
+[Настройка твоей Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
 
 --- /task ---
 
 --- task ---
 
-You will also need to install the buildhat python library by following these instructions:
+После загрузки Raspberry Pi открой Инструмент Настройки Raspberry Pi, нажав кнопку Меню Raspberry и выбрав «Настройки», а затем «Конфигурация Raspberry Pi».
+
+Выбери вкладку «Интерфейсы» и настрой параметры последовательного порта, как показано ниже:
+
+![Изображение, показывающее экран конфигурации ОС Raspberry Pi с включенным последовательным портом и отключенной последовательной консолью](images/configshot.jpg)
+
+--- /task ---
+
+--- task ---
+
+Тебе также понадобится установить библиотеку Python buildhat, следуя этим инструкциям:
 
 --- collapse ---
 ---
-title: Install the buildhat Python library
+title: Установка библиотеки Python buildhat
 ---
 
-Open a terminal window on your Raspberry Pi by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
+Откройте окно терминала на Raspberry Pi, нажав <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
 
-At the prompt type: `sudo pip3 install buildhat`
+В командной строке введи: `sudo pip3 install buildhat`
 
-Press <kbd>Enter</kbd> and wait for the "installation completed" message.
+Нажми <kbd>Ввод</kbd> и дождись сообщения «установка завершена» (или «installation completed» на английском).
 
 --- /collapse ---
 
