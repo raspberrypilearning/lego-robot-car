@@ -1,10 +1,10 @@
-## Control your motors with Blue Dot
+## Управляй своими моторами с помощью приложения Blue Dot
 
-The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
+Приложение Blue Dot и библиотеку Python можно использовать для управления моторами LEGO® Technic™ с твоего устройства.
 
 --- task ---
 
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
+Снова откройте файл `bt_car.py` и пропиши Blue Dot в верхней части файла. Ты также должен заменить импорт `sleep` на `from signal import pause`.
 
 --- code ---
 ---
@@ -25,7 +25,7 @@ dot = BlueDot()
 
 --- task ---
 
-Remove the `for` loop from your current code, so that the complete code looks like this:
+Удали цикл `for` из твоего текущего кода, чтобы полный код выглядел так:
 
 --- code ---
 ---
@@ -71,7 +71,7 @@ motor_right.start(100)
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
+Теперь добавь функцию, которая использует Blue Dot для **вызова** функции `forward` в конец твоего скрипта.
 
 --- code ---
 ---
@@ -87,11 +87,11 @@ forward()
 
 --- /task ---
 
-The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+Функция `move` имеет единственный параметр, который называется `pos`. Он будет автоматически передан функции, в зависимости от того, где коснулись внутри Blue Dot.
 
 --- task ---
 
-Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
+Добавь вызовы двух методов в конец твоего кода. Они заставят автомобиль двигаться вперед и останавливаться. Последний вызов гарантирует, что программа не просто закончится в нижней части скрипта.
 
 --- code ---
 ---
@@ -109,15 +109,15 @@ pause()
 
 --- task ---
 
-Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+Запусти свой код. В приложении Blue Dot на твоем устройстве нажми синюю точку вверху, и моторы должны включиться. Когда ты уберешь палец с синей точки, моторы должны остановиться.
 
 --- /task ---
 
-At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
+На данный момент моторы будут крутить колеса только вперед. Используя параметр `pos`, ты можешь заставить их вращаться во всех направлениях.
 
 --- task ---
 
-Add to your `move` function so that the motors will move the car backwards, left, and right.
+Добавь к твоей функции `move` этот код, чтобы моторы двигали машину назад, влево и вправо.
 
 --- code ---
 ---
@@ -143,15 +143,15 @@ right()
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
+Запусти свой код еще раз и протестируй его с помощью приложения Blue Dot. Нажатие на правую, левую и нижнюю часть синей точки теперь должно вращать моторы в разные направления.
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
+Вы можешь добавить в свой код одну строчку, чтобы Blue Dot реагировал не только на нажатия, но и на перемещение пальца по синей точке.
 
 --- task ---
 
-Add this single line so that the motors respond to motion over the blue dot.
+Добавьте эту единственную строчку, чтобы моторы реагировали на движение пальца над синей точкой.
 
 --- code ---
 ---
@@ -170,10 +170,10 @@ dot.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+Запусти свою программу и поэкспериментируй, нажимая синюю точку на устройстве Android и перемещая палец в разные положения. Моторы должны вращаться в разных направлениях и останавливаться, когда ты убираешь палец с синей точки.
 
 --- /task ---
 
-To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
+Чтобы прочитать полную документацию по BlueDot, [нажми здесь](https://bluedot.readthedocs.io/en/latest/).
 
 --- save ---
