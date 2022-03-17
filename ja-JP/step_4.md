@@ -1,10 +1,10 @@
-## Control your motors with Blue Dot
+## Blue Dotでモーターを制御する
 
-The Blue Dot app and Python library can be used to control your LEGO® Technic™ motors, from your device.
+Blue Dot アプリと Python ライブラリを使用すると、デバイスから LEGO® Technic™ モーターを制御することができます。
 
 --- task ---
 
-Open up the `bt_car.py` file again, and set up Blue Dot at the top of the file. You should also replace the `sleep` import with `from signal import pause`.
+`bt_car.py` ファイルを再度開いて、ファイルの先頭に Blue Dot を設定します。 また、 `sleep` のインポートを `from signal import pause` に入れ替える必要もあります。
 
 --- code ---
 ---
@@ -25,7 +25,7 @@ dot = BlueDot()
 
 --- task ---
 
-Remove the `for` loop from your current code, so that the complete code looks like this:
+現在のコードから `for` ループを削除して、コード全体が次のとおりになるようにします。
 
 --- code ---
 ---
@@ -71,7 +71,7 @@ motor_right.start(100)
 
 --- task ---
 
-Now add a function that uses Blue Dot to **call** the the `forward` function to the bottom of your script.
+次に、Blue Dotを使って `forward` 関数を**コール**するための関数を、スクリプトの最後に追加します。
 
 --- code ---
 ---
@@ -87,11 +87,11 @@ forward()
 
 --- /task ---
 
-The `move` function has a single parameter, which has been called `pos`. This will be automatically passed to the function, depending on where the Blue Dot is touched.
+`move` 関数には `pos` というパラメーターがひとつあります。 これは、青いドットがタッチされた場所を関数に自動的に渡します。
 
 --- task ---
 
-Add two method calls to the bottom of your code. These will make the car move forward and stop. The final call makes sure the program doesn't just end at the bottom of the script.
+コードの最後に2つのメソッドの呼び出しを追加します。 これで車は前進と停止ができるようになります。 最後の呼び出しは、プログラムがスクリプトの最後で終了しないようにします。
 
 --- code ---
 ---
@@ -109,15 +109,15 @@ pause()
 
 --- task ---
 
-Run your code. On the Blue Dot app on your device, press the blue dot near the top and the motors should turn. When you take your finger off the blue dot, the motors should stop.
+コードを実行しましょう。 デバイスの Blue Dot アプリで、青いドットの上のほうを押すと、モーターが回転します。 青いドットから指を離すと、モーターは停止します。
 
 --- /task ---
 
-At the moment, the motors will only turn the wheels in the forward direction. By using the `pos` parameter, you can make them turn in all directions.
+いまの状態では、モーターは前の方向にだけ車輪を回転させます。 `pos` パラメータを使用することで、すべての方向に回転させられるようになります。
 
 --- task ---
 
-Add to your `move` function so that the motors will move the car backwards, left, and right.
+`move` 関数に追加して、モーターが車を後ろや左右に動けるようにします。
 
 --- code ---
 ---
@@ -143,15 +143,15 @@ right()
 
 --- task ---
 
-Run your code again, and test it with the Blue Dot app. Pressing on the right, left, and bottom of the blue dot should now move the motors in different directions.
+コードをもう一度実行して、 Blue Dot アプリでテストしましょう。 青いドットの右、左、下を押すと、モーターがいろいろな方向に移動します。
 
 --- /task ---
 
-You can add a single line to your code, so that Blue Dot responds not only to presses, but also to when your finger moves over the blue dot.
+コードに1行を追加することで、 Blue Dot が押した時だけでなく、指が青いドットの上を移動したときにも応答するようにできます。
 
 --- task ---
 
-Add this single line so that the motors respond to motion over the blue dot.
+青いドットの上の動きにモーターが反応できるように、次の1行を追加します。
 
 --- code ---
 ---
@@ -170,10 +170,10 @@ dot.when_moved = move
 
 --- task ---
 
-Run your program and experiment with pressing the blue dot on your Android device, and moving your finger around to different positions. The motors should spin in different directions, and stop when you lift your finger off the blue dot.
+プログラムを実行して、 Android デバイス上の青いドットを押し、指をいろいろな場所に動かしてみてください。 モーターは色々な方向に回転し、青いドットから指を離すと停止します。
 
 --- /task ---
 
-To read the full documentation for BlueDot, [click here](https://bluedot.readthedocs.io/en/latest/).
+BlueDot のドキュメントを読むには、[ここをクリックしてください](https://bluedot.readthedocs.io/en/latest/)。
 
 --- save ---
