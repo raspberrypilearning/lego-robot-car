@@ -1,22 +1,22 @@
-## Set up the LEGO® Spike™ motors
+## Настройка моторов LEGO® Spike™
 
-It is easier to test and develop your program before you build your robot. This reduces the risk of ruining your wonderful model when a motor unexpectedly sends the robot in the wrong direction and it careens off your desk (although, of course, the good thing about using LEGO® is that you can always rebuild).
+Перед сборкой робота проще протестировать и разработать твою программу. Это снижает риск испортить твою замечательную модель, когда мотор неожиданно отправляет робота в неправильном направлении, и он падает с твоего стола (хотя, конечно, преимущество использования LEGO® в том, что ты всегда можешь все переделать).
 
-The Raspberry Pi Build HAT and its Python library allow you to control LEGO® Technic™ motors directly from your Raspberry Pi computer.
+Плата Raspberry Pi Build HAT и библиотека Python для неё позволяют тебе управлять двигателями LEGO® Technic™ прямо с твоего компьютера Raspberry Pi.
 
-Plug two motors into ports A and B on the Raspberry Pi Build HAT. Connect your battery pack to the barrel jack on the Build HAT and turn it on.
+Подключи два двигателя к портам A и B на плате Raspberry Pi Build HAT. Подключи свой батарейный отсек к циллиндрическому разъему на плате Build HAT и включи его.
 
-### Make the motors spin
+### Заставь моторы вращаться
 
 --- task ---
 
-Open Thonny on your Raspberry Pi from the **Programming** menu.
+Открой Thonny на твоем Raspberry Pi из меню **Программирование**.
 
 --- /task ---
 
 --- task ---
 
-Use the following code to spin both motors at 50% of their maximum speed for 10 seconds. (They will run one at a time, not together.)
+Используй следующий код, чтобы вращать оба двигателя на 50% от их максимальной скорости в течение 10 секунд. (Они будут работать по одному, а не вместе.)
 
 --- code ---
 ---
@@ -38,17 +38,17 @@ motor_right.run_for_seconds(seconds=10, speed=-50)
 
 --- task ---
 
-Run your program and check the motors turn.
+Запусти твою программу и проверь, как вращаются моторы.
 
 --- /task ---
 
-Your current program should move the motors in opposite directions, because the motors will be mounted on opposite sides of the car's chassis. So anti-clockwise rotation on the left-hand wheel will move the robot forward, whereas a clockwise rotation is needed on the right-hand side.
+Твоя текущая программа должна перемещать двигатели в противоположных направлениях, потому что двигатели будут установлены на противоположных сторонах шасси автомобиля. Таким образом, вращение левого колеса против часовой стрелки будет перемещать робота вперед, тогда как для правого колеса требуется вращение по часовой стрелке.
 
-Now that you have tested the motors, you can create functions to make the motors stop and drive forward.
+Теперь, когда ты проверил двигатели, ты можешь создавать такие функции, чтобы двигатели останавливались и двигались вперед.
 
 --- task ---
 
-Remove the two lines of code that make the motors run for 10 seconds, and add these two functions. The `start()` function works differently to the `run` functions of the LEGO motors, so they will run together this time.
+Удали две строки кода, которые заставляют двигатели работать в течение 10 секунд, и добавь эти две функции. Функция `start()` работает иначе, чем функции LEGO двигателей `run`, поэтому на этот раз они будут работать вместе.
 
 --- code ---
 ---
@@ -78,7 +78,7 @@ motor_right.start(-50)
 
 --- task ---
 
-Test your functions out by adding the following start–stop–start–stop sequence:
+Проверь свои функции, добавив следующую последовательность старт-стоп-старт-стоп:
 
 --- code ---
 ---
@@ -95,11 +95,11 @@ sleep(1)
 --- /code --- --- /task ---
 
 
-Once that works, add three more functions to move the robot backwards, left, and right.
+Как только это заработает, добавь еще три функции для перемещения робота назад, влево и вправо.
 
 --- task ---
 
-To move the robot backwards, simply reverse the directions of both motors.
+Чтобы переместить робота назад, просто поменяй направление вращения обоих двигателей на противоположное.
 
 --- code ---
 ---
@@ -118,7 +118,7 @@ motor_right.start(50)
 
 --- task ---
 
-To turn the robot to the left, both motors need to turn in the same direction.
+Чтобы повернуть робота влево, оба мотора должны вращаться в одном направлении.
 
 --- code ---
 ---
@@ -138,7 +138,7 @@ def right(): motor_left.start(-50) motor_right.start(-50)
 
 --- task ---
 
-To test your code, you can edit your `for` loop.
+Чтобы проверить свой код, ты можешь отредактировать цикл `for`.
 
 --- code ---
 ---
@@ -163,7 +163,7 @@ stop()
 
 --- task ---
 
-Run your code and check that the wheels turn correctly.
+Запусти свой код и убедись, что колеса вращаются правильно.
 
 --- /task ---
 
