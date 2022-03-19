@@ -62,7 +62,7 @@ M2のボルトとナットを使用して、 LEGO ビルドプレートの上に
 
 --- /task ---
 
-写真のとおりにRaspberry Piを固定することで、SDカードスロットが扱いやすくなります。 The Build Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+写真のとおりにRaspberry Piを固定することで、SDカードスロットが扱いやすくなります。 ビルドプレートを使うことで、 ダッシュボードのおもな構造に、より簡単に Raspberry Pi を接続できます。
 
 --- task ---
 
