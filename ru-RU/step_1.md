@@ -48,7 +48,7 @@ title: Дополнительная информация для преподав
 
 Ты можешь скачать завершенный проект [здесь](https://rpf.io/p/ru-RU/bt-robot-car-go).
 
-Если вы хотите напечатать этот проект, то воспользуйтесь [версией для печати](https://projects.raspberrypi.org/ru-RU/projects/bt-robot-car/print) {:target="_blank"}.
+Если вы хотите напечатать этот проект, то воспользуйтесь [версией для печати](https://projects.raspberrypi.org/ru-RU/projects/bt-robot-car/print){:target="_blank"}.
 
 --- /collapse ---
 

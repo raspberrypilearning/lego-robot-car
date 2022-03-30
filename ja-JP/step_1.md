@@ -43,7 +43,7 @@ LEGO® と Raspberry Pi Build HAT を使用してロボットカーを作成し�
 
 --- collapse ---
 ---
-title：教育者向けの追加情報
+title: 教育者向けの追加情報
 ---
 
 完全なプロジェクトは [こちら](https://rpf.io/p/ja-JP/bt-robot-car-go)からダウンロードできます。
