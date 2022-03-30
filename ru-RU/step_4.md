@@ -23,6 +23,7 @@ motor_left = Motor('A')
 motor_right = Motor('B')     
 dot = BlueDot() 
 
+--- /code ---
 --- /task ---
 
 --- task ---
