@@ -33,6 +33,8 @@ You will build a wheeled car. Its movement will be determined by two separately 
 + An assortment of LEGO®, including two wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
 + An Android mobile phone or tablet
 + 5× AA batteries and a holder pack with a barrel jack
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### Software
 
