@@ -33,6 +33,8 @@ LEGO® と Raspberry Pi Build HAT を使用してロボットカーを作成し�
 + ホイール2つを含む LEGO® 製品 (本項では [LEGO® エデュケーション SPIKE™ プライムセット](https://education.lego.com/en-gb/product/spike-prime) を使用することを前提とします)
 + Android の携帯電話またはタブレット
 + 5本の単3電池とバレルジャック付き電池ケース
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### ソフトウェア
 
