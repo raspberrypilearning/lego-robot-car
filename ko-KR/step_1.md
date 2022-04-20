@@ -33,6 +33,8 @@ LEGO®와 Raspberry Pi Build HAT를 사용하여 로봇 자동차를 만든 다�
 + 바퀴 2개를 포함한 다양한 LEGO®([LEGO® Education SPIKE™ Prime 키트](https://education.lego.com/en-gb/product/spike-prime)에서 선택 사용)
 + Android 휴대전화 또는 태블릿
 + 5× AA 배터리 및 배럴 잭이 있는 홀더 팩
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### 소프트웨어
 
