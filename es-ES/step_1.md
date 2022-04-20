@@ -33,6 +33,8 @@ Construirás un coche con ruedas. Su movimiento estará determinado por dos rued
 + Variedad de LEGO®, incluidas las ruedas (utilizamos una selección del kit [LEGO® Education SPIKE ™ Prime](https://education.lego.com/en-gb/product/spike-prime))
 + Un teléfono móvil o tableta Android
 + 5 pilas AA y un contenedor de pilas con un conector de barril
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### Software
 
