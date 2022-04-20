@@ -33,6 +33,8 @@
 + 各种乐高（LEGO®）组件，包括两个车轮（我们从 [LEGO® Education SPIKE™ Prime 套件](https://education.lego.com/en-gb/product/spike-prime)中选择了一些）
 + 一台Android 手机或平板电脑
 + 5 节 AA 电池和一个带桶形插座的支架包
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### 软件
 
