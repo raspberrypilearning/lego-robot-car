@@ -33,6 +33,8 @@ Du baust ein Auto mit Rädern. Seine Bewegung wird von zwei getrennt angetrieben
 + Ein Sortiment von LEGO®-Teilen, einschließlich Rädern (wir haben eine Auswahl aus dem [LEGO® Education SPIKE™ Prime-Set verwendet](https://education.lego.com/en-gb/product/spike-prime))
 + Ein Android-Handy oder -Tablet
 + 5× AA-Batterien und einen Batteriehalter mit einem Hohlstecker
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### Software
 
