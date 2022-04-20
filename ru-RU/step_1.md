@@ -33,6 +33,8 @@
 + Детали LEGO®, включая 2 колеса (мы использовали детали из [набора LEGO® Education SPIKE™ Prime](https://education.lego.com/en-gb/product/spike-prime))
 + Мобильный телефон или планшет на базе ОС Android
 + 5× батареек AA и батарейный отсек с гнездом цилиндрической формы
++ Socket-to-pin jumper leads (optional)
++ LEDs (optional)
 
 ### Программное обеспечение
 
