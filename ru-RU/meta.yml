@@ -1,16 +1,21 @@
 ---
 title: Автомобиль LEGO® с дистанционным управлением
 hero_image: images/banner.png
-description: Сделай автомобиль с дистанционным управлением с помощью LEGO® и платы Build HAT
+description: Сделай автомобиль с дистанционным управлением с помощью LEGO® и платы
+  Build HAT
 version: 4
 listed: true
 copyedit: true
-last_tested: "2020-02-26"
+last_tested: '2020-02-26'
 steps:
-  - title: Введение
-  - title: Настройка моторов LEGO® Spike™
-  - title: Настрой и протестируй управление посредством Bluetooth
-  - title: Управляй своими моторами с помощью приложения Blue Dot
-  - title: Сборка твоего робота
-  - title: Добавление светодиодов
-  - title: Что дальше?
+- title: Введение
+- title: Настройка моторов LEGO® Spike™
+- title: Настрой и протестируй управление посредством Bluetooth
+  completion:
+  - engaged
+- title: Управляй своими моторами с помощью приложения Blue Dot
+- title: Сборка твоего робота
+- title: Добавление светодиодов
+  completion:
+  - internal
+- title: Что дальше?
