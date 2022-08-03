@@ -48,9 +48,9 @@ You will build a wheeled car. Its movement will be determined by two separately 
 title: Additional information for educators
 ---
 
-You can download the complete project [here](https://rpf.io/p/en/bt-robot-car-go).
+You can download the complete project [here](https://rpf.io/p/en/lego-robot-car-go).
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/bt-robot-car/print){:target="_blank"}.
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/lego-robot-car/print){:target="_blank"}.
 
 --- /collapse ---
 
