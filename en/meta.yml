@@ -17,6 +17,5 @@ steps:
 - title: Add LEDs
   completion:
   - internal
-- title: What next?
   completion:
   - external
